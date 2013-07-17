@@ -1,0 +1,86 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2305,         77]
+NotebookOptionsPosition[      1999,         61]
+NotebookOutlinePosition[      2335,         76]
+CellTagsIndexPosition[      2292,         73]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"NMX", "=", "1587000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"cnt", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"n", "=", "1"}], ",", 
+    RowBox[{"n", "\[LessEqual]", " ", "NMX"}], ",", 
+    RowBox[{"n", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"num", "=", 
+      RowBox[{"Differences", "[", 
+       RowBox[{"IntegerDigits", "[", "n", "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Min", "[", "num", "]"}], "<", "0"}], "&&", 
+        RowBox[{
+         RowBox[{"Max", "[", "num", "]"}], ">", "0"}]}], ",", 
+       RowBox[{"cnt", "=", 
+        RowBox[{"cnt", "+", "1"}]}]}], "]"}], ";"}]}], "\[IndentingNewLine]", 
+   "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"cnt", "/", "NMX"}], ",", "20"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.577221303541624*^9, 3.57722132049832*^9}, {
+  3.5772213707693467`*^9, 3.5772214550087695`*^9}, {3.577221490625331*^9, 
+  3.577221705107777*^9}, {3.5772217406063266`*^9, 3.5772219076490293`*^9}}],
+
+Cell[BoxData["0.99`20."], "Output",
+ CellChangeTimes->{{3.577221520136282*^9, 3.577221713784645*^9}, {
+  3.577221751560422*^9, 3.5772218198732524`*^9}, {3.5772218511893835`*^9, 
+  3.577221916365901*^9}}]
+}, Open  ]]
+},
+WindowSize->{716, 867},
+WindowMargins->{{36, Automatic}, {Automatic, 46}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1198, 31, 165, "Input"],
+Cell[1780, 55, 203, 3, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

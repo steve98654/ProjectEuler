@@ -1,0 +1,64 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1390,         54]
+NotebookOptionsPosition[      1088,         38]
+NotebookOutlinePosition[      1424,         53]
+CellTagsIndexPosition[      1381,         50]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Total", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"EulerPhi", "[", "i", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "2", ",", 
+      RowBox[{"10", "^", "6"}]}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.577301337848411*^9, 3.5773013946467447`*^9}, {
+  3.577301445196762*^9, 3.5773014518154297`*^9}}],
+
+Cell[BoxData["303963552391"], "Output",
+ CellChangeTimes->{{3.577301341582255*^9, 3.577301395164503*^9}, 
+   3.577301455926161*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{-6, Automatic}, {14, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 359, 9, 32, "Input"],
+Cell[941, 33, 131, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

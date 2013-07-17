@@ -1,0 +1,140 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3816,        131]
+NotebookOptionsPosition[      3471,        114]
+NotebookOutlinePosition[      3807,        129]
+CellTagsIndexPosition[      3764,        126]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"TLVL", "=", "500"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lvlnms", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"{", "1", "}"}], ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"4", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"2", "n"}], "-", "1"}], ")"}]}], "+", "4"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "1", ",", "TLVL"}], "}"}]}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"inds", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1"}], "}"}], "}"}], ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"Accumulate", "[", "lvlnms", "]"}], "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "+", "1"}], ",", 
+         RowBox[{
+          RowBox[{"Accumulate", "[", "lvlnms", "]"}], "[", 
+          RowBox[{"[", 
+           RowBox[{"i", "+", "1"}], "]"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "TLVL"}], "}"}]}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vls", "=", 
+   RowBox[{"Range", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", " ", "TLVL"}], " ", "+", "1"}], ")"}], "^", "2"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"plst", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Take", "[", 
+      RowBox[{"vls", ",", 
+       RowBox[{"inds", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "inds", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lvs", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Take", "[", 
+      RowBox[{
+       RowBox[{"Transpose", "[", 
+        RowBox[{"Partition", "[", 
+         RowBox[{
+          RowBox[{"plst", "[", 
+           RowBox[{"[", 
+            RowBox[{"lvl", "+", "1"}], "]"}], "]"}], ",", 
+          RowBox[{"2", " ", "lvl"}]}], "]"}], "]"}], ",", 
+       RowBox[{"-", "1"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lvl", ",", "1", ",", "TLVL"}], "}"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.576537293759001*^9, 3.576537362092626*^9}, {
+  3.5765374938299847`*^9, 3.57653750560214*^9}, {3.576537555822673*^9, 
+  3.576537589698574*^9}, {3.576537713884527*^9, 3.576537714678356*^9}, {
+  3.576538731889906*^9, 3.576538834367465*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Total", "[", 
+   RowBox[{"Flatten", "[", "lvs", "]"}], "]"}], "+", "1"}]], "Input",
+ CellChangeTimes->{{3.576538836780755*^9, 3.576538851908463*^9}}],
+
+Cell[BoxData["669171001"], "Output",
+ CellChangeTimes->{{3.576538843551735*^9, 3.576538852372734*^9}}]
+}, Open  ]]
+},
+WindowSize->{834, 867},
+WindowMargins->{{86, Automatic}, {Automatic, 32}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 2584, 80, 209, "Input"],
+Cell[CellGroupData[{
+Cell[3166, 104, 184, 4, 32, "Input"],
+Cell[3353, 110, 102, 1, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

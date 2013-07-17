@@ -1,0 +1,174 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5574,        165]
+NotebookOptionsPosition[      5150,        146]
+NotebookOutlinePosition[      5486,        161]
+CellTagsIndexPosition[      5443,        158]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mxln", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"n", "=", 
+      RowBox[{
+       RowBox[{"10", "^", "4"}], "+", "1000"}]}], ",", 
+     RowBox[{"n", "\[LessEqual]", 
+      RowBox[{"2", " ", 
+       RowBox[{"10", "^", "4"}]}]}], ",", 
+     RowBox[{"n", "++"}], ",", 
+     RowBox[{
+      RowBox[{"id", "=", 
+       RowBox[{"IntegerDigits", "[", 
+        RowBox[{"Prime", "[", "n", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"lvl", "=", 
+       RowBox[{"Length", "[", "id", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"tp", "=", 
+       RowBox[{"Tuples", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{"i", ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "1", ",", 
+             RowBox[{"Length", "[", "id", "]"}]}], "}"}]}], "]"}], ",", 
+         "lvl"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"flst", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"ReplacePart", "[", 
+            RowBox[{"id", ",", 
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"tp", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"m", ",", "k"}], "]"}], "]"}], "\[Rule]", "j"}], 
+               ",", 
+               RowBox[{"{", 
+                RowBox[{"k", ",", "1", ",", 
+                 RowBox[{"Length", "[", 
+                  RowBox[{"tp", "[", 
+                   RowBox[{"[", "m", "]"}], "]"}], "]"}]}], "}"}]}], "]"}]}], 
+            "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"j", ",", "0", ",", "9"}], "}"}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"m", ",", "1", ",", 
+           RowBox[{"Length", "[", "tp", "]"}]}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"j", "=", "1"}], ",", 
+        RowBox[{"j", "\[LessEqual]", 
+         RowBox[{"Length", "[", "flst", "]"}]}], ",", 
+        RowBox[{"j", "++"}], ",", 
+        RowBox[{
+         RowBox[{"ntrue", "=", 
+          RowBox[{"Length", "[", 
+           RowBox[{"Position", "[", 
+            RowBox[{
+             RowBox[{"Map", "[", 
+              RowBox[{"PrimeQ", ",", 
+               RowBox[{"Map", "[", 
+                RowBox[{"FromDigits", ",", 
+                 RowBox[{"flst", "[", 
+                  RowBox[{"[", "j", "]"}], "]"}]}], "]"}]}], "]"}], ",", 
+             "True"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"lst", "=", 
+          RowBox[{"Map", "[", 
+           RowBox[{"FromDigits", ",", 
+            RowBox[{"flst", "[", 
+             RowBox[{"[", "j", "]"}], "]"}]}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ntrue", "=", 
+          RowBox[{"Length", "[", 
+           RowBox[{"Position", "[", 
+            RowBox[{
+             RowBox[{"Map", "[", 
+              RowBox[{"PrimeQ", ",", "lst"}], "]"}], ",", "True"}], "]"}], 
+           "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"ntrue", ">", "mxln"}], ",", 
+           RowBox[{"mxln", "=", "ntrue"}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"ntrue", "\[Equal]", "8"}], ",", 
+           RowBox[{"Print", "[", "lst", "]"}]}], "]"}], ";"}]}], "]"}], 
+      ";"}]}], "]"}], ";"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{"{", 
+  RowBox[{
+  "20303", ",", "121313", ",", "222323", ",", "323333", ",", "424343", ",", 
+   "525353", ",", "626363", ",", "727373", ",", "828383", ",", "929393"}], 
+  "}"}]}], "Input",
+ CellChangeTimes->{{3.577567069581761*^9, 3.577567069587907*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"n", "\[IndentingNewLine]", 
+ RowBox[{"Prime", "[", "n", "]"}], "\[IndentingNewLine]", "mxln"}], "Input",
+ CellChangeTimes->{{3.577474060896037*^9, 3.57747406274552*^9}, {
+  3.5774765520853233`*^9, 3.5774765545735693`*^9}}],
+
+Cell[BoxData["10329"], "Output",
+ CellChangeTimes->{
+  3.577474063112414*^9, {3.577476546809465*^9, 3.577476555123845*^9}, 
+   3.5774782453479147`*^9, 3.577479770233426*^9}],
+
+Cell[BoxData["108631"], "Output",
+ CellChangeTimes->{
+  3.577474063112414*^9, {3.577476546809465*^9, 3.577476555123845*^9}, 
+   3.5774782453479147`*^9, 3.577479770236177*^9}],
+
+Cell[BoxData["8"], "Output",
+ CellChangeTimes->{
+  3.577474063112414*^9, {3.577476546809465*^9, 3.577476555123845*^9}, 
+   3.5774782453479147`*^9, 3.577479770238618*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{54, Automatic}, {75, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 3790, 101, 407, "Input"],
+Cell[CellGroupData[{
+Cell[4372, 125, 237, 3, 77, "Input"],
+Cell[4612, 130, 173, 3, 32, "Output"],
+Cell[4788, 135, 174, 3, 32, "Output"],
+Cell[4965, 140, 169, 3, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

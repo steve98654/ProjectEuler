@@ -1,0 +1,113 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3652,        104]
+NotebookOptionsPosition[      3111,         79]
+NotebookOutlinePosition[      3468,         95]
+CellTagsIndexPosition[      3425,         92]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"lst", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "319", ",", "680", ",", "180", ",", "690", ",", "129", ",", "620", ",", 
+    "762", ",", "689", ",", "\n", "762", ",", "318", ",", "368", ",", "710", 
+    ",", "720", ",", "710", ",", "629", ",", "168", ",", "160", ",", "689", 
+    ",", "\n", "716", ",", "731", ",", "736", ",", "729", ",", "316", ",", 
+    "729", ",", "729", ",", "710", ",", "769", ",", "\n", "290", ",", "719", 
+    ",", "680", ",", "318", ",", "389", ",", "162", ",", "289", ",", "162", 
+    ",", "718", ",", "\n", "729", ",", "319", ",", "790", ",", "680", ",", 
+    "890", ",", "362", ",", "319", ",", "760", ",", "316", ",", "\n", "729", 
+    ",", "380", ",", "319", ",", "728", ",", "716"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.578434655616177*^9, 3.578434759093554*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "319", ",", "680", ",", "180", ",", "690", ",", "129", ",", "620", ",", 
+   "762", ",", "689", ",", "762", ",", "318", ",", "368", ",", "710", ",", 
+   "720", ",", "710", ",", "629", ",", "168", ",", "160", ",", "689", ",", 
+   "716", ",", "731", ",", "736", ",", "729", ",", "316", ",", "729", ",", 
+   "729", ",", "710", ",", "769", ",", "290", ",", "719", ",", "680", ",", 
+   "318", ",", "389", ",", "162", ",", "289", ",", "162", ",", "718", ",", 
+   "729", ",", "319", ",", "790", ",", "680", ",", "890", ",", "362", ",", 
+   "319", ",", "760", ",", "316", ",", "729", ",", "380", ",", "319", ",", 
+   "728", ",", "716"}], "}"}]], "Output",
+ CellChangeTimes->{3.578434760957904*^9, 3.578438666064866*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["ilst"], "Input",
+ CellChangeTimes->{{3.5784414854810877`*^9, 3.578441486118967*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "129", ",", "160", ",", "162", ",", "168", ",", "180", ",", "289", ",", 
+   "290", ",", "316", ",", "318", ",", "319", ",", "362", ",", "368", ",", 
+   "380", ",", "389", ",", "620", ",", "629", ",", "680", ",", "689", ",", 
+   "690", ",", "710", ",", "716", ",", "718", ",", "719", ",", "720", ",", 
+   "728", ",", "729", ",", "731", ",", "736", ",", "760", ",", "762", ",", 
+   "769", ",", "790", ",", "890"}], "}"}]], "Output",
+ CellChangeTimes->{3.578441486549821*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["73162890"], "Input",
+ CellChangeTimes->{{3.5784415463995657`*^9, 3.578441605353298*^9}, {
+   3.578441637726914*^9, 3.578441643224185*^9}, 3.578441678381063*^9}],
+
+Cell[BoxData["73162890"], "Output",
+ CellChangeTimes->{3.578441688404261*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{51, Automatic}, {Automatic, 61}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 818, 13, 143, "Input"],
+Cell[1400, 37, 752, 12, 99, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2189, 54, 98, 1, 32, "Input"],
+Cell[2290, 57, 514, 9, 77, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2841, 71, 174, 2, 32, "Input"],
+Cell[3018, 75, 77, 1, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

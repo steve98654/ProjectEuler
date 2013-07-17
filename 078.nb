@@ -1,0 +1,119 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3352,        109]
+NotebookOptionsPosition[      2864,         87]
+NotebookOutlinePosition[      3201,        102]
+CellTagsIndexPosition[      3158,         99]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"i", "=", "54000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"While", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Mod", "[", 
+     RowBox[{
+      RowBox[{"PartitionsP", "[", "i", "]"}], ",", 
+      RowBox[{"10", "^", "6"}]}], "]"}], "!=", "0"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"i", "=", 
+     RowBox[{"i", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Mod", "[", 
+        RowBox[{"i", ",", "1000"}], "]"}], "\[Equal]", "0"}], ",", 
+      RowBox[{"Print", "[", "i", "]"}]}], "]"}], ";"}]}], 
+  "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "i"}], "Input",
+ CellChangeTimes->{{3.5789625061265163`*^9, 3.578962526773631*^9}, {
+  3.578962783331398*^9, 3.578962895092911*^9}, {3.578962927865419*^9, 
+  3.5789629303631477`*^9}, {3.578963019958003*^9, 3.578963036659971*^9}, {
+  3.578963381923177*^9, 3.578963387461005*^9}, {3.578963735219844*^9, 
+  3.578963738046379*^9}, {3.578964348484454*^9, 3.578964349868496*^9}, {
+  3.578964713837604*^9, 3.57896474662421*^9}, {3.578964861948805*^9, 
+  3.578964865392034*^9}}],
+
+Cell[BoxData["55000"], "Print",
+ CellChangeTimes->{3.578964758001102*^9, 3.57896493518972*^9}],
+
+Cell[BoxData["55374"], "Output",
+ CellChangeTimes->{3.5789629195752983`*^9, 3.5789629840593777`*^9, 
+  3.578963026382559*^9, 3.578963376716012*^9, 3.578963648527607*^9, 
+  3.5789643422639513`*^9, 3.5789647106429768`*^9, 3.578964859097333*^9, 
+  3.578964962215528*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.578963024318873*^9, 3.578963025602414*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Position", "[", 
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"PartitionsP", "[", "i", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "22000", ",", "25000"}], "}"}]}], "]"}], ",", 
+     RowBox[{"10", "^", "6"}]}], "]"}], ",", "0"}], "]"}]], "Input",
+ CellChangeTimes->{{3.578962989025261*^9, 3.578962996092606*^9}, {
+  3.578963654693699*^9, 3.578963731102044*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{
+  3.578962996378866*^9, {3.5789636704253387`*^9, 3.578963690245171*^9}, 
+   3.578963722025592*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, 244}, {47, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1141, 27, 143, "Input"],
+Cell[1723, 51, 94, 1, 23, "Print"],
+Cell[1820, 54, 267, 4, 32, "Output"]
+}, Open  ]],
+Cell[2102, 61, 92, 1, 32, "Input"],
+Cell[CellGroupData[{
+Cell[2219, 66, 462, 12, 55, "Input"],
+Cell[2684, 80, 164, 4, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

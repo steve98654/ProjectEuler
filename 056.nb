@@ -1,0 +1,68 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1538,         58]
+NotebookOptionsPosition[      1234,         42]
+NotebookOutlinePosition[      1570,         57]
+CellTagsIndexPosition[      1527,         54]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lst", "=", 
+   RowBox[{"Convergents", "[", 
+    RowBox[{"E", ",", "100"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", 
+  RowBox[{"IntegerDigits", "[", 
+   RowBox[{"Numerator", "[", 
+    RowBox[{"lst", "[", 
+     RowBox[{"[", 
+      RowBox[{"Length", "[", "lst", "]"}], "]"}], "]"}], "]"}], "]"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.576688953918004*^9, 3.576689011838002*^9}, {
+  3.576689090148612*^9, 3.5766891461332903`*^9}}],
+
+Cell[BoxData["272"], "Output",
+ CellChangeTimes->{{3.576688966029922*^9, 3.576689012443469*^9}, {
+  3.57668909376556*^9, 3.5766891469478693`*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{73, Automatic}, {50, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 490, 13, 55, "Input"],
+Cell[1072, 37, 146, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

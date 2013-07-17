@@ -1,0 +1,77 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1867,         68]
+NotebookOptionsPosition[      1527,         51]
+NotebookOutlinePosition[      1863,         66]
+CellTagsIndexPosition[      1820,         63]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{"Select", "[", 
+   RowBox[{
+    RowBox[{"Flatten", "[", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Total", "[", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "j", ",", "k"}], "}"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "9"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", "0", ",", "9"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "0", ",", "9"}], "}"}]}], "]"}], "]"}], ",", 
+    RowBox[{
+     RowBox[{"#", "<", "9"}], "&"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.578791512498879*^9, 3.5787916358154507`*^9}, {
+  3.578791678943575*^9, 3.5787916841493483`*^9}}],
+
+Cell[BoxData["165"], "Output",
+ CellChangeTimes->{{3.5787915867832327`*^9, 3.578791636186447*^9}, 
+   3.5787916852304287`*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.578791813888033*^9, 3.5787918156400747`*^9}}]
+},
+WindowSize->{740, 867},
+WindowMargins->{{13, Automatic}, {54, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 706, 19, 77, "Input"],
+Cell[1288, 43, 126, 2, 32, "Output"]
+}, Open  ]],
+Cell[1429, 48, 94, 1, 32, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

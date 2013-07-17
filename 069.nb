@@ -1,0 +1,72 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1620,         63]
+NotebookOptionsPosition[      1281,         46]
+NotebookOutlinePosition[      1616,         61]
+CellTagsIndexPosition[      1573,         58]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tb", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"i", "/", 
+      RowBox[{"EulerPhi", "[", "i", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"10", "^", "6"}]}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.577191334145052*^9, 3.577191368511488*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Position", "[", 
+  RowBox[{"tb", ",", 
+   RowBox[{"Max", "[", "tb", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5771913762362604`*^9, 3.5771913947501116`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", "510510", "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.577191378771514*^9, 3.577191395553192*^9}}]
+}, Open  ]]
+},
+WindowSize->{716, 867},
+WindowMargins->{{10, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 349, 10, 32, "Input"],
+Cell[CellGroupData[{
+Cell[931, 34, 187, 4, 32, "Input"],
+Cell[1121, 40, 144, 3, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

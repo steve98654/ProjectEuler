@@ -1,0 +1,230 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7224,        221]
+NotebookOptionsPosition[      6584,        194]
+NotebookOutlinePosition[      6920,        209]
+CellTagsIndexPosition[      6877,        206]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"prms", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{"FromDigits", ",", 
+     RowBox[{"Permute", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "0", ",", "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", 
+         "7", ",", "8", ",", "9"}], "}"}], ",", 
+       RowBox[{"SymmetricGroup", "[", "10", "]"}]}], "]"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.576542596931417*^9, 3.576542701591784*^9}, {
+  3.582155498422978*^9, 3.582155499554574*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ind", "=", "455953"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"id", "=", 
+  RowBox[{"IntegerDigits", "[", 
+   RowBox[{"prms", "[", 
+    RowBox[{"[", "ind", "]"}], "]"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.5765427180192633`*^9, 3.576542782584927*^9}, {
+  3.576543029759903*^9, 3.576543038049107*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "3", ",", "4", ",", "6", ",", "2", ",", "8", ",", "0", ",", "5", 
+   ",", "7", ",", "9"}], "}"}]], "Output",
+ CellChangeTimes->{{3.576542721381813*^9, 3.576542735666727*^9}, {
+  3.576542770329218*^9, 3.576542783380131*^9}, {3.5765430306998863`*^9, 
+  3.576543038869063*^9}}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lst", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"k", "=", "1"}], ",", 
+    RowBox[{"k", "\[LessEqual]", 
+     RowBox[{"Length", "[", "prms", "]"}]}], ",", 
+    RowBox[{"k", "++"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"id", "=", 
+      RowBox[{"IntegerDigits", "[", 
+       RowBox[{"prms", "[", 
+        RowBox[{"[", "k", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "id", "]"}], "\[Equal]", "10"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"FromDigits", "[", 
+               RowBox[{"Take", "[", 
+                RowBox[{"id", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"2", ",", "4"}], "}"}]}], "]"}], "]"}], ",", "2"}], 
+             "]"}], "\[Equal]", "0"}], "&&", 
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"FromDigits", "[", 
+               RowBox[{"Take", "[", 
+                RowBox[{"id", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"3", ",", "5"}], "}"}]}], "]"}], "]"}], ",", "3"}], 
+             "]"}], "\[Equal]", "0"}], "&&", 
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"FromDigits", "[", 
+               RowBox[{"Take", "[", 
+                RowBox[{"id", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"4", ",", "6"}], "}"}]}], "]"}], "]"}], ",", "5"}], 
+             "]"}], "\[Equal]", "0"}], "&&", 
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"FromDigits", "[", 
+               RowBox[{"Take", "[", 
+                RowBox[{"id", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"5", ",", "7"}], "}"}]}], "]"}], "]"}], ",", "7"}], 
+             "]"}], "\[Equal]", "0"}], "&&", 
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"FromDigits", "[", 
+               RowBox[{"Take", "[", 
+                RowBox[{"id", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"6", ",", "8"}], "}"}]}], "]"}], "]"}], ",", "11"}],
+              "]"}], "\[Equal]", "0"}], "&&", 
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"FromDigits", "[", 
+               RowBox[{"Take", "[", 
+                RowBox[{"id", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"7", ",", "9"}], "}"}]}], "]"}], "]"}], ",", "13"}],
+              "]"}], "\[Equal]", "0"}], "&&", 
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"FromDigits", "[", 
+               RowBox[{"Take", "[", 
+                RowBox[{"id", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"8", ",", "10"}], "}"}]}], "]"}], "]"}], ",", 
+              "17"}], "]"}], "\[Equal]", "0"}]}], ",", "\[IndentingNewLine]", 
+          
+          RowBox[{
+           RowBox[{"lst", "=", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Flatten", "[", "lst", "]"}], ",", 
+              RowBox[{"prms", "[", 
+               RowBox[{"[", "k", "]"}], "]"}]}], "}"}]}], ";"}]}], 
+         "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+     ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.576542787177395*^9, 3.576542969956139*^9}, 
+   3.5765430760435877`*^9, {3.576543158964278*^9, 3.576543219637916*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Length", "[", "prms", "]"}], "\[IndentingNewLine]", "lst"}], "Input",\
+
+ CellChangeTimes->{{3.57654297145109*^9, 3.576542984585911*^9}}],
+
+Cell[BoxData["3628800"], "Output",
+ CellChangeTimes->{{3.576542974238937*^9, 3.576542989712202*^9}, 
+   3.576543245962322*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1406357289", ",", "1430952867", ",", "1460357289", ",", "4106357289", 
+     ",", "4130952867"}], "}"}], ",", "4160357289"}], "}"}]], "Output",
+ CellChangeTimes->{{3.576542974238937*^9, 3.576542989712202*^9}, 
+   3.57654324596425*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", 
+  RowBox[{"Flatten", "[", "lst", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.576543000942637*^9, 3.576543000984693*^9}, {
+  3.576543266704503*^9, 3.576543283541424*^9}}],
+
+Cell[BoxData["16695334890"], "Output",
+ CellChangeTimes->{
+  3.5765430014387836`*^9, {3.5765432709987717`*^9, 3.5765432838492327`*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{134, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 520, 14, 55, "Input"],
+Cell[CellGroupData[{
+Cell[1102, 38, 343, 8, 55, "Input"],
+Cell[1448, 48, 326, 7, 32, "Output"]
+}, Open  ]],
+Cell[1789, 58, 3769, 99, 363, "Input"],
+Cell[CellGroupData[{
+Cell[5583, 161, 161, 3, 55, "Input"],
+Cell[5747, 166, 126, 2, 32, "Output"],
+Cell[5876, 170, 308, 8, 55, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6221, 183, 209, 4, 32, "Input"],
+Cell[6433, 189, 135, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

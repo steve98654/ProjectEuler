@@ -1,0 +1,94 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2407,         85]
+NotebookOptionsPosition[      2102,         69]
+NotebookOutlinePosition[      2438,         84]
+CellTagsIndexPosition[      2395,         81]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"NMX", "=", "1000000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"n", "=", "1"}], ",", 
+   RowBox[{"n", "\[LessEqual]", "NMX"}], ",", 
+   RowBox[{"n", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"lst", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"i", " ", "n"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "2", ",", "m"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"vl", "=", 
+     RowBox[{"Length", "[", 
+      RowBox[{"Intersection", "[", 
+       RowBox[{"Map", "[", 
+        RowBox[{"Intersection", ",", 
+         RowBox[{"Map", "[", 
+          RowBox[{"IntegerDigits", ",", "lst"}], "]"}]}], "]"}], "]"}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"vl", "\[Equal]", "1"}], ",", 
+      RowBox[{"Print", "[", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "lst"}], "}"}], "]"}]}], "]"}], ";"}]}], 
+  "\[IndentingNewLine]", "]"}]}], "Input",
+ CellChangeTimes->{{3.576686578428183*^9, 3.576686594229883*^9}, {
+  3.576686639903665*^9, 3.576686923929405*^9}, {3.576686958740293*^9, 
+  3.576686966941725*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"142857", ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "285714", ",", "428571", ",", "571428", ",", "714285", ",", "857142"}], 
+    "}"}]}], "}"}]], "Print",
+ CellChangeTimes->{3.5766869699618587`*^9}]
+}, Open  ]]
+},
+WindowSize->{779, 867},
+WindowMargins->{{38, Automatic}, {Automatic, 36}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1269, 35, 165, "Input"],
+Cell[1851, 59, 235, 7, 23, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

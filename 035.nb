@@ -1,0 +1,141 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4257,        132]
+NotebookOptionsPosition[      3873,        114]
+NotebookOutlinePosition[      4210,        129]
+CellTagsIndexPosition[      4167,        126]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lst", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"While", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Prime", "[", "n", "]"}], "<", 
+    RowBox[{"10", "^", "6"}]}], ",", 
+   RowBox[{
+    RowBox[{"lst", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Flatten", "[", "lst", "]"}], ",", 
+       RowBox[{"Prime", "[", "n", "]"}]}], "}"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"n", "=", 
+     RowBox[{"n", "+", "1"}]}], ";"}]}], "\[IndentingNewLine]", 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.576572983842948*^9, 3.5765730444817543`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lst", "=", 
+   RowBox[{"Flatten", "[", "lst", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lst2", "=", 
+   RowBox[{"{", "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.576573070965947*^9, 3.576573071526833*^9}, {
+  3.576573126563245*^9, 3.576573141476688*^9}, {3.576573876213891*^9, 
+  3.5765738881684217`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"k", "=", "451"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"cnt", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"k", "=", "1"}], ",", 
+    RowBox[{"k", "\[LessEqual]", 
+     RowBox[{"Length", "[", "lst", "]"}]}], ",", 
+    RowBox[{"k", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"tls", "=", 
+      RowBox[{"Map", "[", 
+       RowBox[{"FromDigits", ",", 
+        RowBox[{"Permute", "[", 
+         RowBox[{
+          RowBox[{"IntegerDigits", "[", 
+           RowBox[{"lst", "[", 
+            RowBox[{"[", "k", "]"}], "]"}], "]"}], ",", 
+          RowBox[{"CyclicGroup", "[", 
+           RowBox[{"Length", "[", 
+            RowBox[{"IntegerDigits", "[", 
+             RowBox[{"lst", "[", 
+              RowBox[{"[", "k", "]"}], "]"}], "]"}], "]"}], "]"}]}], "]"}]}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Intersection", "[", 
+         RowBox[{"PrimeQ", "[", "tls", "]"}], "]"}], "\[Equal]", 
+        RowBox[{"{", "True", "}"}]}], ",", 
+       RowBox[{
+        RowBox[{"cnt", "=", 
+         RowBox[{"cnt", "+", "1"}]}], ";", 
+        RowBox[{"lst2", "=", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Flatten", "[", "lst2", "]"}], ",", "k"}], "}"}]}]}]}], 
+      "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"cnt", "+", "4"}]}], "Input",
+ CellChangeTimes->{{3.5765731445918427`*^9, 3.576573337355001*^9}, {
+  3.57657338450677*^9, 3.576573390252459*^9}, {3.576573476874715*^9, 
+  3.57657358269243*^9}, {3.576573766579019*^9, 3.5765737694723597`*^9}, {
+  3.5765737999968987`*^9, 3.576573801856056*^9}, {3.5765738334173307`*^9, 
+  3.5765738429649553`*^9}, {3.57657389347264*^9, 3.576573906777885*^9}, {
+  3.576574020996306*^9, 3.576574030384984*^9}}],
+
+Cell[BoxData["55"], "Output",
+ CellChangeTimes->{
+  3.57657339076509*^9, {3.576573478184875*^9, 3.5765735116126347`*^9}, {
+   3.576573557541662*^9, 3.5765735834346533`*^9}, 3.576573771690674*^9, 
+   3.576573803293559*^9, {3.57657383708869*^9, 3.576573850280051*^9}, 
+   3.5765739174708557`*^9, 3.576574048085754*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{164, Automatic}, {Automatic, 49}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 684, 21, 121, "Input"],
+Cell[1244, 43, 364, 9, 55, "Input"],
+Cell[CellGroupData[{
+Cell[1633, 56, 1905, 48, 209, "Input"],
+Cell[3541, 106, 316, 5, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
