@@ -1,0 +1,628 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     25495,        619]
+NotebookOptionsPosition[     23841,        557]
+NotebookOutlinePosition[     24199,        573]
+CellTagsIndexPosition[     24156,        570]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dat", "=", 
+   RowBox[{
+   "Import", "[", "\"\</home/steve98654/Desktop/ProjEuler/network.csv\>\"", 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.583619315499742*^9, 3.58361933791679*^9}, {
+  3.583619417855153*^9, 3.583619445962358*^9}, {3.583619563581355*^9, 
+  3.583619593799159*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", " ", "=", " ", 
+   RowBox[{"Length", "[", "dat", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"elst", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wlst", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "\[LessEqual]", "n"}], ",", 
+    RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"j", "=", "i"}], ",", 
+       RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+       RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"dat", "[", 
+            RowBox[{"[", 
+             RowBox[{"i", ",", "j"}], "]"}], "]"}], ">", "0"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"wlst", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"wlst", ",", 
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<E(\>\"", ",", 
+                RowBox[{"ToString", "[", 
+                 RowBox[{"i", "-", "1"}], "]"}], ",", "\"\<, \>\"", ",", 
+                RowBox[{"ToString", "[", 
+                 RowBox[{"j", "-", "1"}], "]"}], ",", "\"\<)\>\""}], "]"}]}], 
+             "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"elst", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"elst", ",", 
+              RowBox[{"dat", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", ",", "j"}], "]"}], "]"}]}], "]"}]}], ";"}]}], 
+         "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+     ";"}]}], "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"dat", "[", 
+      RowBox[{"[", 
+       RowBox[{"i", ",", "j"}], "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "n"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.583619634484104*^9, 3.583619891121669*^9}, {
+  3.5836216471550007`*^9, 3.5836216472049103`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToString", "[", "elst", "]"}]], "Input",
+ CellChangeTimes->{{3.583619853343349*^9, 3.583619879444283*^9}, {
+  3.583620256133383*^9, 3.58362025721085*^9}, {3.583620662879559*^9, 
+  3.583620673354267*^9}, {3.5836207271424522`*^9, 3.5836207301910257`*^9}, {
+  3.5836212759454403`*^9, 3.583621277681745*^9}, {3.583621323517627*^9, 
+  3.5836213662958393`*^9}, {3.583621803638097*^9, 3.583621803658061*^9}, {
+  3.583621890140011*^9, 3.5836218908024683`*^9}, {3.5836220075449057`*^9, 
+  3.583622007626141*^9}}],
+
+Cell[BoxData["\<\"{427, 668, 495, 377, 678, 177, 870, 869, 624, 300, 609, \
+131, 251, 856, 221, 514, 591, 762, 182, 56, 884, 412, 273, 636, 774, 262, \
+508, 472, 799, 956, 578, 363, 940, 143, 162, 122, 910, 729, 802, 941, 922, \
+573, 531, 539, 667, 607, 920, 315, 649, 937, 185, 102, 636, 289, 926, 958, \
+158, 647, 47, 621, 264, 81, 402, 813, 649, 386, 252, 391, 264, 637, 349, 108, \
+727, 225, 578, 699, 898, 294, 575, 168, 432, 833, 366, 635, 32, 962, 468, \
+893, 854, 718, 427, 448, 916, 258, 760, 909, 529, 311, 404, 588, 680, 875, \
+615, 409, 758, 221, 76, 257, 250, 268, 503, 944, 677, 727, 793, 457, 981, \
+191, 351, 969, 925, 987, 328, 282, 589, 873, 477, 19, 450, 765, 711, 819, \
+305, 302, 926, 582, 861, 683, 293, 66, 27, 290, 786, 554, 817, 33, 54, 506, \
+386, 381, 120, 42, 134, 219, 457, 639, 538, 374, 966, 449, 120, 797, 358, \
+232, 550, 305, 997, 662, 744, 686, 239, 35, 106, 385, 652, 160, 890, 812, \
+605, 953, 79, 712, 613, 312, 452, 978, 900, 901, 225, 533, 770, 722, 283, \
+172, 663, 236, 36, 403, 286, 986, 810, 761, 574, 53, 793, 777, 330, 936, 883, \
+286, 174, 828, 711, 50, 565, 36, 767, 684, 344, 489, 565, 103, 810, 463, 733, \
+665, 494, 644, 863, 25, 385, 342, 470, 730, 582, 468, 155, 519, 256, 990, \
+801, 154, 53, 474, 650, 402, 966, 406, 989, 772, 932, 7, 823, 391, 933, 380, \
+438, 41, 266, 104, 867, 609, 270, 861, 165, 675, 250, 686, 995, 366, 191, \
+433, 313, 851, 248, 220, 826, 359, 829, 234, 198, 145, 409, 68, 359, 814, \
+218, 186, 929, 203, 132, 433, 598, 168, 870, 128, 437, 383, 364, 966, 227, \
+807, 993, 526, 17, 596, 903, 613, 730, 261, 142, 379, 885, 89, 848, 258, 112, \
+900, 818, 639, 268, 600, 539, 379, 664, 561, 542, 999, 585, 321, 398, 950, \
+68, 193, 697, 390, 588, 848, 73, 318, 500, 968, 291, 765, 196, 504, 757, 542, \
+395, 227, 148, 946, 136, 399, 941, 707, 156, 757, 258, 251, 807, 461, 501, \
+616, 686, 575, 627, 817, 282, 698, 398, 222, 649, 654, 389, 729, 553, 304, \
+703, 455, 857, 260, 991, 182, 351, 477, 867, 889, 217, 853, 392, 267, 407, \
+27, 651, 80, 927, 974, 977, 457, 117, 202, 867, 140, 403, 962, 785, 511, 1, \
+707, 388, 939, 959, 83, 463, 361, 512, 931, 224, 690, 369, 164, 829, 620, \
+523, 639, 936, 490, 695, 505, 109, 616, 716, 728, 889, 349, 963, 150, 447, \
+292, 586, 264, 822, 736, 576, 697, 946, 443, 205, 194, 349, 156, 339, 102, \
+790, 359, 439, 938, 809, 260, 293, 486, 943, 779, 6, 880, 116, 775, 947, 212, \
+684, 505, 341, 384, 9, 992, 507, 48, 349, 723, 186, 36, 240, 752, 965, 302, \
+676, 725, 327, 134, 147, 474, 178, 833, 555, 853, 689, 451, 245, 596, 445, \
+343, 949, 270, 112, 91, 768, 273, 248, 344, 371, 680, 540}\"\>"], "Output",
+ CellChangeTimes->{{3.58361985416543*^9, 3.583619894014653*^9}, 
+   3.583620257601638*^9, 3.5836206642670927`*^9, 3.583620730546369*^9, 
+   3.583621278869034*^9, 3.583621332993424*^9, 3.5836213668203697`*^9, 
+   3.583621650706292*^9, {3.583621804247398*^9, 3.583621822787202*^9}, 
+   3.583621891802055*^9, {3.583621995942379*^9, 3.583622008719821*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"All", " ", "garbage", " ", "after", " ", 
+   RowBox[{
+    RowBox[{"this", "!!"}], "!"}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.583619600004787*^9, 3.583619606557255*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Combinatorica`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.583610775036873*^9, 3.583610817197008*^9}, {
+  3.5836108640838118`*^9, 3.583610865964554*^9}, {3.583610907516499*^9, 
+  3.583610923882576*^9}, {3.58361097086814*^9, 3.583610975847993*^9}, {
+  3.583611199968705*^9, 3.583611205730875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "compat"}], "MessageName"], ":", 
+  " ", "\<\"Combinatorica Graph and Permutations functionality has been \
+superseded by preloaded functionality. The package now being loaded may \
+conflict with this. Please see the Compatibility Guide for details.\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{
+  3.583610817895536*^9, 3.583610867066959*^9, 3.583610924748221*^9, {
+   3.5836109718664923`*^9, 3.583610976360115*^9}, 3.5836112068475924`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tstgrph", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Infinity]", ",", "16", ",", "12", ",", "21", ",", "\[Infinity]", ",",
+        "\[Infinity]", ",", "\[Infinity]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "16", ",", "\[Infinity]", ",", "\[Infinity]", ",", "17", ",", "20", ",",
+        "\[Infinity]", ",", "\[Infinity]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "12", ",", "\[Infinity]", ",", "\[Infinity]", ",", "28", ",", 
+       "\[Infinity]", ",", "31", ",", "\[Infinity]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "21", ",", "17", ",", "28", ",", "\[Infinity]", ",", "18", ",", "19", 
+       ",", "23"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\[Infinity]", ",", "20", ",", "\[Infinity]", ",", "18", ",", 
+       "\[Infinity]", ",", "\[Infinity]", ",", "11"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\[Infinity]", ",", "\[Infinity]", ",", "31", ",", "19", ",", 
+       "\[Infinity]", ",", "\[Infinity]", ",", "27"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\[Infinity]", ",", "\[Infinity]", ",", "\[Infinity]", ",", "23", ",", 
+       "11", ",", "27", ",", "\[Infinity]"}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.583610347411708*^9, 3.583610376684099*^9}, {
+  3.583610430779958*^9, 3.5836105338814087`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MinimumSpanningTree", "[", "tstgrph", "]"}]], "Input",
+ CellChangeTimes->{{3.5836112248410673`*^9, 3.5836112306050987`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MinimumSpanningTree", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "\[Infinity]", ",", "16", ",", "12", ",", "21", ",", "\[Infinity]", ",", 
+      "\[Infinity]", ",", "\[Infinity]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "16", ",", "\[Infinity]", ",", "\[Infinity]", ",", "17", ",", "20", ",", 
+      "\[Infinity]", ",", "\[Infinity]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "12", ",", "\[Infinity]", ",", "\[Infinity]", ",", "28", ",", 
+      "\[Infinity]", ",", "31", ",", "\[Infinity]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "21", ",", "17", ",", "28", ",", "\[Infinity]", ",", "18", ",", "19", 
+      ",", "23"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\[Infinity]", ",", "20", ",", "\[Infinity]", ",", "18", ",", 
+      "\[Infinity]", ",", "\[Infinity]", ",", "11"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\[Infinity]", ",", "\[Infinity]", ",", "31", ",", "19", ",", 
+      "\[Infinity]", ",", "\[Infinity]", ",", "27"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\[Infinity]", ",", "\[Infinity]", ",", "\[Infinity]", ",", "23", ",", 
+      "11", ",", "27", ",", "\[Infinity]"}], "}"}]}], "}"}], "]"}]], "Output",\
+
+ CellChangeTimes->{3.583611230878873*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", "tstgrph", "]"}]], "Input",
+ CellChangeTimes->{{3.583610535446973*^9, 3.5836105435005503`*^9}, {
+  3.583610756149212*^9, 3.583610756903122*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"\[Infinity]", "16", "12", "21", "\[Infinity]", "\[Infinity]", 
+      "\[Infinity]"},
+     {"16", "\[Infinity]", "\[Infinity]", "17", "20", "\[Infinity]", 
+      "\[Infinity]"},
+     {"12", "\[Infinity]", "\[Infinity]", "28", "\[Infinity]", "31", 
+      "\[Infinity]"},
+     {"21", "17", "28", "\[Infinity]", "18", "19", "23"},
+     {"\[Infinity]", "20", "\[Infinity]", "18", "\[Infinity]", "\[Infinity]", 
+      "11"},
+     {"\[Infinity]", "\[Infinity]", "31", "19", "\[Infinity]", "\[Infinity]", 
+      "27"},
+     {"\[Infinity]", "\[Infinity]", "\[Infinity]", "23", "11", "27", 
+      "\[Infinity]"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.5836106726591387`*^9, 3.5836107577523413`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g", "=", "DodecahedralGraph"}]], "Input",
+ CellChangeTimes->{{3.583611397968788*^9, 3.583611400257493*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   RowBox[{"\[SkeletonIndicator]", 
+    RowBox[{"Graph", ":", "<"}], "30", ",", "20", ",", "Undirected", 
+    RowBox[{">", "\[SkeletonIndicator]"}]}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  Combinatorica`Graph[{{{1, 2}}, {{1, 5}}, {{1, 6}}, {{2, 3}}, {{2, 7}}, {{3, 
+   4}}, {{3, 8}}, {{4, 5}}, {{4, 9}}, {{5, 10}}, {{6, 11}}, {{6, 12}}, {{7, 
+   11}}, {{7, 15}}, {{8, 14}}, {{8, 15}}, {{9, 13}}, {{9, 14}}, {{10, 12}}, {{
+   10, 13}}, {{11, 16}}, {{12, 17}}, {{13, 18}}, {{14, 19}}, {{15, 20}}, {{16,
+    17}}, {{16, 20}}, {{17, 18}}, {{18, 19}}, {{19, 20}}}, CompressedData["
+1:eJxTTMoPSmVmYGAQAWJGIGYCYrdtn/9eqXhon2J93793+jt7MJV3yP7sGRB4
+Yl++b76U/t0r9qs+XvJNEjhhD1H/Es5nCePT3TT3vX3lSzVDjjVP7F26c57/
+XvnQ3t40bpcnzyt7H/NOx4SnF+ybD5xa6Lrtsb0TkKN0+6Y9WNnHS1BzXtiD
+rRW6DKVf22u3i9089/2xfevrwB1yrbftwc5QeWafC9b2FM5fccwbaMML+w1F
+GRPf1ty3BztD5pE9xJnX7IFuW37M+7o92Nqf9+xDHi+dfUThgf1dFbbGqc6P
+7W//rMvaU/IYzq8FO/yJfRDQ1teBD+DmXVQCqbxjDxbecQ8uDwD/IK6b
+   "]],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.583611400745133*^9, 3.5836127298705597`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["g"], "Input",
+ CellChangeTimes->{3.583611401372347*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   RowBox[{"\[SkeletonIndicator]", 
+    RowBox[{"Graph", ":", "<"}], "30", ",", "20", ",", "Undirected", 
+    RowBox[{">", "\[SkeletonIndicator]"}]}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  Combinatorica`Graph[{{{1, 2}}, {{1, 5}}, {{1, 6}}, {{2, 3}}, {{2, 7}}, {{3, 
+   4}}, {{3, 8}}, {{4, 5}}, {{4, 9}}, {{5, 10}}, {{6, 11}}, {{6, 12}}, {{7, 
+   11}}, {{7, 15}}, {{8, 14}}, {{8, 15}}, {{9, 13}}, {{9, 14}}, {{10, 12}}, {{
+   10, 13}}, {{11, 16}}, {{12, 17}}, {{13, 18}}, {{14, 19}}, {{15, 20}}, {{16,
+    17}}, {{16, 20}}, {{17, 18}}, {{18, 19}}, {{19, 20}}}, CompressedData["
+1:eJxTTMoPSmVmYGAQAWJGIGYCYrdtn/9eqXhon2J93793+jt7MJV3yP7sGRB4
+Yl++b76U/t0r9qs+XvJNEjhhD1H/Es5nCePT3TT3vX3lSzVDjjVP7F26c57/
+XvnQ3t40bpcnzyt7H/NOx4SnF+ybD5xa6Lrtsb0TkKN0+6Y9WNnHS1BzXtiD
+rRW6DKVf22u3i9089/2xfevrwB1yrbftwc5QeWafC9b2FM5fccwbaMML+w1F
+GRPf1ty3BztD5pE9xJnX7IFuW37M+7o92Nqf9+xDHi+dfUThgf1dFbbGqc6P
+7W//rMvaU/IYzq8FO/yJfRDQ1teBD+DmXVQCqbxjDxbecQ8uDwD/IK6b
+   "]],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.583611401702208*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "=", 
+   RowBox[{"WeightedAdjacencyGraph", "[", "tstgrph", "]"}]}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.583611433737091*^9, 3.583611447225881*^9}, {
+  3.583611674006325*^9, 3.583611683199498*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GraphDistance", "[", 
+  RowBox[{"g", ",", "1", ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.583612033348048*^9, 3.58361204189102*^9}}],
+
+Cell[BoxData["16.`"], "Output",
+ CellChangeTimes->{3.58361204233948*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Star", "[", "10", "]"}]], "Input",
+ CellChangeTimes->{{3.583612218759313*^9, 3.58361222037009*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   RowBox[{"\[SkeletonIndicator]", 
+    RowBox[{"Graph", ":", "<"}], "9", ",", "10", ",", "Undirected", 
+    RowBox[{">", "\[SkeletonIndicator]"}]}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  Combinatorica`Graph[{{{1, 10}}, {{2, 10}}, {{3, 10}}, {{4, 10}}, {{5, 
+   10}}, {{6, 10}}, {{7, 10}}, {{8, 10}}, {{9, 
+   10}}}, {{{0.766044443118978, 0.6427876096865393}}, {{0.17364817766693041`, 
+    0.984807753012208}}, {{-0.4999999999999998, 
+    0.8660254037844387}}, {{-0.9396926207859083, 
+    0.3420201433256689}}, {{-0.9396926207859084, -0.34202014332566866`}}, \
+{{-0.5000000000000004, -0.8660254037844384}}, {{
+    0.17364817766692997`, -0.9848077530122081}}, {{
+    0.7660444431189778, -0.6427876096865396}}, {{1., 0}}, {{0, 0}}}],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.5836122206307993`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MinimumSpanningTree", "[", 
+  RowBox[{"FromAdjacencyMatrix", "[", 
+   RowBox[{"tstgrph", ",", "EdgeWeight"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.583612367380196*^9, 3.583612411763826*^9}, {
+  3.583612457447072*^9, 3.583612496516811*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   RowBox[{"\[SkeletonIndicator]", 
+    RowBox[{"Graph", ":", "<"}], "6", ",", "7", ",", "Undirected", 
+    RowBox[{">", "\[SkeletonIndicator]"}]}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  Combinatorica`Graph[{{{5, 7}}, {{1, 3}}, {{1, 2}}, {{2, 4}}, {{4, 5}}, {{4, 
+   6}}}, {{{0.6234898018587336, 0.7818314824680298}}, {{-0.22252093395631434`,
+     0.9749279121818236}}, {{-0.900968867902419, 
+    0.43388373911755823`}}, {{-0.9009688679024191, -0.433883739117558}}, \
+{{-0.2225209339563146, -0.9749279121818236}}, {{
+    0.6234898018587334, -0.7818314824680299}}, {{1., 0}}}],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.583612374502634*^9, 3.583612412236755*^9}, {
+  3.583612462500976*^9, 3.583612497517918*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Combinatorica`Graph", "[", 
+  RowBox[{"{", "tstgrph", "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.583612640057239*^9, 3.583612681777299*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Graph", "[", 
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\[Infinity]", ",", "16", ",", "12", ",", "21", ",", "\[Infinity]", ",",
+        "\[Infinity]", ",", "\[Infinity]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "16", ",", "\[Infinity]", ",", "\[Infinity]", ",", "17", ",", "20", ",",
+        "\[Infinity]", ",", "\[Infinity]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "12", ",", "\[Infinity]", ",", "\[Infinity]", ",", "28", ",", 
+       "\[Infinity]", ",", "31", ",", "\[Infinity]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "21", ",", "17", ",", "28", ",", "\[Infinity]", ",", "18", ",", "19", 
+       ",", "23"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\[Infinity]", ",", "20", ",", "\[Infinity]", ",", "18", ",", 
+       "\[Infinity]", ",", "\[Infinity]", ",", "11"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\[Infinity]", ",", "\[Infinity]", ",", "31", ",", "19", ",", 
+       "\[Infinity]", ",", "\[Infinity]", ",", "27"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\[Infinity]", ",", "\[Infinity]", ",", "\[Infinity]", ",", "23", ",", 
+       "11", ",", "27", ",", "\[Infinity]"}], "}"}]}], "}"}], "}"}], 
+  "]"}]], "Output",
+ CellChangeTimes->{{3.5836126442902203`*^9, 3.583612682587153*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g1", "=", 
+  RowBox[{"SetEdgeWeights", "[", 
+   RowBox[{
+    RowBox[{"GridGraph", "[", 
+     RowBox[{"7", ",", "7"}], "]"}], ",", 
+    RowBox[{"WeightingFunction", "\[Rule]", "RandomInteger"}], ",", 
+    RowBox[{"WeightRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "100"}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.583612868680625*^9, 3.583612915655127*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   RowBox[{"\[SkeletonIndicator]", 
+    RowBox[{"Graph", ":", "<"}], "84", ",", "49", ",", "Undirected", 
+    RowBox[{">", "\[SkeletonIndicator]"}]}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  Combinatorica`Graph[{{{1, 2}, Combinatorica`EdgeWeight -> 93}, {{2, 3}, 
+     Combinatorica`EdgeWeight -> 50}, {{3, 4}, Combinatorica`EdgeWeight -> 
+     6}, {{4, 5}, Combinatorica`EdgeWeight -> 78}, {{5, 6}, 
+     Combinatorica`EdgeWeight -> 40}, {{6, 7}, Combinatorica`EdgeWeight -> 
+     2}, {{8, 9}, Combinatorica`EdgeWeight -> 53}, {{9, 10}, 
+     Combinatorica`EdgeWeight -> 90}, {{10, 11}, Combinatorica`EdgeWeight -> 
+     53}, {{11, 12}, Combinatorica`EdgeWeight -> 7}, {{12, 13}, 
+     Combinatorica`EdgeWeight -> 44}, {{13, 14}, Combinatorica`EdgeWeight -> 
+     44}, {{15, 16}, Combinatorica`EdgeWeight -> 7}, {{16, 17}, 
+     Combinatorica`EdgeWeight -> 29}, {{17, 18}, Combinatorica`EdgeWeight -> 
+     38}, {{18, 19}, Combinatorica`EdgeWeight -> 93}, {{19, 20}, 
+     Combinatorica`EdgeWeight -> 78}, {{20, 21}, Combinatorica`EdgeWeight -> 
+     2}, {{22, 23}, Combinatorica`EdgeWeight -> 18}, {{23, 24}, 
+     Combinatorica`EdgeWeight -> 93}, {{24, 25}, Combinatorica`EdgeWeight -> 
+     30}, {{25, 26}, Combinatorica`EdgeWeight -> 70}, {{26, 27}, 
+     Combinatorica`EdgeWeight -> 5}, {{27, 28}, Combinatorica`EdgeWeight -> 
+     90}, {{29, 30}, Combinatorica`EdgeWeight -> 74}, {{30, 31}, 
+     Combinatorica`EdgeWeight -> 27}, {{31, 32}, Combinatorica`EdgeWeight -> 
+     94}, {{32, 33}, Combinatorica`EdgeWeight -> 35}, {{33, 34}, 
+     Combinatorica`EdgeWeight -> 41}, {{34, 35}, Combinatorica`EdgeWeight -> 
+     81}, {{36, 37}, Combinatorica`EdgeWeight -> 7}, {{37, 38}, 
+     Combinatorica`EdgeWeight -> 94}, {{38, 39}, Combinatorica`EdgeWeight -> 
+     44}, {{39, 40}, Combinatorica`EdgeWeight -> 16}, {{40, 41}, 
+     Combinatorica`EdgeWeight -> 81}, {{41, 42}, Combinatorica`EdgeWeight -> 
+     89}, {{43, 44}, Combinatorica`EdgeWeight -> 7}, {{44, 45}, 
+     Combinatorica`EdgeWeight -> 29}, {{45, 46}, Combinatorica`EdgeWeight -> 
+     44}, {{46, 47}, Combinatorica`EdgeWeight -> 100}, {{47, 48}, 
+     Combinatorica`EdgeWeight -> 63}, {{48, 49}, Combinatorica`EdgeWeight -> 
+     83}, {{1, 8}, Combinatorica`EdgeWeight -> 94}, {{2, 9}, 
+     Combinatorica`EdgeWeight -> 74}, {{3, 10}, Combinatorica`EdgeWeight -> 
+     86}, {{4, 11}, Combinatorica`EdgeWeight -> 50}, {{5, 12}, 
+     Combinatorica`EdgeWeight -> 31}, {{6, 13}, Combinatorica`EdgeWeight -> 
+     66}, {{7, 14}, Combinatorica`EdgeWeight -> 99}, {{8, 15}, 
+     Combinatorica`EdgeWeight -> 66}, {{9, 16}, Combinatorica`EdgeWeight -> 
+     85}, {{10, 17}, Combinatorica`EdgeWeight -> 86}, {{11, 18}, 
+     Combinatorica`EdgeWeight -> 14}, {{12, 19}, Combinatorica`EdgeWeight -> 
+     70}, {{13, 20}, Combinatorica`EdgeWeight -> 15}, {{14, 21}, 
+     Combinatorica`EdgeWeight -> 36}, {{15, 22}, Combinatorica`EdgeWeight -> 
+     72}, {{16, 23}, Combinatorica`EdgeWeight -> 78}, {{17, 24}, 
+     Combinatorica`EdgeWeight -> 16}, {{18, 25}, Combinatorica`EdgeWeight -> 
+     87}, {{19, 26}, Combinatorica`EdgeWeight -> 90}, {{20, 27}, 
+     Combinatorica`EdgeWeight -> 24}, {{21, 28}, Combinatorica`EdgeWeight -> 
+     57}, {{22, 29}, Combinatorica`EdgeWeight -> 91}, {{23, 30}, 
+     Combinatorica`EdgeWeight -> 12}, {{24, 31}, Combinatorica`EdgeWeight -> 
+     1}, {{25, 32}, Combinatorica`EdgeWeight -> 71}, {{26, 33}, 
+     Combinatorica`EdgeWeight -> 76}, {{27, 34}, Combinatorica`EdgeWeight -> 
+     76}, {{28, 35}, Combinatorica`EdgeWeight -> 40}, {{29, 36}, 
+     Combinatorica`EdgeWeight -> 59}, {{30, 37}, Combinatorica`EdgeWeight -> 
+     29}, {{31, 38}, Combinatorica`EdgeWeight -> 61}, {{32, 39}, 
+     Combinatorica`EdgeWeight -> 15}, {{33, 40}, Combinatorica`EdgeWeight -> 
+     46}, {{34, 41}, Combinatorica`EdgeWeight -> 67}, {{35, 42}, 
+     Combinatorica`EdgeWeight -> 27}, {{36, 43}, Combinatorica`EdgeWeight -> 
+     46}, {{37, 44}, Combinatorica`EdgeWeight -> 9}, {{38, 45}, 
+     Combinatorica`EdgeWeight -> 74}, {{39, 46}, Combinatorica`EdgeWeight -> 
+     34}, {{40, 47}, Combinatorica`EdgeWeight -> 74}, {{41, 48}, 
+     Combinatorica`EdgeWeight -> 28}, {{42, 49}, Combinatorica`EdgeWeight -> 
+     55}}, CompressedData["
+1:eJxd0rENg0AMBVATmiuvuMKFG0bIBGSGjBCJOqtnBK5BEQ/p9PWqL9tsn+/7
+WCPiOd8y3yOu77ffM153N9zxwIkL22M23PHAiQs7hz1mxwMnLuyenMMec+DE
+hb2De3IOe8zEhb2zd3BPzmGPWdj/yDt7B/fkHPb88wTgUCyz
+   "]],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.583612906341696*^9, 3.58361291608011*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, 247}, {Automatic, 50}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 328, 8, 32, "Input"],
+Cell[888, 30, 2276, 61, 297, "Input"],
+Cell[CellGroupData[{
+Cell[3189, 95, 527, 8, 32, "Input"],
+Cell[3719, 105, 2980, 38, 957, "Output"]
+}, Open  ]],
+Cell[6714, 146, 225, 5, 32, "Input"],
+Cell[CellGroupData[{
+Cell[6964, 155, 339, 5, 32, "Input"],
+Cell[7306, 162, 507, 10, 81, "Message"]
+}, Open  ]],
+Cell[7828, 175, 1402, 35, 99, "Input"],
+Cell[CellGroupData[{
+Cell[9255, 214, 148, 2, 32, "Input"],
+Cell[9406, 218, 1286, 33, 99, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10729, 256, 186, 3, 32, "Input"],
+Cell[10918, 261, 1229, 29, 131, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12184, 295, 131, 2, 32, "Input"],
+Cell[12318, 299, 1105, 21, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13460, 325, 69, 1, 32, "Input"],
+Cell[13532, 328, 1081, 21, 32, "Output"]
+}, Open  ]],
+Cell[14628, 352, 240, 6, 32, "Input"],
+Cell[CellGroupData[{
+Cell[14893, 362, 164, 3, 32, "Input"],
+Cell[15060, 367, 72, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15169, 373, 123, 2, 32, "Input"],
+Cell[15295, 377, 866, 18, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16198, 400, 272, 5, 32, "Input"],
+Cell[16473, 407, 782, 16, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17292, 428, 167, 3, 32, "Input"],
+Cell[17462, 433, 1352, 34, 99, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18851, 472, 410, 10, 55, "Input"],
+Cell[19264, 484, 4561, 70, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
