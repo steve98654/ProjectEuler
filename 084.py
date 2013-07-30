@@ -73,7 +73,7 @@ sqhits = np.zeros(40) # vector to keep track of hits
 cursqr = 0 # initial square 
 sqhits[0] = sqhits[0] + 1 # note that we are on the initial square 
 
-die_sides = 4
+die_sides = 6
 d1 = 1; d2 = 2
 d1p = 1; d2p = 2
 d1pp = 1; d2pp = 2

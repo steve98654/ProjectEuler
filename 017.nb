@@ -10,147 +10,166 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      5379,        167]
-NotebookOptionsPosition[      5071,        151]
-NotebookOutlinePosition[      5408,        166]
-CellTagsIndexPosition[      5365,        163]
+NotebookDataLength[      6481,        186]
+NotebookOptionsPosition[      6174,        170]
+NotebookOutlinePosition[      6510,        185]
+CellTagsIndexPosition[      6467,        182]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell[BoxData[{
+Cell[BoxData[
  RowBox[{
-  RowBox[{"sm", "=", 
-   RowBox[{"{", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler", " ", "problem", " ", "17"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Author", ":", " ", 
+    RowBox[{"Steve", " ", "Taylor"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Goal", ":", " ", 
     RowBox[{
-    "\"\<\>\"", ",", "\"\<one\>\"", ",", "\"\<two\>\"", ",", "\"\<three\>\"", 
-     ",", "\"\<four\>\"", ",", "\"\<five\>\"", ",", "\"\<six\>\"", ",", 
-     "\"\<seven\>\"", ",", "\"\<eight\>\"", ",", "\"\<nine\>\"", ",", 
-     "\"\<ten\>\"", ",", "\"\<eleven\>\"", ",", "\"\<twelve\>\"", ",", 
-     "\"\<thirteen\>\"", ",", "\"\<fourteen\>\"", ",", "\"\<fifteen\>\"", 
-     ",", "\"\<sixteen\>\"", ",", "\"\<seventeen\>\"", ",", 
-     "\"\<eighteen\>\"", ",", "\"\<nineteen\>\""}], "}"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"mm", "=", 
-   RowBox[{"{", 
-    RowBox[{
-    "\"\<twenty\>\"", ",", "\"\<thirty\>\"", ",", "\"\<forty\>\"", ",", 
-     "\"\<fifty\>\"", ",", "\"\<sixty\>\"", ",", "\"\<seventy\>\"", ",", 
-     "\"\<eighty\>\"", ",", "\"\<ninety\>\""}], "}"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"hd", "=", "\"\<hundred\>\""}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"smchars", "=", 
-   RowBox[{"Length", "[", 
-    RowBox[{"Flatten", "[", 
-     RowBox[{"Characters", "[", 
-      RowBox[{"Take", "[", 
-       RowBox[{"sm", ",", 
-        RowBox[{"{", 
-         RowBox[{"1", ",", 
-          RowBox[{"Length", "[", "sm", "]"}]}], "}"}]}], "]"}], "]"}], "]"}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"midnums", "=", 
-   RowBox[{"Flatten", "[", 
-    RowBox[{"Table", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"mm", "[", 
-         RowBox[{"[", "i", "]"}], "]"}], ",", 
-        RowBox[{"sm", "[", 
-         RowBox[{"[", "j", "]"}], "]"}]}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"i", ",", "1", ",", "8"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"j", ",", "1", ",", "10"}], "}"}]}], "]"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"mmums", "=", 
-   RowBox[{"Join", "[", 
-    RowBox[{
-     RowBox[{"{", "sm", "}"}], ",", 
-     RowBox[{"Table", "[", 
+    "List", " ", "the", " ", "names", " ", "of", " ", "all", " ", "the", " ", 
+     "positive", " ", "integers", " ", "through", " ", "one", " ", "thousand",
+      " ", "and", " ", "then", " ", "count", " ", "the", " ", "total", " ", 
+     "number", " ", "of", " ", "characters"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sm", "=", 
+     RowBox[{"{", 
       RowBox[{
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"mm", "[", 
-          RowBox[{"[", "i", "]"}], "]"}], ",", 
-         RowBox[{"sm", "[", 
-          RowBox[{"[", "j", "]"}], "]"}]}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"i", ",", "1", ",", "8"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"j", ",", "1", ",", "10"}], "}"}]}], "]"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"thd", "=", 
-   RowBox[{"Drop", "[", 
-    RowBox[{
-     RowBox[{"Map", "[", 
-      RowBox[{"StringJoin", ",", 
-       RowBox[{"Flatten", "[", 
-        RowBox[{"mmums", ",", "1"}], "]"}]}], "]"}], ",", "1"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"midchars", "=", 
-   RowBox[{"Length", "[", 
-    RowBox[{"Flatten", "[", 
-     RowBox[{"Characters", "[", "midnums", "]"}], "]"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"tb", "=", 
-   RowBox[{"Join", "[", 
-    RowBox[{
-     RowBox[{"{", "\"\<\>\"", "}"}], ",", "thd"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"bignum", "=", 
-   RowBox[{"Map", "[", 
-    RowBox[{"StringJoin", ",", 
+      "\"\<\>\"", ",", "\"\<one\>\"", ",", "\"\<two\>\"", ",", 
+       "\"\<three\>\"", ",", "\"\<four\>\"", ",", "\"\<five\>\"", ",", 
+       "\"\<six\>\"", ",", "\"\<seven\>\"", ",", "\"\<eight\>\"", ",", 
+       "\"\<nine\>\"", ",", "\"\<ten\>\"", ",", "\"\<eleven\>\"", ",", 
+       "\"\<twelve\>\"", ",", "\"\<thirteen\>\"", ",", "\"\<fourteen\>\"", 
+       ",", "\"\<fifteen\>\"", ",", "\"\<sixteen\>\"", ",", 
+       "\"\<seventeen\>\"", ",", "\"\<eighteen\>\"", ",", 
+       "\"\<nineteen\>\""}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"mm", "=", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<twenty\>\"", ",", "\"\<thirty\>\"", ",", "\"\<forty\>\"", ",", 
+       "\"\<fifty\>\"", ",", "\"\<sixty\>\"", ",", "\"\<seventy\>\"", ",", 
+       "\"\<eighty\>\"", ",", "\"\<ninety\>\""}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"hd", "=", "\"\<hundred\>\""}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"smchars", "=", 
+     RowBox[{"Length", "[", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{"Characters", "[", 
+        RowBox[{"Take", "[", 
+         RowBox[{"sm", ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", 
+            RowBox[{"Length", "[", "sm", "]"}]}], "}"}]}], "]"}], "]"}], 
+       "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"midnums", "=", 
      RowBox[{"Flatten", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"mm", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], ",", 
+          RowBox[{"sm", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", "8"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", "1", ",", "10"}], "}"}]}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"mmums", "=", 
+     RowBox[{"Join", "[", 
       RowBox[{
+       RowBox[{"{", "sm", "}"}], ",", 
        RowBox[{"Table", "[", 
         RowBox[{
          RowBox[{"{", 
           RowBox[{
-           RowBox[{"sm", "[", 
+           RowBox[{"mm", "[", 
             RowBox[{"[", "i", "]"}], "]"}], ",", 
-           RowBox[{"If", "[", 
-            RowBox[{
-             RowBox[{"j", ">", "1"}], ",", "\"\<hundredand\>\"", ",", 
-             "\"\<hundred\>\""}], "]"}], ",", 
-           RowBox[{"tb", "[", 
+           RowBox[{"sm", "[", 
             RowBox[{"[", "j", "]"}], "]"}]}], "}"}], ",", 
          RowBox[{"{", 
-          RowBox[{"i", ",", "2", ",", "10"}], "}"}], ",", 
+          RowBox[{"i", ",", "1", ",", "8"}], "}"}], ",", 
          RowBox[{"{", 
-          RowBox[{"j", ",", "1", ",", 
-           RowBox[{"Length", "[", "tb", "]"}]}], "}"}]}], "]"}], ",", "1"}], 
-      "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"totnums", "=", 
-   RowBox[{"StringJoin", "[", 
-    RowBox[{"thd", ",", "bignum", ",", "\"\<onethousand\>\""}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{"Length", "[", 
-  RowBox[{"Characters", "[", "totnums", "]"}], "]"}]}], "Input",
+          RowBox[{"j", ",", "1", ",", "10"}], "}"}]}], "]"}]}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"thd", "=", 
+     RowBox[{"Drop", "[", 
+      RowBox[{
+       RowBox[{"Map", "[", 
+        RowBox[{"StringJoin", ",", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{"mmums", ",", "1"}], "]"}]}], "]"}], ",", "1"}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"midchars", "=", 
+     RowBox[{"Length", "[", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{"Characters", "[", "midnums", "]"}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"tb", "=", 
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"{", "\"\<\>\"", "}"}], ",", "thd"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"bignum", "=", 
+     RowBox[{"Map", "[", 
+      RowBox[{"StringJoin", ",", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"sm", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], ",", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"j", ">", "1"}], ",", "\"\<hundredand\>\"", ",", 
+               "\"\<hundred\>\""}], "]"}], ",", 
+             RowBox[{"tb", "[", 
+              RowBox[{"[", "j", "]"}], "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "2", ",", "10"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"j", ",", "1", ",", 
+             RowBox[{"Length", "[", "tb", "]"}]}], "}"}]}], "]"}], ",", "1"}],
+         "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"totnums", "=", 
+     RowBox[{"StringJoin", "[", 
+      RowBox[{"thd", ",", "bignum", ",", "\"\<onethousand\>\""}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Length", "[", 
+    RowBox[{"Characters", "[", "totnums", "]"}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.576433152747485*^9, 3.5764331897964478`*^9}, {
   3.576433228192336*^9, 3.5764333434020243`*^9}, {3.576433491713097*^9, 
   3.5764334921618977`*^9}, {3.5821545114119062`*^9, 3.582154535537636*^9}, {
-  3.582154661118514*^9, 3.582154687776545*^9}}],
+  3.582154661118514*^9, 3.582154687776545*^9}, {3.583968082622052*^9, 
+  3.5839680961586514`*^9}, {3.583968198006604*^9, 3.583968221546361*^9}, {
+  3.583968406616377*^9, 3.583968473826171*^9}}],
 
 Cell[BoxData["21124"], "Output",
  CellChangeTimes->{3.582154694022048*^9}]
 }, Open  ]]
 },
 WindowSize->{740, 867},
-WindowMargins->{{193, Automatic}, {73, Automatic}},
+WindowMargins->{{88, Automatic}, {Automatic, 70}},
 FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
 StyleDefinitions->"Default.nb"
 ]
@@ -166,8 +185,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 4399, 123, 407, "Input"],
-Cell[4981, 147, 74, 1, 32, "Output"]
+Cell[579, 22, 5502, 142, 561, "Input"],
+Cell[6084, 166, 74, 1, 32, "Output"]
 }, Open  ]]
 }
 ]
