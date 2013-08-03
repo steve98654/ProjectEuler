@@ -10,115 +10,137 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      4437,        136]
-NotebookOptionsPosition[      4094,        119]
-NotebookOutlinePosition[      4428,        134]
-CellTagsIndexPosition[      4385,        131]
+NotebookDataLength[      5266,        157]
+NotebookOptionsPosition[      4960,        141]
+NotebookOutlinePosition[      5294,        156]
+CellTagsIndexPosition[      5251,        153]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"DNM", "=", "10000"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"vls", "=", 
-   RowBox[{"Table", "[", 
-    RowBox[{
-     RowBox[{"N", "[", 
-      RowBox[{
-       RowBox[{"1", "/", "i"}], ",", "DNM"}], "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"i", ",", "1", ",", "999"}], "}"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"ln", "=", 
-   RowBox[{"Table", "[", 
-    RowBox[{"0", ",", 
-     RowBox[{"{", 
-      RowBox[{"i", ",", "1", ",", "999"}], "}"}]}], "]"}]}], ";"}]}], "Input",\
 
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler", " ", "problem", " ", "26"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Author", ":", 
+    RowBox[{"Steve", " ", "Taylor"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Goal", ":", " ", 
+     RowBox[{
+     "Compute", " ", "the", " ", "decimal", " ", "representations", " ", "of",
+       " ", "the", " ", "first", " ", "999", " ", "fractions", " ", "of", " ",
+       "the", " ", "form", " ", 
+      RowBox[{"1", "/", "i"}]}]}], ",", " ", 
+    RowBox[{
+     RowBox[{
+     "find", " ", "the", " ", "length", " ", "of", " ", "the", " ", "longest",
+       " ", "re"}], "-", 
+     RowBox[{
+     "occuring", " ", "subsequence", " ", "in", " ", "each", " ", "one"}]}], 
+    ",", " ", 
+    RowBox[{
+    "and", " ", "the", " ", "find", " ", "the", " ", "one", " ", "that", " ", 
+     "is", " ", 
+     RowBox[{"greatest", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"DNM", "=", "10000"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"vls", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"1", "/", "i"}], ",", "DNM"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "999"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ln", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{"0", ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "999"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ind", " ", "=", " ", "57"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"tm", "=", "15"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"tM", " ", "=", " ", "25"}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "search", " ", "from", " ", "recurring", " ", "patterns", " ", "longer", 
+      " ", "than", " ", "tM"}], "-", "tn"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"ind", "=", "1"}], ",", 
+      RowBox[{"ind", "\[LessEqual]", " ", "999"}], ",", 
+      RowBox[{"ind", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"tn", "=", 
+        RowBox[{"vls", "[", 
+         RowBox[{"[", "ind", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"str", "=", 
+        RowBox[{"FromDigits", "[", 
+         RowBox[{"Take", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"RealDigits", "[", "tn", "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"tm", ",", "tM"}], "}"}]}], "]"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"ln", "[", 
+         RowBox[{"[", "ind", "]"}], "]"}], "=", 
+        RowBox[{"Commonest", "[", 
+         RowBox[{
+          RowBox[{"Transpose", "[", 
+           RowBox[{"Differences", "[", 
+            RowBox[{"StringPosition", "[", 
+             RowBox[{
+              RowBox[{"ToString", "[", "tn", "]"}], ",", 
+              RowBox[{"ToString", "[", "str", "]"}]}], "]"}], "]"}], "]"}], 
+          "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"slst", "=", 
+     RowBox[{"Sort", "[", 
+      RowBox[{
+       RowBox[{"Flatten", "[", "ln", "]"}], ",", "Greater"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Position", "[", 
+    RowBox[{
+     RowBox[{"Flatten", "[", "ln", "]"}], ",", 
+     RowBox[{"Max", "[", "slst", "]"}]}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.576454423846603*^9, 3.5764544455842237`*^9}, {
    3.5764545565725193`*^9, 3.576454577299391*^9}, 3.576455229087863*^9, {
    3.576455346704932*^9, 3.576455348326462*^9}, {3.576455782260076*^9, 
    3.576455782751976*^9}, {3.57653404960143*^9, 3.57653404978811*^9}, {
    3.5766047991670227`*^9, 3.576604817630048*^9}, {3.5766059197194242`*^9, 
-   3.5766059396913013`*^9}, {3.5821567945170918`*^9, 3.582156795489253*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"ind", " ", "=", " ", "57"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"tm", "=", "15"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"tM", " ", "=", " ", "25"}], ";"}], " ", 
-  RowBox[{"(*", " ", 
-   RowBox[{
-    RowBox[{
-    "search", " ", "from", " ", "recurring", " ", "patterns", " ", "longer", 
-     " ", "than", " ", "tM"}], "-", "tn"}], " ", "*)"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"For", "[", 
-   RowBox[{
-    RowBox[{"ind", "=", "1"}], ",", 
-    RowBox[{"ind", "\[LessEqual]", " ", "999"}], ",", 
-    RowBox[{"ind", "++"}], ",", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"tn", "=", 
-      RowBox[{"vls", "[", 
-       RowBox[{"[", "ind", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"str", "=", 
-      RowBox[{"FromDigits", "[", 
-       RowBox[{"Take", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"RealDigits", "[", "tn", "]"}], "[", 
-          RowBox[{"[", "1", "]"}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"tm", ",", "tM"}], "}"}]}], "]"}], "]"}]}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"ln", "[", 
-       RowBox[{"[", "ind", "]"}], "]"}], "=", 
-      RowBox[{"Commonest", "[", 
-       RowBox[{
-        RowBox[{"Transpose", "[", 
-         RowBox[{"Differences", "[", 
-          RowBox[{"StringPosition", "[", 
-           RowBox[{
-            RowBox[{"ToString", "[", "tn", "]"}], ",", 
-            RowBox[{"ToString", "[", "str", "]"}]}], "]"}], "]"}], "]"}], "[", 
-        RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";"}]}], 
-   "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"slst", "=", 
-   RowBox[{"Sort", "[", 
-    RowBox[{
-     RowBox[{"Flatten", "[", "ln", "]"}], ",", "Greater"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{"Position", "[", 
-  RowBox[{
-   RowBox[{"Flatten", "[", "ln", "]"}], ",", 
-   RowBox[{"Max", "[", "slst", "]"}]}], "]"}]}], "Input",
- CellChangeTimes->{{3.576605106701107*^9, 3.57660519052201*^9}, {
-  3.576605248889679*^9, 3.5766052854557734`*^9}, {3.5766056932923183`*^9, 
-  3.576605706118491*^9}, {3.576605742024757*^9, 3.576605817615382*^9}, {
-  3.576605957504743*^9, 3.576606045910636*^9}}],
+   3.5766059396913013`*^9}, {3.5821567945170918`*^9, 3.582156795489253*^9}, {
+   3.584558577028481*^9, 3.584558615223755*^9}, {3.5845586865762043`*^9, 
+   3.584558739681491*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"{", "983", "}"}], "}"}]], "Output",
- CellChangeTimes->{
-  3.576605788565297*^9, {3.576605819311554*^9, 3.5766058284928627`*^9}, {
-   3.576605927320779*^9, 3.576605968047757*^9}, 3.576606048932796*^9}]
+ CellChangeTimes->{3.584558619215417*^9}]
 }, Open  ]]
 },
 WindowSize->{915, 867},
-WindowMargins->{{8, Automatic}, {Automatic, 0}},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
 StyleDefinitions->"Default.nb"
 ]
@@ -133,10 +155,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 993, 25, 77, "Input"],
 Cell[CellGroupData[{
-Cell[1575, 49, 2260, 60, 297, "Input"],
-Cell[3838, 111, 240, 5, 32, "Output"]
+Cell[579, 22, 4245, 111, 473, "Input"],
+Cell[4827, 135, 117, 3, 32, "Output"]
 }, Open  ]]
 }
 ]

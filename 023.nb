@@ -10,90 +10,117 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      3476,        117]
-NotebookOptionsPosition[      3170,        101]
-NotebookOutlinePosition[      3507,        116]
-CellTagsIndexPosition[      3464,        113]
+NotebookDataLength[      4930,        144]
+NotebookOptionsPosition[      4622,        128]
+NotebookOutlinePosition[      4959,        143]
+CellTagsIndexPosition[      4916,        140]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell[BoxData[{
+Cell[BoxData[
  RowBox[{
-  RowBox[{"n", "=", "28123"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"d", "=", 
-   RowBox[{"Table", "[", 
-    RowBox[{"0", ",", 
-     RowBox[{"{", 
-      RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"For", "[", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler", " ", "problem", " ", "23"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Author", ":", 
+    RowBox[{"Steve", " ", "Taylor"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"i", "=", "1"}], ",", 
-    RowBox[{"i", "\[LessEqual]", "n"}], ",", 
-    RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
     RowBox[{
-     RowBox[{"If", "[", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"Total", "[", 
-         RowBox[{"Drop", "[", 
-          RowBox[{
-           RowBox[{"Divisors", "[", "i", "]"}], ",", 
-           RowBox[{"-", "1"}]}], "]"}], "]"}], ">", "i"}], ",", 
-       RowBox[{
-        RowBox[{"d", "[", 
-         RowBox[{"[", "i", "]"}], "]"}], "=", "i"}]}], "]"}], ";"}]}], 
-   "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"anum", "=", 
-   RowBox[{"Drop", "[", 
+    "Construct", " ", "all", " ", "abundent", " ", "numbers", " ", "less", 
+     " ", "than", " ", "28123.", "  ", "The", " ", "construct", " ", "all", 
+     " ", "integers", " ", "less", " ", "than", " ", "28123", " ", "that", 
+     " ", "can", " ", "be", " ", "written", " ", "as", " ", "the", " ", "sum",
+      " ", "of", " ", "two", " ", "abundent", " ", 
+     RowBox[{"numbers", ".", "  ", "Next"}]}], ",", " ", 
     RowBox[{
-     RowBox[{"Intersection", "[", "d", "]"}], ",", "1"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"nm", "=", 
-   RowBox[{"Flatten", "[", 
-    RowBox[{"Table", "[", 
+    "takes", " ", "the", " ", "complement", " ", "of", " ", "all", " ", 
+     "integers", " ", "less", " ", "than", " ", "this", " ", "value", " ", 
+     "with", " ", "the", " ", "abundant", " ", "sum", " ", "numbers", " ", 
+     "found"}], ",", " ", 
+    RowBox[{"and", " ", "sum", " ", "the", " ", 
+     RowBox[{"result", "."}]}]}], "\[IndentingNewLine]", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "=", "28123"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"d", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{"0", ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
      RowBox[{
+      RowBox[{"i", "=", "1"}], ",", 
+      RowBox[{"i", "\[LessEqual]", "n"}], ",", 
+      RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{"anum", "[", 
-        RowBox[{"[", "i", "]"}], "]"}], "+", 
-       RowBox[{"anum", "[", 
-        RowBox[{"[", "j", "]"}], "]"}]}], ",", 
-      RowBox[{"{", 
-       RowBox[{"i", ",", "1", ",", 
-        RowBox[{"Length", "[", "anum", "]"}]}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"j", ",", "1", ",", 
-        RowBox[{"Length", "[", "anum", "]"}]}], "}"}]}], "]"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"snum", "=", 
-   RowBox[{"Intersection", "[", "nm", "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"vl", "=", 
-   RowBox[{"Select", "[", 
-    RowBox[{"snum", ",", 
-     RowBox[{
-      RowBox[{"#", "\[LessEqual]", " ", "n"}], "&"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"lst", "=", 
-   RowBox[{"Complement", "[", 
-    RowBox[{
-     RowBox[{"Range", "[", "n", "]"}], ",", "vl"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{"Total", "[", "lst", "]"}]}], "Input",
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Total", "[", 
+           RowBox[{"Drop", "[", 
+            RowBox[{
+             RowBox[{"Divisors", "[", "i", "]"}], ",", 
+             RowBox[{"-", "1"}]}], "]"}], "]"}], ">", "i"}], ",", 
+         RowBox[{
+          RowBox[{"d", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "=", "i"}]}], "]"}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"anum", "=", 
+     RowBox[{"Drop", "[", 
+      RowBox[{
+       RowBox[{"Intersection", "[", "d", "]"}], ",", "1"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"nm", "=", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"anum", "[", 
+          RowBox[{"[", "i", "]"}], "]"}], "+", 
+         RowBox[{"anum", "[", 
+          RowBox[{"[", "j", "]"}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"Length", "[", "anum", "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", "1", ",", 
+          RowBox[{"Length", "[", "anum", "]"}]}], "}"}]}], "]"}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"snum", "=", 
+     RowBox[{"Intersection", "[", "nm", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"vl", "=", 
+     RowBox[{"Select", "[", 
+      RowBox[{"snum", ",", 
+       RowBox[{
+        RowBox[{"#", "\[LessEqual]", " ", "n"}], "&"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"lst", "=", 
+     RowBox[{"Complement", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", "n", "]"}], ",", "vl"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Total", "[", "lst", "]"}]}]}]], "Input",
  CellChangeTimes->{{3.576527303804655*^9, 3.576527484608773*^9}, {
    3.5765275439019747`*^9, 3.576527545317809*^9}, {3.576527592073916*^9, 
    3.5765275923881683`*^9}, 3.576527622902136*^9, {3.576527685580058*^9, 
    3.5765276895558777`*^9}, {3.576527794670298*^9, 3.57652779531888*^9}, {
-   3.582154763713153*^9, 3.582154775100686*^9}}],
+   3.582154763713153*^9, 3.582154775100686*^9}, {3.5845581301703873`*^9, 
+   3.5845581463651857`*^9}, {3.5845582083279133`*^9, 3.58455838974579*^9}}],
 
 Cell[BoxData["4179871"], "Output",
  CellChangeTimes->{3.582154845744882*^9}]
@@ -116,8 +143,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 2496, 73, 275, "Input"],
-Cell[3078, 97, 76, 1, 32, "Output"]
+Cell[579, 22, 3948, 100, 517, "Input"],
+Cell[4530, 124, 76, 1, 32, "Output"]
 }, Open  ]]
 }
 ]

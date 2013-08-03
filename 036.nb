@@ -10,65 +10,86 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      3882,        117]
-NotebookOptionsPosition[      3441,         97]
-NotebookOutlinePosition[      3798,        113]
-CellTagsIndexPosition[      3755,        110]
+NotebookDataLength[      4246,        125]
+NotebookOptionsPosition[      3845,        106]
+NotebookOutlinePosition[      4202,        122]
+CellTagsIndexPosition[      4159,        119]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[{
+Cell[BoxData[
  RowBox[{
-  RowBox[{"nmlst", "=", 
-   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"sum", "=", "0"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"For", "[", 
-  RowBox[{
-   RowBox[{"n", "=", "1"}], ",", 
-   RowBox[{"n", "<", 
-    RowBox[{"10", "^", "6"}]}], ",", 
-   RowBox[{"n", "++"}], ",", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"If", "[", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"IntegerDigits", "[", "n", "]"}], "\[Equal]", 
-        RowBox[{"Reverse", "[", 
-         RowBox[{"IntegerDigits", "[", "n", "]"}], "]"}]}], "&&", 
-       RowBox[{
-        RowBox[{"Characters", "[", 
-         RowBox[{"IntegerString", "[", 
-          RowBox[{"n", ",", "2"}], "]"}], "]"}], "\[Equal]", 
-        RowBox[{"Reverse", "[", 
-         RowBox[{"Characters", "[", 
-          RowBox[{"IntegerString", "[", 
-           RowBox[{"n", ",", "2"}], "]"}], "]"}], "]"}]}]}], ",", 
-      RowBox[{
-       RowBox[{"nmlst", "=", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"Flatten", "[", "nmlst", "]"}], ",", "n"}], " ", "}"}]}], 
-       ";", 
-       RowBox[{"sum", "=", 
-        RowBox[{"sum", "+", "n"}]}], ";"}]}], "]"}], ";"}]}], 
-  "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]"}], "Input",
- CellChangeTimes->{{3.5765721415360727`*^9, 3.576572333367655*^9}, {
-  3.5765724478380136`*^9, 3.576572499311492*^9}, {3.5765727782442007`*^9, 
-  3.576572786082943*^9}, {3.5765728987182837`*^9, 3.576572911687173*^9}}],
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler", " ", "problem", " ", "36"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Author", ":", 
+    RowBox[{"Steve", " ", "Taylor"}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.58456034846994*^9, 3.584560358909327*^9}}],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[{
- RowBox[{"Flatten", "[", "nmlst", "]"}], "\[IndentingNewLine]", 
- RowBox[{"Total", "[", 
-  RowBox[{"Flatten", "[", "nmlst", "]"}], 
-  "]"}], "\[IndentingNewLine]", "sum"}], "Input",
- CellChangeTimes->{{3.5765723065054493`*^9, 3.576572306809095*^9}, {
-  3.576572344747582*^9, 3.5765723459362392`*^9}, {3.5765725066007843`*^9, 
-  3.576572531909655*^9}, {3.5765725733863077`*^9, 3.5765725778099823`*^9}}],
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+    "Perform", " ", "a", " ", "brute", " ", "force", " ", "search", " ", "of",
+      " ", "all", " ", "numbers", " ", "less", " ", "than", " ", "a", " ", 
+     "million", " ", "by", " ", "computing", " ", "the", " ", "binary", " ", 
+     "representations"}], ",", " ", 
+    RowBox[{
+    "and", " ", "checking", " ", "if", " ", "their", " ", "binary", " ", 
+     "and", " ", "base", " ", "10", " ", "representations", " ", "are", " ", 
+     "both", " ", 
+     RowBox[{"palindromes", "."}]}]}], " ", "\[IndentingNewLine]", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"nmlst", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"sum", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"n", "=", "1"}], ",", 
+      RowBox[{"n", "<", 
+       RowBox[{"10", "^", "6"}]}], ",", 
+      RowBox[{"n", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"IntegerDigits", "[", "n", "]"}], "\[Equal]", 
+           RowBox[{"Reverse", "[", 
+            RowBox[{"IntegerDigits", "[", "n", "]"}], "]"}]}], "&&", 
+          RowBox[{
+           RowBox[{"Characters", "[", 
+            RowBox[{"IntegerString", "[", 
+             RowBox[{"n", ",", "2"}], "]"}], "]"}], "\[Equal]", 
+           RowBox[{"Reverse", "[", 
+            RowBox[{"Characters", "[", 
+             RowBox[{"IntegerString", "[", 
+              RowBox[{"n", ",", "2"}], "]"}], "]"}], "]"}]}]}], ",", 
+         RowBox[{
+          RowBox[{"nmlst", "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Flatten", "[", "nmlst", "]"}], ",", "n"}], " ", "}"}]}],
+           ";", 
+          RowBox[{"sum", "=", 
+           RowBox[{"sum", "+", "n"}]}], ";"}]}], "]"}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Flatten", "[", "nmlst", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"Total", "[", 
+    RowBox[{"Flatten", "[", "nmlst", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.5765721415360727`*^9, 3.576572333367655*^9}, {
+  3.5765724478380136`*^9, 3.576572499311492*^9}, {3.5765727782442007`*^9, 
+  3.576572786082943*^9}, {3.5765728987182837`*^9, 3.576572911687173*^9}, {
+  3.584560474711397*^9, 3.584560548700632*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -77,26 +98,14 @@ Cell[BoxData[
    "313", ",", "585", ",", "717", ",", "7447", ",", "9009", ",", "15351", ",",
     "32223", ",", "39993", ",", "53235", ",", "53835", ",", "73737", ",", 
    "585585"}], "}"}]], "Output",
- CellChangeTimes->{
-  3.576572307328269*^9, 3.5765723465768137`*^9, {3.5765725117534227`*^9, 
-   3.576572532463909*^9}, 3.576572578138022*^9, 3.57657279315718*^9, 
-   3.576572919948851*^9}],
+ CellChangeTimes->{{3.584560542667819*^9, 3.584560552217312*^9}}],
 
 Cell[BoxData["872187"], "Output",
- CellChangeTimes->{
-  3.576572307328269*^9, 3.5765723465768137`*^9, {3.5765725117534227`*^9, 
-   3.576572532463909*^9}, 3.576572578138022*^9, 3.57657279315718*^9, 
-   3.576572919952074*^9}],
-
-Cell[BoxData["872187"], "Output",
- CellChangeTimes->{
-  3.576572307328269*^9, 3.5765723465768137`*^9, {3.5765725117534227`*^9, 
-   3.576572532463909*^9}, 3.576572578138022*^9, 3.57657279315718*^9, 
-   3.576572919954831*^9}]
+ CellChangeTimes->{{3.584560542667819*^9, 3.584560552220127*^9}}]
 }, Open  ]]
 },
 WindowSize->{740, 867},
-WindowMargins->{{27, Automatic}, {Automatic, 39}},
+WindowMargins->{{30, Automatic}, {Automatic, 38}},
 ShowSelection->True,
 FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
 StyleDefinitions->"Default.nb"
@@ -112,16 +121,14 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 1481, 39, 209, "Input"],
+Cell[557, 20, 329, 8, 55, "Input"],
 Cell[CellGroupData[{
-Cell[2063, 63, 416, 7, 77, "Input"],
-Cell[2482, 72, 491, 10, 55, "Output"],
-Cell[2976, 84, 223, 4, 32, "Output"],
-Cell[3202, 90, 223, 4, 32, "Output"]
+Cell[911, 32, 2446, 59, 363, "Input"],
+Cell[3360, 93, 367, 7, 55, "Output"],
+Cell[3730, 102, 99, 1, 32, "Output"]
 }, Open  ]]
 }
 ]
 *)
 
 (* End of internal cache information *)
-

@@ -10,48 +10,59 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      1947,         73]
-NotebookOptionsPosition[      1606,         56]
-NotebookOutlinePosition[      1942,         71]
-CellTagsIndexPosition[      1899,         68]
+NotebookDataLength[      2379,         83]
+NotebookOptionsPosition[      2073,         67]
+NotebookOutlinePosition[      2409,         82]
+CellTagsIndexPosition[      2366,         79]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"cyc", "=", 
-   RowBox[{"Permute", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
-     RowBox[{"SymmetricGroup", "[", "3", "]"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"cyc", "=", 
-   RowBox[{"Permute", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-      "0", ",", "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", 
-       "7", ",", "8", ",", "9"}], "}"}], ",", 
-     RowBox[{"SymmetricGroup", "[", "10", "]"}]}], "]"}]}], ";"}]}], "Input",
- CellChangeTimes->{{3.57645255546367*^9, 3.5764525998168373`*^9}}],
 
 Cell[CellGroupData[{
-
 Cell[BoxData[
- RowBox[{"cyc", "[", 
-  RowBox[{"[", 
-   RowBox[{"10", "^", "6"}], "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.576452614117581*^9, 3.576452616919858*^9}}],
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler", " ", "problem", " ", "24"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Author", ":", 
+    RowBox[{"Steve", " ", "Taylor"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Goal", ":", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "Compute", " ", "all", " ", "permutations", " ", "of", " ", "0"}], " ",
+        "..."}], " ", "9"}]}], ",", " ", 
+    RowBox[{"and", " ", "select", " ", "the", " ", "millionth", " ", 
+     RowBox[{"one", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"cyc", "=", 
+     RowBox[{"Permute", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "0", ",", "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", 
+         "7", ",", "8", ",", "9"}], "}"}], ",", 
+       RowBox[{"SymmetricGroup", "[", "10", "]"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"cyc", "[", 
+    RowBox[{"[", 
+     RowBox[{"10", "^", "6"}], "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.57645255546367*^9, 3.5764525998168373`*^9}, {
+  3.5845584617151012`*^9, 3.58455853542037*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
   "2", ",", "7", ",", "8", ",", "3", ",", "9", ",", "1", ",", "5", ",", "4", 
    ",", "6", ",", "0"}], "}"}]], "Output",
- CellChangeTimes->{3.5764526172777977`*^9}]
+ CellChangeTimes->{3.5845584870777273`*^9}]
 }, Open  ]]
 },
 WindowSize->{740, 867},
@@ -70,10 +81,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 631, 18, 55, "Input"],
 Cell[CellGroupData[{
-Cell[1213, 42, 170, 4, 32, "Input"],
-Cell[1386, 48, 204, 5, 32, "Output"]
+Cell[579, 22, 1271, 35, 187, "Input"],
+Cell[1853, 59, 204, 5, 32, "Output"]
 }, Open  ]]
 }
 ]
