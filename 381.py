@@ -14,7 +14,7 @@ def primes(n):
 def S(p):
     return sum([factorial(p-k) for k in xrange(1,6)])%p
 
-pmx = 4000        # runs too slow. need to be smarter
+pmx = 10000        # runs too slow. need to be smarter
 plst = primes(pmx)
 plst = plst[2:]
 
