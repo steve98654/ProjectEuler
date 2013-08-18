@@ -1,0 +1,120 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3618,        111]
+NotebookOptionsPosition[      3313,         95]
+NotebookOutlinePosition[      3648,        110]
+CellTagsIndexPosition[      3605,        107]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler", " ", "problem", " ", "133"}], " ", "*)"}],
+   "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Take", " ", "n", " ", "to", " ", "be", " ", "large", " ", "compared", 
+     " ", "to", " ", "n"}], "=", 
+    RowBox[{
+    "9", " ", "in", " ", "problem", " ", "132", " ", "and", " ", "find", " ", 
+     "all", " ", "prime", " ", "factors", " ", "below", " ", 
+     RowBox[{"10", "^", "5"}], " ", "and", " ", "take", " ", "the", " ", 
+     "complement", " ", "of", " ", "these", " ", "numbers", " ", "in", " ", 
+     "the", " ", "full", " ", "set", " ", "of", " ", "primes", " ", "less", 
+     " ", "than", " ", 
+     RowBox[{"10", "^", "5."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "=", "30"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"mxpm", "=", "100000"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"inds", "=", 
+     RowBox[{"Position", "[", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"PowerMod", "[", 
+          RowBox[{"10", ",", 
+           RowBox[{"(", 
+            RowBox[{"10", "^", "n"}], ")"}], ",", 
+           RowBox[{"9", " ", 
+            RowBox[{"Prime", "[", "i", "]"}]}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "mxpm"}], "}"}]}], "]"}], ",", "1"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"fp", "=", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"Prime", "[", 
+        RowBox[{"Flatten", "[", "inds", "]"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"#", "<", 
+         RowBox[{"10", "^", "5"}]}], "&"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Total", "[", 
+    RowBox[{"Complement", "[", 
+     RowBox[{
+      RowBox[{"Select", "[", 
+       RowBox[{
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"Prime", "[", "i", "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "1", ",", "100000"}], "}"}]}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"#", "<", 
+          RowBox[{"10", "^", "5"}]}], "&"}]}], "]"}], ",", "fp"}], "]"}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.585710417418619*^9, 3.5857104585876713`*^9}, {
+  3.585710528880826*^9, 3.585710628768882*^9}, {3.585710696317729*^9, 
+  3.585710697492227*^9}, {3.585710754138527*^9, 3.585710980355056*^9}, {
+  3.585711029916704*^9, 3.5857110694849663`*^9}}],
+
+Cell[BoxData["453647705"], "Output",
+ CellChangeTimes->{{3.5857104347625437`*^9, 3.585710459391518*^9}, {
+   3.5857105298614388`*^9, 3.585710630619288*^9}, 3.585710700386138*^9, 
+   3.5857108823951807`*^9, 3.585710923297893*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{6, Automatic}, {-7, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 2487, 65, 275, "Input"],
+Cell[3069, 89, 228, 3, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

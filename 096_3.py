@@ -55,7 +55,7 @@ def zroind(arr):
 def soltst(arr):
     rwtst = [len(set(range(1,10)).difference(set(tstsol[i]))) for i in range(9)] 
     cltst = [len(set(range(1,10)).difference(set(tstsol.T[i]))) for i in range(9)]
-    tstinds = [[0,0],k[3,0],[6,0],[3,0],[3,3],[3,6],[6,0],[6,3],[6,6]]
+    tstinds = [[0,0],[3,0],[6,0],[3,0],[3,3],[3,6],[6,0],[6,3],[6,6]]
     sqtst = [len(set(range(1,10)).difference(set(sqrtn(arr,ind).flatten()))) for ind in tstinds]
     
     sol = 0
@@ -74,12 +74,6 @@ def solver(tmparr):
     
         tpinds = zroind(tmparr)
     
-        # START HERE!!
-        # build logic in here.  if wcntmx == cntmx - 1, 
-        # save current state
-        # guess for index with fewest numbers and try to solve
-        # if we cannot get a solution, then try other candidates
-
         for i in range(len(tpinds)):
             tpind = tpinds[i]
     
@@ -117,9 +111,8 @@ with open('sudoku.txt','r') as f:
     content = f.readlines()
 
 cnt = 0    
-numpuz = 50 # number of puzzles to solve from file
 
-for k in range(numpuz): 
+for k in range(2): 
     tpuz = content[10*k+1:10*(k+1)]
 
     tarr = zeros((9,9))

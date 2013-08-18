@@ -4,6 +4,7 @@
 # BUILD IN GUESSING IF MAXITER IS REACHED
 
 from numpy import *
+import copy
 
 # specify a su doku array, and a tuple ind    
 def sqrtn(arr, ind):
@@ -96,7 +97,20 @@ def solver(tmparr):
         
         wcnt +=1        
     return tmparr                
-                
+
+# return the possible values of a zero in an array
+def posvals(tmparr, ind): 
+    
+    tpind = ind
+    trw = set(rwrtn(tmparr,tpind[0]))
+    tcl = set(clrtn(tmparr,tpind[1]))
+    tsq = set(sqrtn(tmparr,tpind))
+    tpnms = set(list(trw.union(tcl).union(tsq))[1:]) # numbers in row, col, or sqr    
+    dset = list(set(range(1,10)).difference(tpnms))  # this is the difference set.
+    
+    return dset
+
+## Let's build a separate guessing function instead.
 
 # test su doku array 
 tstarr = array([[0,0,3,0,2,0,6,0,0],[9,0,0,3,0,5,0,0,1],[0,0,1,8,0,6,4,0,0],
@@ -117,7 +131,7 @@ with open('sudoku.txt','r') as f:
     content = f.readlines()
 
 cnt = 0    
-numpuz = 50 # number of puzzles to solve from file
+numpuz = 2 # number of puzzles to solve from file
 
 for k in range(numpuz): 
     tpuz = content[10*k+1:10*(k+1)]
@@ -128,9 +142,39 @@ for k in range(numpuz):
         for j in range(9):
             tarr[i][j] = int(tpuz[i][j])
 
+    ## main solver call.  If there are zeros left, then run it into the guessing function
     outarr = solver(tarr)
+
+    ## This is the crux of a single guess method (single guess) if main solver does not work
+    if len(zroind(outarr)) > 0:
+        print "There are %r zeros left" % len(zroind(outarr))
+        guessarr = copy.deepcopy(outarr)  # save copy of out array
+        guessinds = zroind(guessarr) # find indicief of zeros 
+        pvls = [posvals(outarr,ind) for ind in guessinds] # find possible values for zeros
+        pvllen = map(len,pvls)  # find lengths of possibilities 
+        minvlinds = [i for i, x in enumerate(pvllen) if x == min(pvllen)] # min len indexes
+        
+        cndinds = [guessinds[i] for i in minvlinds] # candidate min inds 
+        cndvals = [pvls[i] for i in minvlinds] # candidate min inds 
+
+        # code for testing purposes 
+        cndinds = guessinds
+        cndvals = pvls
+
+        for k2 in range(len(cndinds)):
+            for k3 in range(len(cndvals[k2])):
+                guessarr[cndinds[k2][0]][cndinds[k][1]] = cndvals[k2][0]  # make the guess
+                solver(guessarr)
+                if len(zroind(guessarr)) == 0:
+                    break
+                    print "GOT IT!!!!!!!!!!!!!" 
+                else:
+                    print guessarr
+                    guessarr = copy.deepcopy(outarr)
+            if len(zroind(guessarr)) == 0:
+                break
+        ## FIND IND WITH MIN NUMBER OF POSSIBILITIES AND RETURN ALL GUESSES
+        ## SUB IN GUESSES, THEN TRY TO SOLVE.   
 
     tparr = map(repr,map(int,outarr[0][0:3].tolist()))
     cnt += int("".join(tparr))
-    print outarr
-
