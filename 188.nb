@@ -1,0 +1,68 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1696,         59]
+NotebookOptionsPosition[      1438,         45]
+NotebookOutlinePosition[      1798,         61]
+CellTagsIndexPosition[      1755,         58]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Project", " ", "Euler", " ", "Problem", " ", "188"}], ":", 
+     "\[IndentingNewLine]", "Goal", ":", " ", 
+     RowBox[{
+     "Using", " ", "exponential", " ", "modular", " ", "arithmetic"}]}], ",", 
+    " ", 
+    RowBox[{"we", " ", 
+     RowBox[{"compute", ":"}]}]}], "\[IndentingNewLine]", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"mfun", "[", "pow_", "]"}], ":=", 
+    RowBox[{"PowerMod", "[", 
+     RowBox[{"1777", ",", "pow", ",", 
+      RowBox[{"10", "^", "8"}]}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Nest", "[", 
+    RowBox[{"mfun", ",", "1777", ",", "1854"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.586124378272089*^9, 3.586124472911517*^9}, {
+  3.586124598227421*^9, 3.5861245985230637`*^9}, {3.586124633060298*^9, 
+  3.586124703993565*^9}}]
+},
+WindowSize->{740, 429},
+WindowMargins->{{Automatic, -65}, {-133, Automatic}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 877, 23, 121, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

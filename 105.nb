@@ -1,0 +1,280 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10496,        271]
+NotebookOptionsPosition[     10107,        253]
+NotebookOutlinePosition[     10442,        268]
+CellTagsIndexPosition[     10399,        265]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Project", " ", "Euler", " ", "Problem", " ", "105", " ", 
+    "\[IndentingNewLine]", "  ", 
+    RowBox[{"Goal", ":", " ", 
+     RowBox[{
+     "Adapt", " ", "code", " ", "from", " ", "problem", " ", "103", " ", "to",
+       " ", "test", " ", "if", " ", "tuples", " ", "satisfy", " ", "the", " ",
+       "desired", " ", 
+      RowBox[{"conditions", "."}]}]}]}], "  ", "\[IndentingNewLine]", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"CndTest", "[", "ssets_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "tsttb", ",", "totsets", ",", "cmels", ",", "dissets", ",", "prop1", 
+       ",", "prop2", ",", "sts", ",", "tst", ",", "minset", ",", "i", ",", 
+       "maxset"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"tsttb", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"Length", "[", 
+          RowBox[{"Intersection", "[", 
+           RowBox[{
+            RowBox[{"ssets", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], ",", 
+            RowBox[{"ssets", "[", 
+             RowBox[{"[", "j", "]"}], "]"}]}], "]"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "2", ",", 
+           RowBox[{"Length", "[", "ssets", "]"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "2", ",", 
+           RowBox[{"Length", "[", "ssets", "]"}]}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"totsets", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"ssets", "[", 
+            RowBox[{"[", "i", "]"}], "]"}], ",", 
+           RowBox[{"ssets", "[", 
+            RowBox[{"[", "j", "]"}], "]"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "2", ",", 
+           RowBox[{"Length", "[", "ssets", "]"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "2", ",", 
+           RowBox[{"Length", "[", "ssets", "]"}]}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"cmels", "=", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"totsets", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"dissets", "=", 
+       RowBox[{"cmels", "[", 
+        RowBox[{"[", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{"Position", "[", 
+           RowBox[{
+            RowBox[{"Flatten", "[", 
+             RowBox[{"tsttb", ",", "1"}], "]"}], ",", "0"}], "]"}], "]"}], 
+         "]"}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"If", " ", "0", " ", "then", " ", "pass"}], ",", " ", 
+        RowBox[{
+        "if", " ", "1", " ", "then", " ", "does", " ", "not", " ", "pass"}]}],
+        " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"prop1", "=", 
+       RowBox[{"Length", "[", 
+        RowBox[{"Position", "[", 
+         RowBox[{
+          RowBox[{"Intersection", "[", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Length", "[", 
+              RowBox[{"Intersection", "[", 
+               RowBox[{"Map", "[", 
+                RowBox[{"Total", ",", 
+                 RowBox[{"dissets", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}]}], "]"}], "]"}], "]"}], ",", 
+             
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", 
+               RowBox[{"Length", "[", "dissets", "]"}]}], "}"}]}], "]"}], 
+           "]"}], ",", "1"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"prop1", "\[Equal]", "0"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+           RowBox[{"If", " ", "0", " ", "then", " ", "pass"}], ",", " ", 
+           RowBox[{
+           "if", " ", "1", " ", "then", " ", "does", " ", "not", " ", 
+            "pass"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"sts", "=", 
+           RowBox[{"Map", "[", 
+            RowBox[{"Sort", ",", "dissets"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"tst", " ", "=", " ", 
+           RowBox[{"Table", "[", 
+            RowBox[{"0", ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", 
+               RowBox[{"Length", "[", "dissets", "]"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"i", "=", "1"}], ",", 
+            RowBox[{"i", "\[LessEqual]", 
+             RowBox[{"Length", "[", "tst", "]"}]}], ",", 
+            RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"minset", " ", "=", " ", 
+              RowBox[{"sts", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", ",", "1"}], "]"}], "]"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"maxset", " ", "=", " ", 
+              RowBox[{"sts", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", ",", "2"}], "]"}], "]"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"tst", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "=", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Length", "[", "minset", "]"}], "<", 
+                 RowBox[{"Length", "[", "maxset", "]"}]}], ",", 
+                RowBox[{
+                 RowBox[{"Total", "[", "minset", "]"}], "<", 
+                 RowBox[{"Total", "[", "maxset", "]"}]}], ",", "True"}], 
+               "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"prop2", "=", " ", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Length", "[", 
+               RowBox[{"Intersection", "[", "tst", "]"}], "]"}], "==", "1"}], 
+             ",", "0", ",", "1"}], "]"}]}], ";"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"prop2", "=", "2"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Need", " ", "this", " ", "to", " ", "be", " ", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], " ", "for", " ", "the", " ", 
+         "above", " ", "to", " ", "check"}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"prop1", ",", "prop2"}], "}"}]}]}]}], "\[IndentingNewLine]", 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.586043404677877*^9, 3.586043429793385*^9}, {
+  3.5860478284935207`*^9, 3.586047878530252*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sets", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"StringJoin", "[", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<sets.csv\>\""}], 
+     "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sum", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "\[LessEqual]", 
+     RowBox[{"Length", "[", "sets", "]"}]}], ",", 
+    RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Print", "[", "i", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"CndTest", "[", 
+         RowBox[{"Subsets", "[", 
+          RowBox[{"sets", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "]"}], "]"}], "\[Equal]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+       RowBox[{"sum", "+=", 
+        RowBox[{"Total", "[", 
+         RowBox[{"sets", "[", 
+          RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], "]"}], ";"}]}], 
+   "\[IndentingNewLine]", "]"}], 
+  ";"}], "\[IndentingNewLine]", "sum"}], "Input",
+ CellChangeTimes->{{3.5860425590838127`*^9, 3.5860425704657593`*^9}, {
+  3.586042618468858*^9, 3.586042711788588*^9}, {3.5860428640278378`*^9, 
+  3.586042887998927*^9}, {3.586042997760651*^9, 3.586043010503353*^9}, {
+  3.586047917033517*^9, 3.5860479239081993`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"Length", ",", "sets"}], "]"}]], "Input",
+ CellChangeTimes->{{3.586043340907042*^9, 3.586043353425795*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "8", ",", "9", ",", "11", ",", "8", ",", "9", ",", "9", ",", "10", ",", 
+   "11", ",", "9", ",", "9", ",", "9", ",", "9", ",", "12", ",", "10", ",", 
+   "8", ",", "8", ",", "8", ",", "10", ",", "7", ",", "12", ",", "8", ",", 
+   "8", ",", "11", ",", "9", ",", "10", ",", "12", ",", "7", ",", "8", ",", 
+   "8", ",", "12", ",", "10", ",", "11", ",", "8", ",", "10", ",", "7", ",", 
+   "9", ",", "9", ",", "10", ",", "8", ",", "8", ",", "8", ",", "10", ",", 
+   "10", ",", "9", ",", "11", ",", "10", ",", "12", ",", "10", ",", "12", ",",
+    "10", ",", "8", ",", "7", ",", "10", ",", "7", ",", "11", ",", "11", ",", 
+   "9", ",", "10", ",", "12", ",", "8", ",", "10", ",", "7", ",", "10", ",", 
+   "8", ",", "9", ",", "8", ",", "7", ",", "10", ",", "8", ",", "7", ",", "9",
+    ",", "12", ",", "11", ",", "11", ",", "11", ",", "11", ",", "9", ",", "9",
+    ",", "9", ",", "12", ",", "9", ",", "7", ",", "11", ",", "9", ",", "10", 
+   ",", "9", ",", "12", ",", "11", ",", "11", ",", "8", ",", "9", ",", "10", 
+   ",", "11", ",", "10", ",", "8", ",", "9", ",", "9", ",", "7", ",", "7", 
+   ",", "11"}], "}"}]], "Output",
+ CellChangeTimes->{{3.5860433476454487`*^9, 3.5860433538472958`*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{-2, Automatic}, {Automatic, 9}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 6696, 164, 825, "Input"],
+Cell[7256, 186, 1426, 37, 165, "Input"],
+Cell[CellGroupData[{
+Cell[8707, 227, 153, 3, 32, "Input"],
+Cell[8863, 232, 1228, 18, 121, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

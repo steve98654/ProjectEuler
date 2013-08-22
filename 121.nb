@@ -1,0 +1,219 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7196,        210]
+NotebookOptionsPosition[      6701,        188]
+NotebookOutlinePosition[      7036,        203]
+CellTagsIndexPosition[      6993,        200]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{
+   "Project", " ", "Euler", " ", "Problem", " ", "121", "\[IndentingNewLine]",
+     "\[IndentingNewLine]", 
+    RowBox[{"Goal", ":", " ", 
+     RowBox[{
+     "Find", " ", "probabilities", " ", "of", " ", "drawing", " ", "8"}]}]}], 
+   ",", "9", ",", "...", ",", 
+   RowBox[{"15", " ", "blue", " ", 
+    RowBox[{"disks", ".", " ", "Sum"}], " ", "probabilities", " ", "to", " ", 
+    "find", " ", "total", " ", "probability", " ", "tprb", " ", "of", " ", 
+    RowBox[{"winning", ".", "  ", "Then"}], " ", "find", " ", "the", " ", 
+    "smallest", " ", "integer", " ", "such", " ", "that", " ", "when", " ", 
+    "multiplied", " ", "by", " ", "tprb", " ", "gives", " ", "a", " ", 
+    "value", " ", "greater", " ", "than", " ", "1.", " ", "Then", " ", 
+    "subtract", " ", "1", " ", "from", " ", "this", " ", "to", " ", "get", 
+    " ", 
+    RowBox[{"result", "."}]}]}], "\[IndentingNewLine]", "\[IndentingNewLine]",
+   "*)"}]], "Input",
+ CellChangeTimes->{{3.586112010568297*^9, 3.586112061308601*^9}, {
+  3.5861121246198187`*^9, 3.586112171790975*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Prod", "[", "x_", "]"}], ":=", 
+  RowBox[{"Product", "[", 
+   RowBox[{
+    RowBox[{"x", "[", 
+     RowBox[{"[", "i", "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", 
+      RowBox[{"Length", "[", "x", "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.586108585988057*^9, 3.586108632660643*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tprb", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"drws", "=", "15"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pblue", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"1", "/", "i"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "2", ",", 
+       RowBox[{"drws", "+", "1"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Mod", "[", 
+      RowBox[{"drws", ",", "2"}], "]"}], "\[Equal]", "0"}], ",", 
+    RowBox[{"istr", "=", 
+     RowBox[{
+      RowBox[{"drws", "/", "2"}], "+", "1"}]}], ",", 
+    RowBox[{"istr", "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"drws", "+", "1"}], ")"}], "/", "2"}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "istr"}], ",", 
+    RowBox[{"i", "\[LessEqual]", "drws"}], ",", 
+    RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"ssets", "=", 
+      RowBox[{"Subsets", "[", 
+       RowBox[{"pblue", ",", 
+        RowBox[{"{", "i", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"i", "<", "drws"}], ",", 
+       RowBox[{
+        RowBox[{"apnd", "=", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"1", "-", 
+            RowBox[{"Complement", "[", 
+             RowBox[{"pblue", ",", 
+              RowBox[{"ssets", "[", 
+               RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "1", ",", 
+             RowBox[{"Length", "[", "ssets", "]"}]}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"pbs", "=", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"Join", "[", 
+            RowBox[{
+             RowBox[{"ssets", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], ",", 
+             RowBox[{"apnd", "[", 
+              RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "1", ",", 
+             RowBox[{"Length", "[", "ssets", "]"}]}], "}"}]}], "]"}]}], ";"}],
+        ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"pbs", "=", "ssets"}], ";"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"tprb", "+=", 
+      RowBox[{"Total", "[", 
+       RowBox[{"Map", "[", 
+        RowBox[{"Prod", ",", "pbs"}], "]"}], "]"}]}], ";"}]}], 
+   "\[IndentingNewLine]", "]"}], 
+  ";"}], "\[IndentingNewLine]", "tprb"}], "Input",
+ CellChangeTimes->{{3.586109282103713*^9, 3.5861093021269217`*^9}, {
+  3.586109507877812*^9, 3.586109513104289*^9}, {3.586109554395261*^9, 
+  3.586109623797337*^9}, {3.5861096564744177`*^9, 3.5861096686311293`*^9}, {
+  3.586109880813883*^9, 3.5861098856832323`*^9}, {3.586109926759128*^9, 
+  3.5861099268777018`*^9}, {3.586110003902975*^9, 3.586110067223773*^9}, {
+  3.5861100993560953`*^9, 3.5861100994146557`*^9}, {3.58611029709404*^9, 
+  3.586110297951507*^9}, {3.5861103732371197`*^9, 3.586110391557767*^9}, {
+  3.586110454727544*^9, 3.58611048967482*^9}, {3.586110692330764*^9, 
+  3.5861107501678457`*^9}, {3.586110797334218*^9, 3.586110855646777*^9}, {
+  3.586111094380052*^9, 3.586111094965287*^9}}],
+
+Cell[BoxData[
+ FractionBox["9219406943", "20922789888000"]], "Output",
+ CellChangeTimes->{{3.586110467186439*^9, 3.586110494471603*^9}, {
+   3.586110699857885*^9, 3.586110707238385*^9}, {3.586110807994687*^9, 
+   3.586110856513842*^9}, 3.586111096239203*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ttb", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Abs", "[", 
+      RowBox[{
+       RowBox[{"j", " ", "tprb"}], "-", "1"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "1", ",", "3000"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"mind", "=", 
+    RowBox[{"Position", "[", 
+     RowBox[{"ttb", ",", 
+      RowBox[{"Min", "[", "ttb", "]"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"2270", " ", "is", " ", "first", " ", "one", " ", "over", " ", 
+    RowBox[{"one", ".", "  ", "So"}], " ", "2269", " ", "is", " ", "the", " ",
+     "answer"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{"2270", "tprb"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.586111570066927*^9, 3.5861116950938663`*^9}, {
+  3.586111977880661*^9, 3.586111981443429*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", "2269", "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.586111581043432*^9, 3.5861116956684923`*^9}}]
+}, Open  ]]
+},
+WindowSize->{825, 867},
+WindowMargins->{{7, Automatic}, {Automatic, 18}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1110, 22, 209, "Input"],
+Cell[1670, 44, 360, 10, 32, "Input"],
+Cell[CellGroupData[{
+Cell[2055, 58, 3281, 86, 297, "Input"],
+Cell[5339, 146, 258, 4, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5634, 155, 904, 25, 99, "Input"],
+Cell[6541, 182, 144, 3, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
