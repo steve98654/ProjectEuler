@@ -10,16 +10,32 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      2358,         86]
-NotebookOptionsPosition[      1912,         65]
-NotebookOutlinePosition[      2247,         80]
-CellTagsIndexPosition[      2204,         77]
+NotebookDataLength[     13625,        406]
+NotebookOptionsPosition[     12416,        360]
+NotebookOutlinePosition[     12751,        375]
+CellTagsIndexPosition[     12708,        372]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.579298084672679*^9, 3.5792980866435432`*^9}}],
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler", " ", "Problem", " ", "172"}], " ", "*)"}],
+   "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Statement", ":", " ", 
+    RowBox[{
+     RowBox[{"How", " ", "many", " ", "18"}], "-", 
+     RowBox[{"digit", " ", "numbers", " ", "n", " ", 
+      RowBox[{"(", 
+       RowBox[{"without", " ", "leading", " ", "zeros"}], ")"}], " ", "are", 
+      " ", "there", " ", "such", " ", "that", " ", "no", " ", "digit", " ", 
+      "occurs", " ", "more", " ", "than", " ", "three", " ", "times", " ", 
+      "in", " ", 
+      RowBox[{"n", "?"}]}]}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.586368940776306*^9, 3.5863689429641323`*^9}, {
+  3.586373322470086*^9, 3.5863733417618027`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -46,25 +62,304 @@ Cell[BoxData[{
 Cell[BoxData["2611559"], "Output",
  CellChangeTimes->{{3.5792984908720703`*^9, 3.579298515214326*^9}, 
    3.579298548481291*^9, 3.579298578630479*^9, {3.579298655282509*^9, 
-   3.579298670639189*^9}}]
+   3.579298670639189*^9}, 3.586383157697048*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"9", "*", 
-  RowBox[{"10", "^", 
-   RowBox[{"(", "17", ")"}]}]}]], "Input",
- CellChangeTimes->{{3.5792985945979843`*^9, 3.579298597096946*^9}, {
-  3.579298678348403*^9, 3.579298712640045*^9}}],
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "Test", " ", "case", " ", "direct", " ", "counting", " ", "for", " ", 
+      "low", " ", 
+      RowBox[{"digits", ".", "  ", "Note"}], " ", "n"}], "=", 
+     RowBox[{
+     "4", " ", "case", " ", "works", " ", "out", " ", "since", " ", "there", 
+      " ", "are", " ", "8999", " ", "total", " ", "4", " ", "digit", " ", 
+      "numbers", " ", "and", " ", "only", " ", "1111"}]}], ",", "2222", ",", 
+    RowBox[{
+    "...", "9999", " ", "have", " ", "more", " ", "than", " ", "three", " ", 
+     "repeated", " ", 
+     RowBox[{"digits", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"cnt", " ", "=", " ", "0"}], ";", 
+    RowBox[{"dgts", " ", "=", " ", "6"}], ";", 
+    RowBox[{"nlst", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"nums", " ", "=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{"n", ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "1", ",", 
+         RowBox[{"10", "^", "dgts"}]}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"i", "=", 
+       RowBox[{
+        RowBox[{"10", "^", 
+         RowBox[{"(", 
+          RowBox[{"dgts", "-", "1"}], ")"}]}], "+", "1"}]}], ",", 
+      RowBox[{"i", "\[LessEqual]", 
+       RowBox[{
+        RowBox[{"10", "^", "dgts"}], "-", "1"}]}], ",", 
+      RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Max", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "[", 
+             RowBox[{"Tally", "[", 
+              RowBox[{"IntegerDigits", "[", 
+               RowBox[{"nums", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "]"}], "]"}], "]"}], "[", 
+            RowBox[{"[", "2", "]"}], "]"}], "]"}], ">", "3"}], ",", 
+         RowBox[{
+          RowBox[{"cnt", "+=", "1"}], ";", 
+          RowBox[{"nlst", "=", 
+           RowBox[{"Append", "[", 
+            RowBox[{"nlst", ",", "i"}], "]"}]}]}]}], "]"}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
+   "cnt"}]}]], "Input",
+ CellChangeTimes->{{3.586367216514821*^9, 3.586367257209262*^9}, {
+  3.586367360285967*^9, 3.5863673819511337`*^9}, {3.586367633391321*^9, 
+  3.586367765715735*^9}, {3.586367804914295*^9, 3.586367840072668*^9}, {
+  3.586367950429164*^9, 3.586367954516366*^9}, {3.586368890752287*^9, 
+  3.586368901246271*^9}, {3.586374311783526*^9, 3.586374343665373*^9}}],
 
-Cell[BoxData["900000000000000000"], "Output",
- CellChangeTimes->{3.579298597570866*^9, 3.579298681833246*^9, 
-  3.5792987133158007`*^9}]
-}, Open  ]]
+Cell[BoxData["11429"], "Output",
+ CellChangeTimes->{{3.586367747988117*^9, 3.5863677661407623`*^9}, 
+   3.586367845912139*^9, {3.586368892725285*^9, 3.58636890760079*^9}, 
+   3.586374317735478*^9, 3.586374350616763*^9, 3.586383169919166*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Now", " ", 
+   RowBox[{"let", "'"}], "s", " ", "come", " ", "up", " ", "with", " ", "a", 
+   " ", "better", " ", "counting", " ", 
+   RowBox[{"method", "."}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.586368912969425*^9, 3.5863689222581587`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dgts", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"totnums", "=", 
+  RowBox[{
+   RowBox[{"10", "^", "dgts"}], "-", 
+   RowBox[{"10", "^", 
+    RowBox[{"(", 
+     RowBox[{"dgts", "-", "1"}], ")"}]}]}]}]}], "Input"],
+
+Cell[BoxData["900000"], "Output",
+ CellChangeTimes->{3.5863736369862337`*^9, 3.586383170017221*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Not", " ", "correct", " ", "because", " ", "the", " ", "other", " ", 
+    "digits", " ", "may", " ", "have", " ", "more", " ", "than", " ", "one", 
+    " ", "other", " ", "number"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "How", " ", "many", " ", "ints", " ", "with", " ", "dgts", " ", "digits", 
+    " ", "have", " ", "a", " ", "single", " ", "1"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "If", " ", "first", " ", "digit", " ", "is", " ", "a", " ", "one"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"fdgt1", "=", 
+     RowBox[{"9", "^", 
+      RowBox[{"(", 
+       RowBox[{"dgts", "-", "1"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "If", " ", "any", " ", "other", " ", "digits", " ", "is", " ", "a", " ", 
+     "one"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"odgt1", "=", 
+     RowBox[{
+      RowBox[{"9", "^", 
+       RowBox[{"(", 
+        RowBox[{"dgts", "-", "2"}], ")"}]}], "*", "8"}]}], ";", 
+    RowBox[{"8", 
+     RowBox[{"(", 
+      RowBox[{"fdgt1", "+", "odgt1"}], ")"}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.5863736473004007`*^9, 3.586373669960394*^9}, {
+  3.586373714290472*^9, 3.586373715589593*^9}, {3.586373804862278*^9, 
+  3.586373814018857*^9}, {3.586373929108478*^9, 3.586373959180954*^9}}],
+
+Cell[BoxData["892296"], "Output",
+ CellChangeTimes->{3.586383170115741*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+  "Probably", " ", "better", " ", "to", " ", "count", " ", "the", " ", 
+   "number", " ", "of", " ", "ints", " ", "with", " ", "repeated", " ", 
+   "values"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.586374054774768*^9, 3.586374067939787*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"9", 
+   RowBox[{"Total", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Binomial", "[", 
+       RowBox[{"dgts", ",", "i"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "4", ",", "dgts"}], "}"}]}], "]"}], "]"}]}], "+", 
+  RowBox[{"Total", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Binomial", "[", 
+      RowBox[{
+       RowBox[{"dgts", "-", "1"}], ",", "i"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "4", ",", "dgts"}], "}"}]}], "]"}], "]"}]}]], "Input",\
+
+ CellChangeTimes->{{3.586374094653616*^9, 3.5863741700229263`*^9}, {
+  3.5863742697744493`*^9, 3.586374274779025*^9}}],
+
+Cell[BoxData["204"], "Output",
+ CellChangeTimes->{{3.5863741033430223`*^9, 3.586374130869626*^9}, 
+   3.586374170940168*^9, 3.5863742752544193`*^9, 3.586383174069415*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Suppose", " ", "we", " ", "are", "  ", "trying", " ", "to", " ", "find", 
+    " ", "how", " ", "many", " ", "six", " ", "digits", " ", "numbers", " ", 
+    "have", " ", "four", " ", 
+    RowBox[{"eights", ".", "  ", "There"}], " ", 
+    RowBox[{"are", ":"}]}], "  ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"dgts", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"nmvls", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Binomial", "[", 
+    RowBox[{"dgts", ",", "nmvls"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "different", " ", "ways", " ", "to", " ", "have", " ", "4", " ", 
+      "eights"}], ",", " ", 
+     RowBox[{"of", " ", "these"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Binomial", "[", 
+    RowBox[{
+     RowBox[{"dgts", "-", "1"}], ",", 
+     RowBox[{"nmvls", "-", "1"}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "have", " ", "an", " ", "8", " ", "as", " ", "a", " ", "first", " ", 
+     "digit"}], " ", "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.5863746338922453`*^9, 3.586374816645344*^9}, {
+   3.5863748699426394`*^9, 3.586374885714795*^9}, 3.586375236002412*^9, {
+   3.586383299202868*^9, 3.586383340759328*^9}}],
+
+Cell[BoxData["15"], "Output",
+ CellChangeTimes->{3.586374814774583*^9, 3.58638317796667*^9, 
+  3.586383341633017*^9}],
+
+Cell[BoxData["10"], "Output",
+ CellChangeTimes->{3.586374814774583*^9, 3.58638317796667*^9, 
+  3.586383341635845*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "If", " ", "the", " ", "first", " ", "digit", " ", "is", " ", "an", " ", 
+     "8"}], ",", " ", 
+    RowBox[{"then", " ", "there", " ", "are"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"10", "^", 
+     RowBox[{"(", 
+      RowBox[{"dgts", "-", "nmvls"}], ")"}]}], " ", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{
+      RowBox[{"dgts", "-", "1"}], ",", 
+      RowBox[{"nmvls", "-", "1"}]}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"other", " ", "possibilities"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"if", " ", "not", " ", "then", " ", "there", " ", "are"}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"9", " ", 
+    RowBox[{"10", "^", 
+     RowBox[{"(", 
+      RowBox[{"dgts", "-", "nmvls", "-", "1"}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Binomial", "[", 
+       RowBox[{"dgts", ",", "nmvls"}], "]"}], "-", 
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"dgts", "-", "1"}], ",", 
+        RowBox[{"nmvls", "-", "1"}]}], "]"}]}], ")"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"other", " ", "possibilities"}], " ", "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.586375245414603*^9, 3.586375348495235*^9}, {
+  3.586383351054372*^9, 3.586383434160736*^9}}],
+
+Cell[BoxData["1000"], "Output",
+ CellChangeTimes->{3.586375276253806*^9, 3.586375331591071*^9, 
+  3.586383179368132*^9, 3.586383393795491*^9, 3.586383436036916*^9}],
+
+Cell[BoxData["450"], "Output",
+ CellChangeTimes->{3.586375276253806*^9, 3.586375331591071*^9, 
+  3.586383179368132*^9, 3.586383393795491*^9, 3.586383436039276*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+  "Now", " ", "extend", " ", "this", " ", "to", " ", "more", " ", "than", " ",
+    "4", " ", 
+   RowBox[{"eights", ".", "  ", "The"}], " ", "repeat", " ", "for", " ", 
+   "other", " ", 
+   RowBox[{"ints", ".", "  ", "Then"}], " ", "work", " ", "out", " ", "the", 
+   " ", "special", " ", "zero", " ", 
+   RowBox[{"case", ".", " ", "w"}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.586375238287887*^9, 3.586375243570285*^9}, {
+  3.58637539039143*^9, 3.5863754135633307`*^9}}]
 },
-WindowSize->{740, 867},
-WindowMargins->{{7, Automatic}, {Automatic, 40}},
+WindowSize->{675, 867},
+WindowMargins->{{-3, Automatic}, {Automatic, 3}},
 FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
 StyleDefinitions->"Default.nb"
 ]
@@ -79,18 +374,42 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 94, 1, 32, "Input"],
+Cell[557, 20, 772, 17, 121, "Input"],
 Cell[CellGroupData[{
-Cell[676, 25, 626, 18, 55, "Input"],
-Cell[1305, 45, 200, 3, 32, "Output"]
+Cell[1354, 41, 626, 18, 77, "Input"],
+Cell[1983, 61, 222, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1542, 53, 215, 5, 32, "Input"],
-Cell[1760, 60, 136, 2, 32, "Output"]
-}, Open  ]]
+Cell[2242, 69, 2575, 66, 253, "Input"],
+Cell[4820, 137, 241, 3, 32, "Output"]
+}, Open  ]],
+Cell[5076, 143, 297, 6, 32, "Input"],
+Cell[CellGroupData[{
+Cell[5398, 153, 258, 8, 55, "Input"],
+Cell[5659, 163, 99, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5795, 169, 1442, 37, 187, "Input"],
+Cell[7240, 208, 75, 1, 32, "Output"]
+}, Open  ]],
+Cell[7330, 212, 294, 6, 55, "Input"],
+Cell[CellGroupData[{
+Cell[7649, 222, 671, 20, 55, "Input"],
+Cell[8323, 244, 170, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8530, 251, 1335, 32, 187, "Input"],
+Cell[9868, 285, 117, 2, 32, "Output"],
+Cell[9988, 289, 117, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10142, 296, 1403, 40, 165, "Input"],
+Cell[11548, 338, 164, 2, 32, "Output"],
+Cell[11715, 342, 163, 2, 32, "Output"]
+}, Open  ]],
+Cell[11893, 347, 519, 11, 77, "Input"]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
