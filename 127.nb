@@ -1,0 +1,124 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3847,        115]
+NotebookOptionsPosition[      3503,         98]
+NotebookOutlinePosition[      3840,        113]
+CellTagsIndexPosition[      3797,        110]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Prod", "[", "vec_", "]"}], ":=", 
+  RowBox[{"Product", "[", 
+   RowBox[{
+    RowBox[{"vec", "[", 
+     RowBox[{"[", "i", "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", 
+      RowBox[{"Length", "[", "vec", "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.589378634435967*^9, 3.589378674437224*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Timing", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"cmx", " ", "=", " ", "10000"}], ";", "\[IndentingNewLine]", 
+   RowBox[{"sum", "=", "0"}], ";", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"a", "=", "1"}], ",", 
+      RowBox[{"a", "<", 
+       RowBox[{"cmx", "-", "1"}]}], ",", 
+      RowBox[{"++", "a"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"b", "=", 
+         RowBox[{"a", "+", "1"}]}], ",", 
+        RowBox[{"b", "<", 
+         RowBox[{"cmx", "-", "a"}]}], ",", 
+        RowBox[{"b", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"c", " ", "=", " ", 
+          RowBox[{"a", "+", "b"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"GCD", "[", 
+              RowBox[{"a", ",", "b"}], "]"}], "\[Equal]", "1"}], "&&", 
+            RowBox[{
+             RowBox[{"GCD", "[", 
+              RowBox[{"a", ",", "c"}], "]"}], "\[Equal]", "1"}], "&&", 
+            RowBox[{
+             RowBox[{"GCD", "[", 
+              RowBox[{"b", ",", "c"}], "]"}], "\[Equal]", "1"}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Prod", "[", 
+                RowBox[{
+                 RowBox[{"Transpose", "[", 
+                  RowBox[{"FactorInteger", "[", 
+                   RowBox[{"a", " ", "b", " ", "c"}], "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "]"}], "<", "c"}], ",", 
+              RowBox[{"sum", "+=", "c"}]}], "]"}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+       "]"}]}], "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+    "sum"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.589378272871434*^9, 3.58937828344186*^9}, {
+  3.589378357626586*^9, 3.589378399507062*^9}, {3.589378440113923*^9, 
+  3.589378515817039*^9}, {3.589378550383939*^9, 3.589378572588606*^9}, {
+  3.589378678092781*^9, 3.589378756141053*^9}, {3.5893921744108047`*^9, 
+  3.589392206394142*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "300.47199999999997999111656099557876586914`8.49840392102583", ",", 
+   RowBox[{"441085", " ", "Null"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.589378753123107*^9, 3.5893787593123693`*^9}, {
+   3.589392182258047*^9, 3.589392199768303*^9}, 3.589392512642393*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{176, Automatic}, {21, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 366, 10, 32, "Input"],
+Cell[CellGroupData[{
+Cell[948, 34, 2230, 53, 297, "Input"],
+Cell[3181, 89, 306, 6, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

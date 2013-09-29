@@ -1,0 +1,254 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7960,        245]
+NotebookOptionsPosition[      7172,        213]
+NotebookOutlinePosition[      7508,        228]
+CellTagsIndexPosition[      7465,        225]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"days", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"totstr", " ", "=", " ", 
+   RowBox[{"3", "^", "days"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.588529991144424*^9, 3.588530006961046*^9}, {
+  3.588538692509897*^9, 3.588538696250696*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "How", " ", "many", " ", "strings", " ", "have", " ", "0", " ", "or", " ", 
+    "1", " ", 
+    RowBox[{"lates", "?"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"(", "nolates", ")"}], " ", "+", " ", 
+    RowBox[{"(", 
+     RowBox[{"one", " ", "late"}], ")"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"if", " ", "one", " ", "late"}], ",", " ", 
+    RowBox[{"days", "-", 
+     RowBox[{"1", " ", "are", " ", "free"}]}], ",", " ", 
+    RowBox[{
+    "and", " ", "late", " ", "can", " ", "be", " ", "in", " ", "any", " ", 
+     "slot"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"days", "^", "2"}], "+", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"days", "-", "1"}], ")"}], "^", "2"}], "*", 
+    "days"}]}]}]], "Input",
+ CellChangeTimes->{{3.5885299278967113`*^9, 3.588529958506411*^9}, {
+  3.5885300630237503`*^9, 3.588530121877857*^9}, {3.588530159970551*^9, 
+  3.5885302098655252`*^9}}],
+
+Cell[BoxData["52"], "Output",
+ CellChangeTimes->{3.5885301620689993`*^9, 3.588530211157095*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+  "Of", " ", "these", " ", "strings", " ", "how", " ", "many", " ", "have", 
+   " ", "fewer", " ", "than", " ", "conseq", " ", 
+   RowBox[{"A", "'"}], 
+   RowBox[{"s", "?"}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.588529968163453*^9, 3.588529988113453*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"no", " ", "lates"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"only", " ", "days"}], "-", 
+    RowBox[{"2", " ", "possible", " ", "con", " ", 
+     RowBox[{"strs", ".", "  ", "The"}], " ", "other", " ", "days"}], "-", 
+    RowBox[{
+    "3", " ", "entries", " ", "can", " ", "take", " ", "any", " ", 
+     "value"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"days", "-", "2"}], ")"}], "*", 
+   RowBox[{"(", 
+    RowBox[{"days", "-", "3"}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.5885302280861797`*^9, 3.5885302311167994`*^9}, {
+  3.588530280888548*^9, 3.588530378690524*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.588530294918055*^9, 3.588530339436365*^9, 
+  3.588530380436925*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"one", " ", "late"}], ",", " ", 
+    RowBox[{"hard", " ", "case"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"lpos", "=", "i"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"sum", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"afpos", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"bipos", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ",", 
+     RowBox[{"i", "\[LessEqual]", "days"}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"afi", " ", "=", " ", 
+       RowBox[{"days", "-", "i"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"bi", " ", "=", " ", 
+       RowBox[{"i", "-", "1"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"afi", ">=", "3"}], "&&", 
+         RowBox[{"afi", "<=", 
+          RowBox[{"days", "-", "3"}]}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"afpos", "=", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"afi", "-", "2"}], ")"}], 
+          RowBox[{"(", 
+           RowBox[{"afi", "-", "3"}], ")"}]}]}], ",", "0"}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"bi", ">=", "3"}], " ", "&&", " ", 
+         RowBox[{"bi", "<=", 
+          RowBox[{"days", "-", "3"}]}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"bipos", "=", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"bi", "-", "2"}], ")"}], 
+          RowBox[{"(", 
+           RowBox[{"bi", "-", "3"}], ")"}]}]}], ",", "0"}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"sum", " ", "+=", " ", 
+       RowBox[{"afpos", "+", "bipos"}]}]}]}], "\[IndentingNewLine]", 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.588530381294373*^9, 3.588530396591002*^9}, {
+  3.588538129477152*^9, 3.588538136361594*^9}, {3.588538412376656*^9, 
+  3.588538601254208*^9}, {3.5885387890982943`*^9, 3.588538828391938*^9}, {
+  3.588538886846882*^9, 3.588538893640086*^9}, {3.588538940627427*^9, 
+  3.5885389509365892`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["sum"], "Input",
+ CellChangeTimes->{{3.58853860283149*^9, 3.588538603134261*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.5885386034979563`*^9, 3.5885388302885237`*^9, 
+  3.5885388969066153`*^9, 3.588538952650652*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"days", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**",
+     "**", "**", "**"}], "*****)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"No", " ", "lates"}], ",", " ", 
+    RowBox[{"how", " ", "many", " ", "bad", " ", 
+     RowBox[{"ones", "?"}]}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"nolpos", "=", 
+  RowBox[{"2", "^", "days"}]}], "\[IndentingNewLine]", 
+ RowBox[{"bads1", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"days", "-", "2"}], ")"}], 
+   RowBox[{"2", "^", 
+    RowBox[{"(", 
+     RowBox[{"days", "-", "3"}], ")"}], " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{"bad", " ", "ones", " ", "in", " ", "this", " ", "case"}], " ", 
+     "*)"}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.588539215734316*^9, 3.588539288599465*^9}, {
+  3.5885393234806023`*^9, 3.588539396175208*^9}, {3.588539546850687*^9, 
+  3.588539551795289*^9}, {3.588539629077758*^9, 3.588539652996389*^9}}],
+
+Cell[BoxData["16"], "Output",
+ CellChangeTimes->{3.588539366175787*^9, 3.588539396593727*^9, 
+  3.588539634879447*^9}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{3.588539366175787*^9, 3.588539396593727*^9, 
+  3.588539634880171*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{-6, Automatic}, {Automatic, 36}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 297, 7, 55, "Input"],
+Cell[CellGroupData[{
+Cell[879, 31, 1071, 30, 99, "Input"],
+Cell[1953, 63, 95, 1, 32, "Output"]
+}, Open  ]],
+Cell[2063, 67, 311, 7, 55, "Input"],
+Cell[CellGroupData[{
+Cell[2399, 78, 711, 18, 99, "Input"],
+Cell[3113, 98, 117, 2, 32, "Output"]
+}, Open  ]],
+Cell[3245, 103, 2285, 58, 363, "Input"],
+Cell[CellGroupData[{
+Cell[5555, 165, 94, 1, 32, "Input"],
+Cell[5652, 168, 145, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5834, 175, 1081, 27, 121, "Input"],
+Cell[6918, 204, 118, 2, 32, "Output"],
+Cell[7039, 208, 117, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
