@@ -10,46 +10,219 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     12652,        390]
-NotebookOptionsPosition[     11747,        354]
-NotebookOutlinePosition[     12084,        369]
-CellTagsIndexPosition[     12041,        366]
+NotebookDataLength[     12816,        377]
+NotebookOptionsPosition[     12387,        358]
+NotebookOutlinePosition[     12723,        373]
+CellTagsIndexPosition[     12680,        370]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
  RowBox[{
+  RowBox[{"Prod", "[", "vec_", "]"}], ":=", 
+  RowBox[{"Product", "[", 
+   RowBox[{
+    RowBox[{"vec", "[", 
+     RowBox[{"[", "i", "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", 
+      RowBox[{"Length", "[", "vec", "]"}]}], "}"}]}], "]"}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
   RowBox[{"prms", "=", 
    RowBox[{"Permute", "[", 
     RowBox[{
      RowBox[{"Range", "[", "9", "]"}], ",", 
-     RowBox[{"SymmetricGroup", "[", "9", "]"}]}], "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.589412089449902*^9, 3.5894120912749567`*^9}, {
-  3.589412124970009*^9, 3.58941216012818*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"prms", "[", 
-  RowBox[{"[", "100", "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.589412181768239*^9, 3.58941218672838*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
+     RowBox[{"SymmetricGroup", "[", "9", "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"totpart", "=", 
+   RowBox[{"IntegerPartitions", "[", "9", "]"}]}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "only", " ", "4", " ", "primes", " ", "less", " ", "than", " ", "1"}], 
+    " ", ",", " ", 
+    RowBox[{
+    "no", " ", "9", " ", "dgt", " ", "primes", " ", "are", " ", 
+     "pandigital"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"totpart", "=", 
+   RowBox[{"Delete", "[", 
+    RowBox[{"totpart", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "1", "}"}], ",", 
+       RowBox[{"{", "18", "}"}], ",", 
+       RowBox[{"{", "25", "}"}], ",", 
+       RowBox[{"{", "28", "}"}], ",", 
+       RowBox[{"{", "29", "}"}], ",", 
+       RowBox[{"{", "30", "}"}]}], "}"}]}], "]"}]}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Primes", " ", "less", " ", "than", " ", 
+    RowBox[{"10", "^", "9"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pms", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Prime", "[", "i", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "5800000"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
-  "1", ",", "2", ",", "3", ",", "4", ",", "9", ",", "5", ",", "7", ",", "8", 
-   ",", "6"}], "}"}]], "Output",
- CellChangeTimes->{{3.5894121841956453`*^9, 3.58941218707209*^9}}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"totpart", "=", 
-  RowBox[{"IntegerPartitions", "[", "9", "]"}]}]], "Input",
- CellChangeTimes->{{3.589412313138715*^9, 3.589412319492861*^9}, {
-  3.589412571631043*^9, 3.589412573322942*^9}}],
+   RowBox[{"pdgt", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{"0", ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "9"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Note", " ", "we", " ", "can", " ", "stop", " ", "at", " ", "i"}],
+     "=", " ", 
+    RowBox[{
+    "8", " ", "since", " ", "no", " ", "9", " ", "dgt", " ", "primes", " ", 
+     "are", " ", "pandigital", " ", "by", " ", "problem", " ", "44"}]}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ",", 
+     RowBox[{"i", "\[LessEqual]", "8"}], ",", 
+     RowBox[{"++", "i"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"pdgt", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "=", 
+       RowBox[{"Select", "[", 
+        RowBox[{"pms", ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"10", "^", 
+             RowBox[{"(", 
+              RowBox[{"i", "-", "1"}], ")"}]}], "<", "#", "<", 
+            RowBox[{"10", "^", "i"}]}], "&&", 
+           RowBox[{
+            RowBox[{"Length", "[", 
+             RowBox[{"Intersection", "[", 
+              RowBox[{"IntegerDigits", "[", "#", "]"}], "]"}], "]"}], 
+            "\[Equal]", "i"}], "&&", 
+           RowBox[{
+            RowBox[{"Length", "[", 
+             RowBox[{"Position", "[", 
+              RowBox[{
+               RowBox[{"IntegerDigits", "[", "#", "]"}], ",", "0"}], "]"}], 
+             "]"}], "\[Equal]", "0"}]}], "&"}]}], "]"}]}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Length", " ", "of", " ", "primes", " ", "with", " ", "a", " ", "given", 
+    " ", "number", " ", "of", " ", "digits"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"len", "=", 
+    RowBox[{"Map", "[", 
+     RowBox[{"Length", ",", "pdgt"}], "]"}]}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lst", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"k", "=", "1"}], ",", 
+    RowBox[{"k", "\[LessEqual]", 
+     RowBox[{"Length", "[", "totpart", "]"}]}], ",", 
+    RowBox[{"k", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"tmp", "=", 
+      RowBox[{"totpart", "[", 
+       RowBox[{"[", "k", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"ends1", "=", 
+      RowBox[{"len", "[", 
+       RowBox[{"[", "tmp", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"nums", "=", 
+      RowBox[{"Block", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"a", ",", "lims"}], "}"}], ",", 
+        RowBox[{
+         RowBox[{"lims", "=", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"a", "[", "i", "]"}], ",", "1", ",", 
+              RowBox[{"ends1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", 
+              RowBox[{"Length", "[", "ends1", "]"}]}], "}"}]}], "]"}]}], ";", 
+         
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"pdgt", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{"tmp", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], ",", 
+                RowBox[{"a", "[", "i", "]"}]}], "]"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", 
+               RowBox[{"Length", "[", "tmp", "]"}]}], "}"}]}], "]"}], ",", 
+           RowBox[{"Evaluate", "[", 
+            RowBox[{"Sequence", "@@", "lims"}], "]"}]}], "]"}]}]}], "]"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"nums", "=", 
+      RowBox[{"Partition", "[", 
+       RowBox[{
+        RowBox[{"Flatten", "[", "nums", "]"}], ",", 
+        RowBox[{"Length", "[", "tmp", "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "1"}], ",", 
+       RowBox[{"i", "\[LessEqual]", 
+        RowBox[{"Length", "[", "nums", "]"}]}], ",", 
+       RowBox[{"++", "i"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Length", "[", 
+            RowBox[{"Intersection", "[", 
+             RowBox[{"Flatten", "[", 
+              RowBox[{"Map", "[", 
+               RowBox[{"IntegerDigits", ",", 
+                RowBox[{"nums", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}]}], "]"}], "]"}], "]"}], "]"}],
+            "\[Equal]", "9"}], ",", 
+          RowBox[{
+           RowBox[{"lst", "=", 
+            RowBox[{"Append", "[", 
+             RowBox[{"lst", ",", 
+              RowBox[{"nums", "[", 
+               RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], ";"}]}], 
+         "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+     ";"}]}], "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", 
+  RowBox[{"Intersection", "[", 
+   RowBox[{"Map", "[", 
+    RowBox[{"Sort", ",", "lst"}], "]"}], "]"}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.589412089449902*^9, 3.5894120912749567`*^9}, {
+  3.589412124970009*^9, 3.58941216012818*^9}, {3.5894750786257057`*^9, 
+  3.589475175100975*^9}, {3.589475214359344*^9, 3.5894752430363283`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -122,34 +295,11 @@ Cell[BoxData[
     RowBox[{
     "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
       ",", "1"}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{3.589412320096485*^9, 3.58941257411042*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", " ", 
-   RowBox[{
-   "only", " ", "4", " ", "primes", " ", "less", " ", "than", " ", "1"}], " ",
-    "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"totpart", "=", 
-   RowBox[{"Delete", "[", 
-    RowBox[{"totpart", ",", 
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", "18", "}"}], ",", 
-       RowBox[{"{", "25", "}"}], ",", 
-       RowBox[{"{", "28", "}"}], ",", 
-       RowBox[{"{", "29", "}"}], ",", 
-       RowBox[{"{", "30", "}"}]}], "}"}]}], "]"}]}]}]], "Input",
- CellChangeTimes->{{3.589412579256671*^9, 3.589412693253963*^9}, {
-  3.58941278112936*^9, 3.5894128203388653`*^9}}],
+ CellChangeTimes->{3.589475250171268*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-   RowBox[{"{", "9", "}"}], ",", 
    RowBox[{"{", 
     RowBox[{"8", ",", "1"}], "}"}], ",", 
    RowBox[{"{", 
@@ -200,160 +350,14 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{"2", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1"}], "}"}]}], 
   "}"}]], "Output",
- CellChangeTimes->{{3.58941267236375*^9, 3.589412693766314*^9}, {
-  3.589412782227619*^9, 3.589412820747192*^9}}]
-}, Open  ]],
+ CellChangeTimes->{3.58947525017264*^9}],
 
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Prime", "[", "55000000", "]"}]], "Input",
- CellChangeTimes->{{3.589413557226968*^9, 3.589413621000931*^9}}],
-
-Cell[BoxData["1086218491"], "Output",
- CellChangeTimes->{{3.589413563512713*^9, 3.5894136213886623`*^9}}]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"pms", "=", 
-   RowBox[{"Table", "[", 
-    RowBox[{
-     RowBox[{"Prime", "[", "i", "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"i", ",", "1", ",", "55000000"}], "}"}]}], "]"}]}], 
-  ";"}]], "Input",
- CellChangeTimes->{{3.589412517554998*^9, 3.589412525454549*^9}, {
-  3.589412664798862*^9, 3.589412667727833*^9}, {3.589412836729622*^9, 
-  3.5894128734484253`*^9}, {3.589413114546832*^9, 3.589413120092045*^9}, {
-  3.589413392262506*^9, 3.589413401158746*^9}, {3.5894134791025677`*^9, 
-  3.5894134818688726`*^9}, {3.589413630520123*^9, 3.589413648449885*^9}}],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"ones", "=", 
-   RowBox[{"Select", "[", 
-    RowBox[{"pms", ",", 
-     RowBox[{
-      RowBox[{"#", "<", "10"}], "&"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"twos", "=", 
-   RowBox[{"Select", "[", 
-    RowBox[{"pms", ",", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"10", "<", "#", "<", "100"}], "&&", 
-       RowBox[{
-        RowBox[{"Length", "[", 
-         RowBox[{"Intersection", "[", 
-          RowBox[{"IntegerDigits", "[", "#", "]"}], "]"}], "]"}], "\[Equal]", 
-        "2"}]}], "&"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"threes", "=", 
-   RowBox[{"Select", "[", 
-    RowBox[{"pms", ",", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"100", "<", "#", "<", "1000"}], "&&", 
-       RowBox[{
-        RowBox[{"Length", "[", 
-         RowBox[{"Intersection", "[", 
-          RowBox[{"IntegerDigits", "[", "#", "]"}], "]"}], "]"}], "\[Equal]", 
-        "3"}], "&&", 
-       RowBox[{
-        RowBox[{"Length", "[", 
-         RowBox[{"Position", "[", 
-          RowBox[{
-           RowBox[{"IntegerDigits", "[", "#", "]"}], ",", "0"}], "]"}], "]"}],
-         "\[Equal]", "0"}]}], "&"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"fours", "=", 
-   RowBox[{"Select", "[", 
-    RowBox[{"pms", ",", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"1000", "<", "#", "<", "10000"}], "&&", 
-       RowBox[{
-        RowBox[{"Length", "[", 
-         RowBox[{"Intersection", "[", 
-          RowBox[{"IntegerDigits", "[", "#", "]"}], "]"}], "]"}], "\[Equal]", 
-        "4"}], "&&", 
-       RowBox[{
-        RowBox[{"Length", "[", 
-         RowBox[{"Position", "[", 
-          RowBox[{
-           RowBox[{"IntegerDigits", "[", "#", "]"}], ",", "0"}], "]"}], "]"}],
-         "\[Equal]", "0"}]}], "&"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"fives", "=", 
-   RowBox[{"Select", "[", 
-    RowBox[{"pms", ",", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"10000", "<", "#", "<", "100000"}], "&&", 
-       RowBox[{
-        RowBox[{"Length", "[", 
-         RowBox[{"Intersection", "[", 
-          RowBox[{"IntegerDigits", "[", "#", "]"}], "]"}], "]"}], "\[Equal]", 
-        "5"}], "&&", 
-       RowBox[{
-        RowBox[{"Length", "[", 
-         RowBox[{"Position", "[", 
-          RowBox[{
-           RowBox[{"IntegerDigits", "[", "#", "]"}], ",", "0"}], "]"}], "]"}],
-         "\[Equal]", "0"}]}], "&"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"sixes", "=", 
-   RowBox[{"Select", "[", 
-    RowBox[{"pms", ",", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"100000", "<", "#", "<", "1000000"}], "&&", 
-       RowBox[{
-        RowBox[{"Length", "[", 
-         RowBox[{"Intersection", "[", 
-          RowBox[{"IntegerDigits", "[", "#", "]"}], "]"}], "]"}], "\[Equal]", 
-        "6"}], "&&", 
-       RowBox[{
-        RowBox[{"Length", "[", 
-         RowBox[{"Position", "[", 
-          RowBox[{
-           RowBox[{"IntegerDigits", "[", "#", "]"}], ",", "0"}], "]"}], "]"}],
-         "\[Equal]", "0"}]}], "&"}]}], "]"}]}], ";"}]}], "Input",
- CellChangeTimes->{{3.589413142973394*^9, 3.589413217655151*^9}, {
-  3.589413279117426*^9, 3.5894133458413773`*^9}, {3.589413410510171*^9, 
-  3.589413423787105*^9}, {3.5894134901351213`*^9, 3.589413506888476*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Map", "[", 
-  RowBox[{"Length", ",", 
-   RowBox[{"{", 
-    RowBox[{
-    "ones", ",", "twos", ",", "threes", ",", "fours", ",", "fives", ",", 
-     "sixes"}], "}"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.589413349764729*^9, 3.589413358661974*^9}, {
-  3.589413429991729*^9, 3.5894134310674686`*^9}, {3.589413510881809*^9, 
-  3.5894135119707193`*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"4", ",", "20", ",", "83", ",", "395", ",", "1610", ",", "5045"}], 
-  "}"}]], "Output",
- CellChangeTimes->{3.589413359052059*^9, 3.589413431520615*^9, 
-  3.5894135156364803`*^9}]
-}, Open  ]],
-
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.589413111158194*^9, 3.5894131127311583`*^9}}]
+Cell[BoxData["44680"], "Output",
+ CellChangeTimes->{3.589475610498321*^9}]
+}, Open  ]]
 },
 WindowSize->{740, 867},
-WindowMargins->{{Automatic, 242}, {Automatic, 45}},
+WindowMargins->{{-3, Automatic}, {Automatic, 56}},
 FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
 StyleDefinitions->"Default.nb"
 ]
@@ -368,30 +372,13 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 325, 8, 32, "Input"],
+Cell[557, 20, 300, 9, 32, "Input"],
 Cell[CellGroupData[{
-Cell[907, 32, 147, 3, 32, "Input"],
-Cell[1057, 37, 217, 5, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1311, 47, 214, 4, 32, "Input"],
-Cell[1528, 53, 2595, 71, 165, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[4160, 129, 626, 17, 55, "Input"],
-Cell[4789, 148, 2044, 55, 121, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[6870, 208, 131, 2, 32, "Input"],
-Cell[7004, 212, 105, 1, 32, "Output"]
-}, Open  ]],
-Cell[7124, 216, 595, 13, 32, "Input"],
-Cell[7722, 231, 3292, 97, 451, "Input"],
-Cell[CellGroupData[{
-Cell[11039, 332, 375, 9, 32, "Input"],
-Cell[11417, 343, 217, 5, 32, "Output"]
-}, Open  ]],
-Cell[11649, 351, 94, 1, 32, "Input"]
+Cell[882, 33, 6895, 191, 759, "Input"],
+Cell[7780, 226, 2574, 71, 165, "Output"],
+Cell[10357, 299, 1937, 53, 121, "Output"],
+Cell[12297, 354, 74, 1, 32, "Output"]
+}, Open  ]]
 }
 ]
 *)

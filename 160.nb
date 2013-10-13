@@ -1,0 +1,91 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2193,         82]
+NotebookOptionsPosition[      1746,         61]
+NotebookOutlinePosition[      2082,         76]
+CellTagsIndexPosition[      2039,         73]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+  "Find", " ", "total", " ", "number", " ", "of", " ", "multiples", " ", "of",
+    " ", "two", " ", "and", " ", "five", " ", "in", " ", 
+   RowBox[{"10", "^", "12"}], " ", 
+   RowBox[{"factorial", "."}]}], "  ", "*)"}]], "Input",
+ CellChangeTimes->{{3.589769481395282*^9, 3.5897695146091557`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FactorInteger", "[", 
+  RowBox[{"10", "!"}], "]"}]], "Input",
+ CellChangeTimes->{{3.589770481875846*^9, 3.589770500728557*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.589770501465893*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"7", " ", "3", " ", "3", " ", "3", " ", "3", " ", "2", " ", "2", " ",
+   "2", " ", "2", " ", "2", " ", "2"}]], "Input",
+ CellChangeTimes->{{3.589770545454624*^9, 3.58977055009338*^9}}],
+
+Cell[BoxData["36288"], "Output",
+ CellChangeTimes->{3.58977055072305*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{15, Automatic}, {Automatic, 32}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 343, 7, 55, "Input"],
+Cell[CellGroupData[{
+Cell[925, 31, 151, 3, 32, "Input"],
+Cell[1079, 36, 331, 11, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1447, 52, 207, 3, 32, "Input"],
+Cell[1657, 57, 73, 1, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
