@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      2193,         82]
-NotebookOptionsPosition[      1746,         61]
-NotebookOutlinePosition[      2082,         76]
-CellTagsIndexPosition[      2039,         73]
+NotebookDataLength[     13353,        367]
+NotebookOptionsPosition[     12474,        334]
+NotebookOutlinePosition[     12809,        349]
+CellTagsIndexPosition[     12766,        346]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -27,40 +27,313 @@ Cell[BoxData[
    RowBox[{"factorial", "."}]}], "  ", "*)"}]], "Input",
  CellChangeTimes->{{3.589769481395282*^9, 3.5897695146091557`*^9}}],
 
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"Remove", " ", "trailing", " ", "zeros"}], ",", " ", 
+   RowBox[{"then", " ", "mod", " ", "by", " ", 
+    RowBox[{"10", "^", "6"}]}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.5912236554008102`*^9, 3.59122368596911*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"buf", " ", "=", " ", "5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"imx", "=", "21"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"prd", " ", "=", " ", "1"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.591223701284374*^9, 3.591223735974063*^9}, {
+  3.591223803643162*^9, 3.5912238068685017`*^9}}],
+
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"FactorInteger", "[", 
-  RowBox[{"10", "!"}], "]"}]], "Input",
- CellChangeTimes->{{3.589770481875846*^9, 3.589770500728557*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
+Cell[BoxData[{
+ RowBox[{"For", "[", 
   RowBox[{
-   RowBox[{"{", 
-    RowBox[{"2", ",", "8"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"3", ",", "4"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"5", ",", "2"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"7", ",", "1"}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{3.589770501465893*^9}]
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", " ", "imx"}], ",", 
+   RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"prd", "*=", "i"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Mod", "[", 
+        RowBox[{"i", ",", "buf"}], "]"}], "\[Equal]", "0"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"tpnum", "=", 
+        RowBox[{"IntegerDigits", "[", "prd", "]"}]}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+  "]"}], "\[IndentingNewLine]", "prd"}], "Input",
+ CellChangeTimes->{{3.591223740692852*^9, 3.59122384215405*^9}, {
+  3.591223992484733*^9, 3.5912239997045107`*^9}}],
+
+Cell[BoxData["51090942171709440000"], "Output",
+ CellChangeTimes->{{3.591223782869129*^9, 3.591223811509729*^9}, {
+  3.5916368178501587`*^9, 3.591636821825385*^9}}]
 }, Open  ]],
 
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Int", " ", "Truncate"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"n", " ", "=", " ", "123134100004134200000"}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.591636866756975*^9, 3.591636918197164*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"IntTrun", "[", "n_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"tpid", ",", "keepdgt", ",", "i"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"tpid", "=", 
+      RowBox[{"IntegerDigits", "[", "n", "]"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"keepdgt", "=", "6"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"i", " ", "=", " ", 
+      RowBox[{"Length", "[", "tpid", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"While", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"tpid", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], "\[Equal]", "0"}], ",", 
+       RowBox[{
+        RowBox[{"i", "--"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"tpid", "=", 
+      RowBox[{"Take", "[", 
+       RowBox[{"tpid", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "i"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"i", "=", 
+      RowBox[{
+       RowBox[{"Length", "[", "tpid", "]"}], "-", "keepdgt"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"tpid", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], "\[Equal]", "0"}], ",", 
+       RowBox[{"i", "--"}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"FromDigits", "[", 
+      RowBox[{"Take", "[", 
+       RowBox[{"tpid", ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", 
+          RowBox[{"Length", "[", "tpid", "]"}]}], "}"}]}], "]"}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.591636922336684*^9, 3.5916370136326227`*^9}, {
+  3.591637080366764*^9, 3.5916371040863123`*^9}, {3.591637139170027*^9, 
+  3.59163717981003*^9}, {3.591637237415928*^9, 3.5916372679776077`*^9}, {
+  3.59163736863214*^9, 3.591637405831751*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PrdRed", "[", "prd_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"inds", ",", "cnt", ",", "j", ",", "tpdgts", ",", "prdr"}], 
+     "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"cnt", "=", "0"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"tpdgts", "=", 
+      RowBox[{"IntegerDigits", "[", "prd", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"j", " ", "=", " ", 
+        RowBox[{"Length", "[", "tpdgts", "]"}]}], ",", 
+       RowBox[{"j", ">", "1"}], ",", 
+       RowBox[{
+        RowBox[{"j", "--"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"tpdgts", "[", 
+            RowBox[{"[", "j", "]"}], "]"}], ">", "0"}], ",", "Break", ",", 
+          RowBox[{"cnt", "++"}]}], "]"}], ";"}]}], "\[IndentingNewLine]", 
+      "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"prdr", "=", 
+      RowBox[{"FromDigits", "[", 
+       RowBox[{"Take", "[", 
+        RowBox[{"tpdgts", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Length", "[", "tpdgts", "]"}], "-", "cnt", "-", "10"}], 
+           ",", 
+           RowBox[{
+            RowBox[{"Length", "[", "tpdgts", "]"}], "-", "cnt", "+", "2"}]}], 
+          " ", "}"}]}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "prdr"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5912246575651703`*^9, 3.59122468561862*^9}, {
+  3.591224721474567*^9, 3.591224817932735*^9}, {3.5912251384919643`*^9, 
+  3.59122513865584*^9}, {3.591225190774411*^9, 3.591225197468155*^9}, {
+  3.591225230010003*^9, 3.59122533203522*^9}, {3.591226250533737*^9, 
+  3.591226253919574*^9}, {3.591226461074642*^9, 3.591226463813128*^9}}],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"7", " ", "3", " ", "3", " ", "3", " ", "3", " ", "2", " ", "2", " ",
-   "2", " ", "2", " ", "2", " ", "2"}]], "Input",
- CellChangeTimes->{{3.589770545454624*^9, 3.58977055009338*^9}}],
+ RowBox[{"PrdRed", "[", "prd", "]"}]], "Input",
+ CellChangeTimes->{{3.591225266164463*^9, 3.5912252695504313`*^9}}],
 
-Cell[BoxData["36288"], "Output",
- CellChangeTimes->{3.58977055072305*^9}]
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Take", "::", "take"}], "MessageName"], ":", 
+  " ", "\<\"Cannot take positions \[NoBreak]\\!\\(-2\\)\[NoBreak] through \
+\[NoBreak]\\!\\(10\\)\[NoBreak] in \[NoBreak]\\!\\({3, 8, 3, 9, 6, 1, 6, \
+0}\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\
+\"Link\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Take/take\\\
+\", ButtonNote -> \\\"Take::take\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.591226465286416*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FromDigits", "::", "nlst"}], "MessageName"], ":", 
+  " ", "\<\"The expression \[NoBreak]\\!\\(Take[\\(\\(\\(\\({3, 8, 3, 9, 6, \
+1, 6, 0}\\)\\), \\(\\({\\(\\(-2\\)\\), 10}\\)\\)\\)\\)]\\)\[NoBreak] is not a \
+list of digits or a string of valid digits. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/FromDigits/nlst\\\", ButtonNote -> \
+\\\"FromDigits::nlst\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.591226465322894*^9}],
+
+Cell[BoxData[
+ RowBox[{"FromDigits", "[", 
+  RowBox[{"Take", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "3", ",", "8", ",", "3", ",", "9", ",", "6", ",", "1", ",", "6", ",", 
+      "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "2"}], ",", "10"}], "}"}]}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{{3.591225269943345*^9, 3.591225332946739*^9}, 
+   3.591226255068995*^9, 3.5912264653262653`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"IntTrun", "[", "n_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"tpid", ",", "keepdgt", ",", "i"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"tpid", "=", 
+      RowBox[{"IntegerDigits", "[", "n", "]"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"keepdgt", "=", "6"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"i", " ", "=", " ", 
+      RowBox[{"Length", "[", "tpid", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"While", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"tpid", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], "\[Equal]", "0"}], ",", 
+       RowBox[{
+        RowBox[{"i", "--"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"tpid", "=", 
+      RowBox[{"Take", "[", 
+       RowBox[{"tpid", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "i"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"i", "=", 
+      RowBox[{
+       RowBox[{"Length", "[", "tpid", "]"}], "-", "keepdgt"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"tpid", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], "\[Equal]", "0"}], ",", 
+       RowBox[{"i", "--"}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"FromDigits", "[", 
+      RowBox[{"Take", "[", 
+       RowBox[{"tpid", ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", 
+          RowBox[{"Length", "[", "tpid", "]"}]}], "}"}]}], "]"}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"pstr", "=", "11"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"prd", "=", 
+     RowBox[{"pstr", "!"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"imx", " ", "=", " ", 
+     RowBox[{"10", "^", "6"}]}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Need", " ", "to", " ", "go", " ", "to", " ", 
+      RowBox[{"10", "^", "12"}], " ", "here"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"buf", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"i", "=", 
+       RowBox[{"1", "+", "pstr"}]}], ",", 
+      RowBox[{"i", "\[LessEqual]", " ", "imx"}], ",", 
+      RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"prd", "*=", "i"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Mod", "[", 
+           RowBox[{"i", ",", "buf"}], "]"}], "\[Equal]", "0"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"prd", "=", 
+           RowBox[{"IntTrun", "[", "prd", "]"}]}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+    ";"}], "\[IndentingNewLine]", "prd"}]}]], "Input",
+ CellChangeTimes->{
+  3.591225361742805*^9, {3.591225424487582*^9, 3.591225444512075*^9}, {
+   3.591225487779422*^9, 3.59122552184149*^9}, {3.5912255675610456`*^9, 
+   3.5912256972296124`*^9}, {3.5912257980497513`*^9, 3.591225835003889*^9}, {
+   3.591226069398417*^9, 3.591226147221484*^9}, {3.5912262145834627`*^9, 
+   3.591226215121591*^9}, {3.591226264253202*^9, 3.5912262782224493`*^9}, {
+   3.591226354729795*^9, 3.591226355001244*^9}, {3.5916374767671633`*^9, 
+   3.59163749541819*^9}, {3.591637529518455*^9, 3.5916375489755087`*^9}, {
+   3.5916375795800667`*^9, 3.591637700846212*^9}}],
+
+Cell[BoxData["8412544"], "Output",
+ CellChangeTimes->{{3.591225430000866*^9, 3.5912254450717697`*^9}, {
+   3.591225489067829*^9, 3.5912255223384542`*^9}, {3.591225568803235*^9, 
+   3.591225697574233*^9}, {3.5912257987162933`*^9, 3.591225835541729*^9}, {
+   3.5912260724682417`*^9, 3.591226147728594*^9}, {3.591226208790938*^9, 
+   3.591226215537881*^9}, {3.591226256203959*^9, 3.591226288401224*^9}, 
+   3.591226355379138*^9, 3.591226416056896*^9, 3.59122646619969*^9, {
+   3.5916374787834787`*^9, 3.591637495858437*^9}, {3.5916375309319153`*^9, 
+   3.591637549266642*^9}, {3.591637580060474*^9, 3.59163760200243*^9}, {
+   3.591637640659278*^9, 3.591637711471923*^9}}]
 }, Open  ]]
 },
 WindowSize->{740, 867},
-WindowMargins->{{15, Automatic}, {Automatic, 32}},
+WindowMargins->{{-7, Automatic}, {Automatic, 4}},
 FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
 StyleDefinitions->"Default.nb"
 ]
@@ -76,13 +349,25 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[557, 20, 343, 7, 55, "Input"],
+Cell[903, 29, 277, 6, 32, "Input"],
+Cell[1183, 37, 349, 8, 77, "Input"],
 Cell[CellGroupData[{
-Cell[925, 31, 151, 3, 32, "Input"],
-Cell[1079, 36, 331, 11, 32, "Output"]
+Cell[1557, 49, 775, 20, 165, "Input"],
+Cell[2335, 71, 164, 2, 32, "Output"]
 }, Open  ]],
+Cell[2514, 76, 273, 6, 55, "Input"],
+Cell[2790, 84, 1919, 50, 297, "Input"],
+Cell[4712, 136, 1807, 44, 253, "Input"],
 Cell[CellGroupData[{
-Cell[1447, 52, 207, 3, 32, "Input"],
-Cell[1657, 57, 73, 1, 32, "Output"]
+Cell[6544, 184, 129, 2, 32, "Input"],
+Cell[6676, 188, 511, 9, 24, "Message"],
+Cell[7190, 199, 565, 10, 43, "Message"],
+Cell[7758, 211, 433, 12, 32, "Output"]
+}, Open  ]],
+Cell[8206, 226, 1656, 46, 297, "Input"],
+Cell[CellGroupData[{
+Cell[9887, 276, 1900, 44, 275, "Input"],
+Cell[11790, 322, 668, 9, 32, "Output"]
 }, Open  ]]
 }
 ]

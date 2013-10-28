@@ -1,0 +1,219 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7163,        210]
+NotebookOptionsPosition[      6667,        188]
+NotebookOutlinePosition[      7003,        203]
+CellTagsIndexPosition[      6960,        200]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"IntTrun", "[", "n_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tpid", ",", "keepdgt", ",", "i"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"tpid", "=", 
+       RowBox[{"IntegerDigits", "[", "n", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"keepdgt", "=", "6"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"i", " ", "=", " ", 
+       RowBox[{"Length", "[", "tpid", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"tpid", "[", 
+          RowBox[{"[", "i", "]"}], "]"}], "\[Equal]", "0"}], ",", 
+        RowBox[{
+         RowBox[{"i", "--"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"tpid", "=", 
+       RowBox[{"Take", "[", 
+        RowBox[{"tpid", ",", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "i"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"i", "=", 
+       RowBox[{
+        RowBox[{"Length", "[", "tpid", "]"}], "-", "keepdgt"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"tpid", "[", 
+          RowBox[{"[", "i", "]"}], "]"}], "\[Equal]", "0"}], ",", 
+        RowBox[{"i", "--"}]}], "\[IndentingNewLine]", "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"FromDigits", "[", 
+       RowBox[{"Take", "[", 
+        RowBox[{"tpid", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"Length", "[", "tpid", "]"}]}], "}"}]}], "]"}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.591637746471655*^9, 3.591637805540762*^9}, {
+  3.591637950523283*^9, 3.591637962790036*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"Compute", " ", "up", " ", "to", " ", "n"}], " ", "=", " ", 
+   RowBox[{"10", "^", "8"}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.5916416867815247`*^9, 3.591641708209837*^9}, {
+  3.5916417385949*^9, 3.591641747157673*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lst", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pstr", "=", "11"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Timing", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"prd", "=", 
+    RowBox[{"pstr", "!"}]}], ";", "\[IndentingNewLine]", 
+   RowBox[{"imx", " ", "=", " ", 
+    RowBox[{"1", " ", 
+     RowBox[{"10", "^", "8"}]}]}], ";", " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Need", " ", "to", " ", "go", " ", "to", " ", 
+     RowBox[{"10", "^", "12"}], " ", "here"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"buf", "=", "10"}], ";", "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", 
+      RowBox[{"1", "+", "pstr"}]}], ",", 
+     RowBox[{"i", "\[LessEqual]", " ", "imx"}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"prd", "*=", "i"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Mod", "[", 
+          RowBox[{"i", ",", "buf"}], "]"}], "\[Equal]", "0"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"prd", "=", 
+          RowBox[{"IntTrun", "[", "prd", "]"}]}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Mod", "[", 
+          RowBox[{"i", ",", 
+           RowBox[{"10", "^", "6"}]}], "]"}], "\[Equal]", "0"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"lst", "=", 
+          RowBox[{"Append", "[", 
+           RowBox[{"lst", ",", "prd"}], "]"}]}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+   ";", "\[IndentingNewLine]", "prd"}], "\[IndentingNewLine]", 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.591638082332137*^9, 3.591638082725007*^9}, {
+  3.5916385331593246`*^9, 3.591638561309354*^9}, {3.591638762314797*^9, 
+  3.591638788489503*^9}, {3.59163908584542*^9, 3.591639090161268*^9}, {
+  3.5916391408531847`*^9, 3.5916391801681128`*^9}, {3.591639363014142*^9, 
+  3.591639366144524*^9}, {3.5916400843535843`*^9, 3.5916400846448107`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "546.90800000000001546140993013978004455566`8.758514189425235", ",", 
+   "20754176"}], "}"}]], "Output",
+ CellChangeTimes->{{3.591637801937695*^9, 3.591637813706197*^9}, {
+   3.591637956716041*^9, 3.5916379686970587`*^9}, 3.59163814872047*^9, {
+   3.591638539130513*^9, 3.591638575145413*^9}, {3.591638767807639*^9, 
+   3.5916387976924057`*^9}, 3.5916392896389427`*^9, 3.591639918526547*^9, 
+   3.591640634819747*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"We", " ", "would", " ", "like", " ", 
+     RowBox[{
+      RowBox[{"lst", "[", 
+       RowBox[{"[", 
+        RowBox[{"10", "^", "6"}], "]"}], "]"}], ".", "  ", "This"}], " ", 
+     "is", " ", "the", " ", "same", " ", "as", " ", 
+     RowBox[{"lst", "[", 
+      RowBox[{"[", 
+       RowBox[{"2", "^", "6"}], "]"}], "]"}], " ", "since", " ", 
+     RowBox[{"lst", "[", 
+      RowBox[{"[", "n", "]"}], "]"}]}], "\[Equal]", 
+    RowBox[{"lst", "[", 
+     RowBox[{"[", 
+      RowBox[{
+       RowBox[{"2", "^", "6"}], " ", 
+       RowBox[{"5", "^", "6"}]}], "]"}], "]"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"FromDigits", "[", 
+   RowBox[{"Drop", "[", 
+    RowBox[{
+     RowBox[{"IntegerDigits", "[", 
+      RowBox[{"lst", "[", 
+       RowBox[{"[", 
+        RowBox[{"2", "^", "6"}], "]"}], "]"}], "]"}], ",", "2"}], "]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.591641298470957*^9, 3.5916413017906303`*^9}, {
+  3.591641421638955*^9, 3.591641443265636*^9}, {3.591641486295683*^9, 
+  3.591641541593833*^9}, {3.5916417168441057`*^9, 3.5916417345077677`*^9}}],
+
+Cell[BoxData["16576"], "Output",
+ CellChangeTimes->{
+  3.591641302412382*^9, {3.5916414385683737`*^9, 3.591641443523898*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{55, Automatic}, {Automatic, 39}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1827, 48, 297, "Input"],
+Cell[2387, 70, 286, 6, 32, "Input"],
+Cell[CellGroupData[{
+Cell[2698, 80, 2186, 54, 385, "Input"],
+Cell[4887, 136, 459, 9, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5383, 150, 1140, 31, 77, "Input"],
+Cell[6526, 183, 125, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

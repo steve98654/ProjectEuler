@@ -1,0 +1,105 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2813,         96]
+NotebookOptionsPosition[      2398,         76]
+NotebookOutlinePosition[      2735,         91]
+CellTagsIndexPosition[      2692,         88]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"<<", "Combinatorica`"}]], "Input",
+ CellChangeTimes->{{3.591404806015131*^9, 3.591404810038719*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "compat"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Combinatorica Graph and Permutations functionality has \
+been superseded by preloaded functionality. The package now being loaded may \
+conflict with this. Please see the Compatibility Guide for details.\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{3.591404811175211*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Brute", " ", "Force"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"bnum", " ", "=", " ", "5"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"wnum", " ", "=", " ", "5"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"lst", " ", "=", 
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "bnum"}], "}"}]}], "]"}], ",", 
+       RowBox[{"Table", "[", 
+        RowBox[{"0", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "wnum"}], "}"}]}], "]"}]}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Intersection", "[", 
+     RowBox[{"Map", "[", 
+      RowBox[{"Sort", ",", 
+       RowBox[{"SetPartitions", "[", "lst", "]"}]}], "]"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Length", "[", "%", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.5914048122734823`*^9, 3.591404954028002*^9}}],
+
+Cell[BoxData["339"], "Output",
+ CellChangeTimes->{{3.59140482168922*^9, 3.591404836490863*^9}, 
+   3.59140487293715*^9, {3.5914049118255653`*^9, 3.5914049549842978`*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, 286}, {71, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 124, 2, 32, "Input"],
+Cell[706, 26, 397, 9, 81, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1140, 40, 1069, 29, 165, "Input"],
+Cell[2212, 71, 170, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
