@@ -1,0 +1,147 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4625,        138]
+NotebookOptionsPosition[      4244,        120]
+NotebookOutlinePosition[      4580,        135]
+CellTagsIndexPosition[      4537,        132]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"a", " ", "--"}], " ", "Has", " ", "a", " ", "0", 
+   "\[IndentingNewLine]", "  ", 
+   RowBox[{"b", " ", "--"}], " ", "Has", " ", "a", " ", "1", 
+   "\[IndentingNewLine]", "  ", 
+   RowBox[{"c", " ", "--"}], " ", "Has", " ", "am", " ", "A"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.596409559219851*^9, 3.5964095870486*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"a", "||", "b", "||", "c"}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"a", " ", "+", " ", "b", " ", "+", " ", "c", " ", "-", " ", "a"}],
+     "&&", 
+    RowBox[{"b", " ", "-", " ", "a"}], "&&", 
+    RowBox[{"c", " ", "-", " ", "b"}], "&&", 
+    RowBox[{"c", " ", "+", " ", "a"}], "&&", "b", "&&", "c"}]}], " ", 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.596409595552561*^9, 3.596409660846168*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sum", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"dgts", "=", "1"}], ",", 
+    RowBox[{"dgts", "\[LessEqual]", "16"}], ",", 
+    RowBox[{"dgts", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"all", " ", "=", " ", 
+      RowBox[{"15", " ", 
+       RowBox[{"16", "^", 
+        RowBox[{"(", 
+         RowBox[{"dgts", "-", "1"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"has0", "=", 
+      RowBox[{"all", "-", 
+       RowBox[{"15", "^", "dgts"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"has1", " ", "=", 
+      RowBox[{"all", "-", 
+       RowBox[{"14", " ", 
+        RowBox[{"15", "^", 
+         RowBox[{"(", 
+          RowBox[{"dgts", "-", "1"}], ")"}]}]}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"hasA", " ", "=", " ", "has1"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"has01orA", " ", "=", " ", 
+      RowBox[{"all", "-", 
+       RowBox[{"13", "^", "dgts"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"has1or0", "=", 
+      RowBox[{"all", "-", 
+       RowBox[{"14", "^", "dgts"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"has0orA", "=", "has1or0"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"has1orA", " ", "=", " ", 
+      RowBox[{"all", "-", 
+       RowBox[{"13", " ", 
+        RowBox[{"14", "^", 
+         RowBox[{"(", 
+          RowBox[{"dgts", "-", "1"}], ")"}]}]}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"has1andA", "=", 
+      RowBox[{"has1", "+", "hasA", "-", "has1orA"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"has0andA", " ", "=", " ", 
+      RowBox[{"has0", "+", "hasA", "-", "has0orA"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"has1and0", "=", 
+      RowBox[{"has0", "+", "has1", "-", "has1or0"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"sum", "+=", 
+      RowBox[{
+       RowBox[{"-", "has0"}], "-", "has1", "-", "hasA", "+", "has1and0", "+", 
+       "has0andA", "+", "has1andA", "+", "has01orA"}]}], ";"}]}], 
+   "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"BaseForm", "[", 
+  RowBox[{"sum", ",", "16"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.596410437195932*^9, 3.596410503971129*^9}, {
+  3.596410874230021*^9, 3.596410894074813*^9}, {3.5964109291705914`*^9, 
+  3.596410930302475*^9}, {3.59641122460996*^9, 3.596411248498851*^9}, {
+  3.596411691608776*^9, 3.596411702853941*^9}, {3.596411763228652*^9, 
+  3.5964118331707287`*^9}, {3.596412171818585*^9, 3.5964121990904408`*^9}, {
+  3.596412939376162*^9, 3.596412939749304*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  InterpretationBox[
+   SubscriptBox["\<\"3d58725572c62302\"\>", "\<\"16\"\>"],
+   4420408745587516162,
+   Editable->False],
+  BaseForm[#, 16]& ]], "Output",
+ CellChangeTimes->{3.596412940210679*^9}]
+}, Open  ]]
+},
+WindowSize->{615, 867},
+WindowMargins->{{-2, Automatic}, {Automatic, -7}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 384, 9, 77, "Input"],
+Cell[944, 31, 453, 11, 55, "Input"],
+Cell[CellGroupData[{
+Cell[1422, 46, 2581, 62, 385, "Input"],
+Cell[4006, 110, 222, 7, 46, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

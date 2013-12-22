@@ -1,0 +1,192 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      6003,        183]
+NotebookOptionsPosition[      5406,        158]
+NotebookOutlinePosition[      5762,        174]
+CellTagsIndexPosition[      5719,        171]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"trials", "=", "1000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"payoff", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{"2", "f"}]}], ")"}], "^", "hds"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "f"}], ")"}], "^", 
+     RowBox[{"(", 
+      RowBox[{"trials", "-", "hds"}], ")"}]}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{
+  3.5964974538687277`*^9, {3.5964979178576193`*^9, 3.596497979697434*^9}, {
+   3.596498092958474*^9, 3.596498103751555*^9}, 3.596498741636449*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tmp", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Solve", "[", 
+       RowBox[{
+        RowBox[{"payoff", "\[Equal]", 
+         RowBox[{"10", "^", "9"}]}], ",", "hds"}], "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], ",", "f"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"rt", "=", 
+   RowBox[{
+    RowBox[{"FindRoot", "[", 
+     RowBox[{"tmp", ",", 
+      RowBox[{"{", 
+       RowBox[{"f", ",", "0.1"}], "}"}], ",", 
+      RowBox[{"WorkingPrecision", "\[Rule]", "20"}]}], "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tmp2", "=", 
+   RowBox[{"payoff", "/.", 
+    RowBox[{"f", "\[Rule]", "rt"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"tmp2", "\[Equal]", 
+     RowBox[{"10", "^", "9"}]}], ",", "hds"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"1", "-", 
+    RowBox[{"Sum", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Binomial", "[", 
+        RowBox[{"trials", ",", "k"}], "]"}], "/", 
+       RowBox[{"2", "^", "trials"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "1", ",", 
+        RowBox[{"Floor", "[", 
+         RowBox[{"%", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "]"}]}], "}"}]}], 
+     "]"}]}], ",", "20"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.59649814974025*^9, 3.5964981708809223`*^9}, {
+  3.596498757536592*^9, 3.5964988431230087`*^9}, {3.596499290363172*^9, 
+  3.5964992977559633`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.596498160790325*^9, 3.5964981713335133`*^9}, {
+  3.596498760618393*^9, 3.59649884377636*^9}, {3.596499292841262*^9, 
+  3.596499298291504*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.596498160790325*^9, 3.5964981713335133`*^9}, {
+  3.596498760618393*^9, 3.59649884377636*^9}, {3.596499292841262*^9, 
+  3.596499298323276*^9}}],
+
+Cell[BoxData["0.999992836186713594670702126004996978214851084651109969591`20.\
+"], "Output",
+ CellChangeTimes->{{3.596498160791979*^9, 3.596498171347108*^9}, {
+  3.596498760622129*^9, 3.5964988438091516`*^9}, {3.596499292872776*^9, 
+  3.596499298337538*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Floor", "[", 
+  RowBox[{"%", "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5964992590317307`*^9, 3.5964992846911383`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.5964992563982477`*^9, 3.5964992709887114`*^9}}],
+
+Cell[BoxData["431.25594829396045105038826764606098980028`19.41623891476788"], \
+"Output",
+ CellChangeTimes->{{3.596499256400161*^9, 3.596499270991282*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{0, Automatic}, {Automatic, 69}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 587, 17, 55, "Input"],
+Cell[CellGroupData[{
+Cell[1169, 41, 1674, 51, 143, "Input"],
+Cell[2846, 94, 654, 13, 61, "Message"],
+Cell[3503, 109, 654, 13, 61, "Message"],
+Cell[4160, 124, 258, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4455, 133, 215, 5, 32, "Input"],
+Cell[4673, 140, 559, 11, 61, "Message"],
+Cell[5235, 153, 155, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
