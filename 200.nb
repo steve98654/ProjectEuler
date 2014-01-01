@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     14103,        368]
+NotebookDataLength[     14105,        368]
 NotebookOptionsPosition[     12460,        315]
-NotebookOutlinePosition[     12795,        330]
-CellTagsIndexPosition[     12752,        327]
+NotebookOutlinePosition[     12797,        330]
+CellTagsIndexPosition[     12754,        327]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -314,7 +314,7 @@ Cell[BoxData["$Aborted"], "Output",
 }, Open  ]]
 },
 WindowSize->{716, 867},
-WindowMargins->{{16, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, 166}, {Automatic, 61}},
 FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
 StyleDefinitions->"Default.nb"
 ]
@@ -368,7 +368,7 @@ Cell[11690, 296, 181, 2, 23, "Print"],
 Cell[11874, 300, 179, 2, 23, "Print"],
 Cell[12056, 304, 179, 2, 23, "Print"]
 }, Open  ]],
-Cell[12250, 309, 194, 3, 31, "Output"]
+Cell[12250, 309, 194, 3, 32, "Output"]
 }, Open  ]]
 }
 ]

@@ -1,0 +1,227 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7193,        218]
+NotebookOptionsPosition[      6599,        193]
+NotebookOutlinePosition[      6957,        209]
+CellTagsIndexPosition[      6914,        206]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+        "Start", " ", "again", " ", "with", " ", "the", " ", "work", " ", 
+         "in", " ", "Ewens", " ", "and", " ", "Wilf"}], " ", "..."}], " ", 
+       "Computing", " ", "the", " ", "distribution", " ", "of", " ", "the", 
+       " ", "maximum", " ", "in", " ", "balls"}], "-", "and", "-", 
+      RowBox[{"boxes", " ", "problems"}]}], " ", "..."}], " ", "PNAS"}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"r", "=", "20000"}], ";"}], "  ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Number", " ", "of", " ", "balls"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"n", "=", "1000000"}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Number", " ", "of", " ", "bins"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"m", "=", "2"}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "no", " ", "box", " ", "contains", " ", "more", " ", "than", " ", "m", 
+     " ", "balls"}], " ", "*)"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"They", " ", "use", " ", "notation", " ", "P", 
+      RowBox[{"(", 
+       RowBox[{"r", ",", "n", ",", "m"}], ")"}], " ", "is", " ", "the", " ", 
+      "probabiliy", " ", "that", " ", "none", " ", "of", " ", "the", " ", "n",
+       " ", "boxes", " ", 
+      RowBox[{"(", 
+       RowBox[{
+       "filled", " ", "with", " ", "a", " ", "total", " ", "of", " ", "r", 
+        " ", "balls"}], ")"}], " ", "contain", " ", "more", " ", "than", " ", 
+      "m", " ", 
+      RowBox[{"balls", ".", "  ", "Our"}], " ", "desired", " ", "probability",
+       " ", "is", " ", "then", " ", "1"}], " ", "-", " ", 
+     RowBox[{"P", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"r", ",", "n", ",", "m"}], ")"}], "."}]}]}], " ", 
+    "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.596681312830327*^9, 3.596681337206637*^9}, {
+  3.596739912578185*^9, 3.5967401323620872`*^9}, {3.596740377537507*^9, 
+  3.596740423342383*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pwsrs", " ", "=", " ", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "^", "k"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"k", "!"}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0", ",", "m"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.596740274722659*^9, 3.596740291936973*^9}, 
+   3.596740368565055*^9, 3.5967404313379107`*^9}],
+
+Cell[BoxData[
+ RowBox[{"1", "+", "x", "+", 
+  FractionBox[
+   SuperscriptBox["x", "2"], "2"]}]], "Output",
+ CellChangeTimes->{
+  3.59674029233396*^9, {3.59674036983666*^9, 3.596740379074491*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"Goal", ":", " ", "\[IndentingNewLine]", 
+    RowBox[{"From", " ", "the", " ", "paper"}]}], ",", " ", 
+   RowBox[{
+   "we", " ", "know", " ", "that", " ", "this", " ", "desired", " ", 
+    "probability", " ", "is", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"r", "!"}], ")"}], "/", 
+     RowBox[{"n", "^", "r"}]}], " ", "times", " ", "the", " ", 
+    RowBox[{"x", "^", "r"}], " ", "coefficient", " ", "of", " ", 
+    RowBox[{
+     RowBox[{"(", "pwsrs", ")"}], "^", "ns", 
+     "\[IndentingNewLine]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.596740258997971*^9, 3.596740264792337*^9}, {
+  3.596740434890369*^9, 3.596740444602603*^9}, {3.596740481739455*^9, 
+  3.5967405355145473`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"descoef", " ", "=", " ", 
+   RowBox[{"Coefficient", "[", 
+    RowBox[{
+     RowBox[{"pwsrs", "^", "n"}], ",", "x", ",", "r"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.596740963593308*^9, 3.5967409829824667`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Timing", " ", "test", " ", "for", " ", "computing", " ", "different", " ",
+     "large", " ", "coeffs", " ", "with", " ", "this", " ", 
+    RowBox[{"function", ".", "  ", "Extrapolates"}], " ", "out", " ", "to", 
+    " ", "about", " ", "100", " ", "secs", " ", "for", " ", "the", " ", "one",
+     " ", "that", " ", "we", " ", "are", " ", "interested", " ", 
+    RowBox[{"in", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"tvls", " ", "=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{"i", ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "8"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"i", "=", "1"}], ",", 
+      RowBox[{"i", "\[LessEqual]", 
+       RowBox[{"Length", "[", "tvls", "]"}]}], ",", 
+      RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"tvls", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], "=", 
+        RowBox[{"Timing", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"coef", "=", 
+           RowBox[{"Coefficient", "[", 
+            RowBox[{
+             RowBox[{"pwsrs", "^", "n"}], ",", "x", ",", 
+             RowBox[{"1000", " ", "i"}]}], "]"}]}], ";"}], 
+         "\[IndentingNewLine]", "]"}]}], ";"}]}], "\[IndentingNewLine]", 
+     "]"}], ";"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.59674064079884*^9, 3.596740643673917*^9}, {
+  3.596740691570219*^9, 3.5967408627604027`*^9}, {3.5967409865910997`*^9, 
+  3.596741021341668*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"res", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"descoef", " ", 
+      RowBox[{
+       RowBox[{"r", "!"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"n", "^", "r"}], ")"}]}]}], ",", "20"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"1", "-", "res"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.59674104591951*^9, 3.596741094345714*^9}}],
+
+Cell[BoxData["0.731172025128296060027749748632911680973090262231943508616`20.\
+43454510636088"], "Print",
+ CellChangeTimes->{{3.5967410810768414`*^9, 3.596741094751405*^9}}]
+}, Open  ]]
+},
+WindowSize->{884, 1027},
+WindowMargins->{{-7, Automatic}, {Automatic, -7}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 2104, 54, 209, "Input"],
+Cell[CellGroupData[{
+Cell[2686, 78, 419, 12, 32, "Input"],
+Cell[3108, 92, 195, 5, 52, "Output"]
+}, Open  ]],
+Cell[3318, 100, 749, 18, 99, "Input"],
+Cell[4070, 120, 258, 7, 32, "Input"],
+Cell[4331, 129, 1634, 40, 231, "Input"],
+Cell[CellGroupData[{
+Cell[5990, 173, 417, 13, 55, "Input"],
+Cell[6410, 188, 173, 2, 23, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

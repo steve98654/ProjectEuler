@@ -1,0 +1,143 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3718,        134]
+NotebookOptionsPosition[      3017,        104]
+NotebookOutlinePosition[      3353,        119]
+CellTagsIndexPosition[      3310,        116]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"1", "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"1", "/", "a"}], "+", 
+     RowBox[{"1", "/", "a"}], "+", 
+     RowBox[{"1", "/", "a"}]}], ")"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.597163913438816*^9, 3.597163957884715*^9}}],
+
+Cell[BoxData[
+ FractionBox["a", "3"]], "Output",
+ CellChangeTimes->{{3.5971639436920023`*^9, 3.5971639582742853`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"srsvls", " ", "=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", "/", "i"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "2", ",", "n"}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.597164008908231*^9, 3.597164043011664*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "View", " ", "the", " ", "partitions", " ", "of", " ", "18", " ", "as", 
+    " ", "the", " ", "total", " ", "number", " ", "of", " ", "circuits", " ", 
+    "in", " ", "a", " ", "series"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Length", "[", 
+   RowBox[{"IntegerPartitions", "[", "18", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.597164090965581*^9, 3.5971641167577267`*^9}, {
+  3.5971641676466627`*^9, 3.5971641814128103`*^9}}],
+
+Cell[BoxData["385"], "Output",
+ CellChangeTimes->{{3.597164103376432*^9, 3.597164117047187*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{
+   "For", " ", "each", " ", "number", " ", "greater", " ", "than", " ", "1"}],
+    ",", " ", 
+   RowBox[{"view", " ", "as", " ", "series", " ", "or", " ", "parallel"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.597164182734909*^9, 3.597164207231256*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"IntegerPartitions", "[", "3", "]"}]], "Input",
+ CellChangeTimes->{{3.597164372898328*^9, 3.597164380790576*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "3", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.597164381102154*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"3", "^", "30"}]], "Input",
+ CellChangeTimes->{{3.597165073510598*^9, 3.5971650756566277`*^9}}],
+
+Cell[BoxData["205891132094649"], "Output",
+ CellChangeTimes->{3.5971650760277576`*^9}]
+}, Open  ]]
+},
+WindowSize->{737, 867},
+WindowMargins->{{Automatic, 63}, {63, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 287, 8, 32, "Input"],
+Cell[869, 32, 118, 2, 46, "Output"]
+}, Open  ]],
+Cell[1002, 37, 378, 10, 55, "Input"],
+Cell[CellGroupData[{
+Cell[1405, 51, 502, 10, 77, "Input"],
+Cell[1910, 63, 96, 1, 32, "Output"]
+}, Open  ]],
+Cell[2021, 67, 315, 8, 55, "Input"],
+Cell[CellGroupData[{
+Cell[2361, 79, 136, 2, 32, "Input"],
+Cell[2500, 83, 257, 8, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2794, 96, 118, 2, 32, "Input"],
+Cell[2915, 100, 86, 1, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

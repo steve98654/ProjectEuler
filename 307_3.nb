@@ -1,0 +1,118 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3298,        109]
+NotebookOptionsPosition[      2971,         92]
+NotebookOutlinePosition[      3329,        108]
+CellTagsIndexPosition[      3286,        105]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+        "Start", " ", "again", " ", "with", " ", "the", " ", "work", " ", 
+         "in", " ", "Ewens", " ", "and", " ", "Wilf"}], " ", "..."}], " ", 
+       "Computing", " ", "the", " ", "distribution", " ", "of", " ", "the", 
+       " ", "maximum", " ", "in", " ", "balls"}], "-", "and", "-", 
+      RowBox[{"boxes", " ", "problems"}]}], " ", "..."}], " ", "PNAS"}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"r", "=", "20000"}], ";"}], "  ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Number", " ", "of", " ", "balls"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"n", "=", "1000000"}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Number", " ", "of", " ", "bins"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"m", "=", "2"}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "no", " ", "box", " ", "contains", " ", "more", " ", "than", " ", "m", 
+     " ", "balls"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"pwsrs", " ", "=", " ", 
+     RowBox[{"Sum", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "^", "k"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"k", "!"}], ")"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "0", ",", "m"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"descoef", " ", "=", " ", 
+     RowBox[{"Coefficient", "[", 
+      RowBox[{
+       RowBox[{"pwsrs", "^", "n"}], ",", "x", ",", "r"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{"descoef", " ", 
+        RowBox[{
+         RowBox[{"r", "!"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"n", "^", "r"}], ")"}]}]}], ",", "20"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"1", "-", "res"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.596681312830327*^9, 3.596681337206637*^9}, {
+  3.596739912578185*^9, 3.5967401323620872`*^9}, {3.596740377537507*^9, 
+  3.596740423342383*^9}, {3.596741418918386*^9, 3.5967414420045443`*^9}}],
+
+Cell[BoxData["0.731172025128296060027749748632911680973090262231943508616`20.\
+43454510636088"], "Print",
+ CellChangeTimes->{3.5967415398997383`*^9}]
+}, Open  ]]
+},
+WindowSize->{884, 1027},
+WindowMargins->{{-7, Automatic}, {Automatic, -7}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 2224, 63, 209, "Input"],
+Cell[2806, 87, 149, 2, 23, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

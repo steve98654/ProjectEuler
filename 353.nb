@@ -1,0 +1,278 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      9473,        269]
+NotebookOptionsPosition[      8999,        250]
+NotebookOutlinePosition[      9335,        265]
+CellTagsIndexPosition[      9292,        262]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"272646", " ", "nodes", " ", "in", " ", "n"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"15", " ", "case"}], " ", "..."}], " ", "about", " ", "10", " ",
+      "mins", " ", "to", " ", "compute"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Only", " ", "keep", " ", "the", " ", "distances", " ", "between", " ", 
+    "a", " ", "point", " ", "an", " ", "its", " ", "say", " ", "10", " ", 
+    "nearest", " ", 
+    RowBox[{"nbrs", "!!"}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.597197540484475*^9, 3.59719755765492*^9}, {
+  3.597351565420774*^9, 3.59735156557174*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", " ", "=", " ", "5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"2", "^", "n"}], "-", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ptlst", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"x", "^", "2"}], "+", 
+       RowBox[{"y", "^", "2"}], "+", 
+       RowBox[{"z", "^", "2"}]}], "\[Equal]", 
+      RowBox[{"r", "^", "2"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", "Integers"}], "]"}]}], 
+  ";", 
+  RowBox[{"pts", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ptlst", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "1", ",", "2"}], "]"}], "]"}], ",", 
+       RowBox[{"ptlst", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "2", ",", "2"}], "]"}], "]"}], ",", 
+       RowBox[{"ptlst", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "3", ",", "2"}], "]"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "ptlst", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.597197091252502*^9, 3.5971971480099773`*^9}, {
+  3.597197178184684*^9, 3.5971972311027107`*^9}, {3.597351452066762*^9, 
+  3.5973514725052233`*^9}, {3.597351555552122*^9, 3.5973515577746696`*^9}, {
+  3.597351733187278*^9, 3.597351830714501*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Find", " ", "index", " ", "of", " ", "both", " ", "north", " ", "and", 
+    " ", "south", " ", "pole"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"npind", " ", "=", " ", 
+     RowBox[{"Position", "[", 
+      RowBox[{"pts", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "r"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"spind", " ", "=", " ", 
+     RowBox[{"Position", "[", 
+      RowBox[{"pts", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", 
+         RowBox[{"-", "r"}]}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Check", " ", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"pts", "[", 
+        RowBox[{"[", 
+         RowBox[{"npind", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ",", "1"}], "]"}], "]"}], "]"}], "]"}], ",", 
+       RowBox[{"pts", "[", 
+        RowBox[{"[", 
+         RowBox[{"spind", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ",", "1"}], "]"}], "]"}], "]"}], "]"}]}], "}"}]}], 
+    "\[IndentingNewLine]", "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.597351995606119*^9, 3.5973520834246387`*^9}, {
+  3.597352116203352*^9, 3.597352142554579*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Strategy", " ", "..."}], " ", "\[IndentingNewLine]", "We", " ", 
+    "need", " ", "to", " ", "find", " ", "the", " ", "edges", " ", "of", " ", 
+    "the", " ", "graph", " ", "of", " ", "cost", " ", "functions", " ", 
+    "given", " ", "to", " ", 
+    RowBox[{"points", ".", " ", "Given"}], " ", "a", " ", "single", " ", 
+    "point"}], ",", " ", 
+   RowBox[{
+   "lets", " ", "find", " ", "its", " ", "k", " ", "nearest", " ", 
+    "neighbors", " ", 
+    RowBox[{"(", 
+     RowBox[{
+     "in", " ", "terms", " ", "of", " ", "the", " ", "Euclidean", " ", 
+      "distance"}], ")"}], " ", "and", " ", "then", " ", "fill", " ", "in", 
+    " ", "the", " ", "associated", " ", "edges", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+      "I", " ", "hope", " ", "we", " ", "do", " ", "not", " ", "need", " ", 
+       "an", " ", "adjacency", " ", "mat", " ", 
+       RowBox[{"here", ".", "  ", "Thus"}], " ", "if", " ", "we", " ", "take",
+        " ", "k"}], " ", "=", " ", 
+      RowBox[{
+      "10", " ", "we", " ", "will", " ", "have", " ", "around", " ", "3", " ",
+        "million", " ", "total", " ", "edges"}]}], ")"}], 
+    "\[IndentingNewLine]", "Then", " ", "run", " ", 
+    RowBox[{"dikstra", "'"}], "s", " ", "algorithm", " ", "on", " ", "this", 
+    " ", "graph", " ", "to", " ", "find", " ", "the", " ", "shortest", " ", 
+    RowBox[{"path", ".", "  ", "We"}], " ", "can", " ", "always", " ", 
+    "check", " ", "against", " ", "computing", " ", "the", " ", "full", " ", 
+    "set", " ", "of", " ", "edges", " ", "later", " ", "if", " ", 
+    RowBox[{"needed", "."}]}]}], "\[IndentingNewLine]", "*)"}]], "Input",
+ CellChangeTimes->{{3.597352451095377*^9, 3.59735263848533*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Run", " ", "this", " ", "cell", " ", "to", " ", "show", " ", "the", " ", 
+     "plot", " ", "of", " ", "the", " ", "stations", " ", "on", " ", "the", 
+     " ", 
+     RowBox[{"sphere", ".", " ", "Only"}], " ", "use", " ", "this", " ", 
+     "for", " ", "n"}], " ", "<", " ", 
+    RowBox[{
+    "8", " ", "or", " ", "else", " ", "there", " ", "are", " ", "too", " ", 
+     "many", " ", "points"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g1", "=", 
+     RowBox[{"Graphics3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Opacity", "[", "0.5", "]"}], ",", 
+         RowBox[{"Sphere", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "r"}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"Boxed", "\[Rule]", "False"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"g2", " ", "=", " ", 
+     RowBox[{"ListPointPlot3D", "[", 
+      RowBox[{"pts", ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"PointSize", "[", "0.015", "]"}]}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Show", "[", 
+    RowBox[{"g1", ",", "g2"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.597351603551673*^9, 3.5973517174315042`*^9}, {
+  3.597351793267438*^9, 3.59735187537881*^9}, {3.5973519533517036`*^9, 
+  3.597351969953113*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"http", ":"}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"en", ".", "wikipedia", ".", "org"}], "/", "wiki"}], "/", 
+      "Great"}], "-", "circle_distance"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"i", " ", "=", " ", "2"}], ";", " ", 
+    RowBox[{"j", " ", "=", " ", "3"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ptdis", " ", "=", 
+     RowBox[{"r", " ", 
+      RowBox[{"ArcCos", "[", 
+       RowBox[{"Dot", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"pts", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "/", 
+          RowBox[{"Norm", "[", 
+           RowBox[{"pts", "[", 
+            RowBox[{"[", "i", "]"}], "]"}], "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"pts", "[", 
+           RowBox[{"[", "j", "]"}], "]"}], "/", 
+          RowBox[{"Norm", "[", 
+           RowBox[{"pts", "[", 
+            RowBox[{"[", "j", "]"}], "]"}], "]"}]}]}], "]"}], "]"}]}]}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.597353183910787*^9, 3.5973531969754667`*^9}, {
+  3.597353295552258*^9, 3.59735332437844*^9}, {3.597353355370685*^9, 
+  3.59735338656491*^9}, {3.59735345860001*^9, 3.597353473052066*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Next", ",", " ", 
+    RowBox[{"build", " ", "up", " ", "the", " ", "graph"}], ",", " ", 
+    RowBox[{"then", " ", "use", " ", "Find", " ", "Shortest", " ", "Path"}], 
+    ",", " ", 
+    RowBox[{
+    "and", " ", "run", " ", "it", " ", "between", " ", "the", " ", "north", 
+     " ", "and", " ", "south", " ", "poles"}]}], " ", "*)"}], " "}]], "Input",\
+
+ CellChangeTimes->{{3.5973536853390837`*^9, 3.5973537053158503`*^9}}]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, 89}, {Automatic, -7}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 692, 17, 77, "Input"],
+Cell[1252, 39, 1449, 41, 121, "Input"],
+Cell[2704, 82, 1314, 37, 143, "Input"],
+Cell[4021, 121, 1761, 35, 275, "Input"],
+Cell[5785, 158, 1455, 39, 143, "Input"],
+Cell[7243, 199, 1269, 36, 99, "Input"],
+Cell[8515, 237, 480, 11, 55, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
