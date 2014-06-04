@@ -1,0 +1,72 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1690,         62]
+NotebookOptionsPosition[      1387,         46]
+NotebookOutlinePosition[      1723,         61]
+CellTagsIndexPosition[      1680,         58]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"127", "+", 
+      RowBox[{"19", "n"}]}], ")"}], 
+    RowBox[{"7", "^", "n"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "0", ",", "17"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.604438934834383*^9, 3.604438957215711*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "127", ",", "1022", ",", "8085", ",", "63112", ",", "487403", ",", 
+   "3731154", ",", "28353409", ",", "214121180", ",", "1608379479", ",", 
+   "12025374886", ",", "89544653933", ",", "664381785648", ",", 
+   "4913656956355", ",", "36236489892218", ",", "266541667629657", ",", 
+   "1955995342096516", ",", "14323393075498031", ",", "104683731294243150"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.604438958082993*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, -7}, {Automatic, -6}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 327, 10, 32, "Input"],
+Cell[909, 34, 462, 9, 99, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
