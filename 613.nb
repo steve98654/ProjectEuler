@@ -1,0 +1,167 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5550,        159]
+NotebookOptionsPosition[      4727,        137]
+NotebookOutlinePosition[      5061,        152]
+CellTagsIndexPosition[      5018,        149]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"-", 
+    RowBox[{"(", 
+     RowBox[{"25", " ", "-", " ", 
+      RowBox[{"x", "^", "2"}], "-", 
+      RowBox[{"y", "^", "2"}], " ", "-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"3", "-", "y"}], ")"}], "^", "2"}], "-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"4", "-", "x"}], ")"}], "^", "2"}]}], ")"}]}], "/", 
+   RowBox[{"(", 
+    RowBox[{"2", " ", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{"x", "^", "2"}], "+", 
+       RowBox[{"y", "^", "2"}]}], "]"}], 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"3", "-", "y"}], ")"}], "^", "2"}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"4", "-", "x"}], ")"}], "^", "2"}]}], "]"}]}], 
+    ")"}]}]}]], "Input",ExpressionUUID->"f01415de-cbc6-4ece-a24a-\
+e9117b2db46f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ArcCos", "[", 
+     RowBox[{"f", "[", 
+      RowBox[{"x", ",", "y"}], "]"}], "]"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"12", " ", "Pi"}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", "0", ",", 
+     RowBox[{"0.75", "*", "x"}]}], "}"}], ",", 
+   RowBox[{"AccuracyGoal", "\[Rule]", "25"}], ",", 
+   RowBox[{"WorkingPrecision", "\[Rule]", "25"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.774137462273871*^9, 3.774137464518386*^9}, {
+  3.774137527710298*^9, 3.7741375632687817`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"58566d4f-7478-4f68-89cb-f8f3c3f01713"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate","eincr",
+   "\"The global error of the strategy GlobalAdaptive has increased more than \
+\\!\\(\\*RowBox[{\\\"2000\\\"}]\\) times. The global error is expected to \
+decrease monotonically after a number of integrand evaluations. Suspect one \
+of the following: the working precision is insufficient for the specified \
+precision goal; the integrand is highly oscillatory or it is not a \
+(piecewise) smooth function; or the true value of the integral is 0. \
+Increasing the value of the GlobalAdaptive option MaxErrorIncreases might \
+lead to a convergent numerical integration. NIntegrate obtained \
+\\!\\(\\*RowBox[{\\\"0.\
+391672150408749414197804672615879373529420226614895579621301224612573512555`\
+75.\\\", \\\"-\\\", \
+RowBox[{\\\"6.\
+80400498257102114387981000277109141236162691178108164342887910470316588779`75.\
+*^-18\\\", \\\" \\\", \\\"\[ImaginaryI]\\\"}]}]\\) and \
+\\!\\(\\*RowBox[{\\\"1.\
+5259561685387259003203764138708790280882711921043228271307916839771881523`75.*\
+^-15\\\"}]\\) for the integral and error estimates.\"",2,24,7,
+   20360220825342160742,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.774137611326049*^9},
+ CellLabel->
+  "During evaluation of \
+In[24]:=",ExpressionUUID->"55e01f64-ffb3-4b7f-b78a-724ec2d27424"],
+
+Cell[BoxData[
+ RowBox[{"0.39167215040874941419780467261587937353`25.15051499783199", "-", 
+  RowBox[{
+  "6.80400498257102114388`8.390356928384858*^-18", " ", 
+   "\[ImaginaryI]"}]}]], "Output",
+ CellChangeTimes->{
+  3.774137465122608*^9, {3.7741375332976027`*^9, 3.7741375564146442`*^9}, 
+   3.774137611626671*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"fb8e5858-6305-41dc-9207-1394cddccd28"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ArcCos", "[", 
+     RowBox[{"f", "[", 
+      RowBox[{"x", ",", "y"}], "]"}], "]"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"12", " ", "Pi"}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", "0", ",", 
+     RowBox[{"0.75", "*", "x"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.774137631525448*^9, 3.774137668576254*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"bdb6b295-88f8-4fd9-9bff-492fda579399"],
+
+Cell[BoxData["0.39167215040874925`"], "Output",
+ CellChangeTimes->{3.7741377389297543`*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"171df6f3-4cb7-4425-87ac-45e679b59b4e"]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{111, Automatic}, {0, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 933, 31, 55, "Input",ExpressionUUID->"f01415de-cbc6-4ece-a24a-e9117b2db46f"],
+Cell[CellGroupData[{
+Cell[1516, 55, 717, 18, 55, "Input",ExpressionUUID->"58566d4f-7478-4f68-89cb-f8f3c3f01713"],
+Cell[2236, 75, 1312, 25, 207, "Message",ExpressionUUID->"55e01f64-ffb3-4b7f-b78a-724ec2d27424"],
+Cell[3551, 102, 393, 8, 37, "Output",ExpressionUUID->"fb8e5858-6305-41dc-9207-1394cddccd28"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3981, 115, 557, 15, 31, "Input",ExpressionUUID->"bdb6b295-88f8-4fd9-9bff-492fda579399"],
+Cell[4541, 132, 170, 2, 68, "Output",ExpressionUUID->"171df6f3-4cb7-4425-87ac-45e679b59b4e"]
+}, Open  ]]
+}
+]
+*)
+
